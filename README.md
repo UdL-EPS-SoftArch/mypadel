@@ -1,4 +1,9 @@
-# MypadelClient
+# Padel Match Organizer - MyPadel-Client
+
+Class project for the Software Architecture 2017-18 Course, Polytechnic School, University of Lleida
+
+[![Build Status](https://travis-ci.org/UdL-EPS-SoftArch/mypadel-client.svg?branch=master)](https://travis-ci.org/UdL-EPS-SoftArch/mypadel-client/branches) 
+<a href="https://zenhub.com"><img src="https://cdn.rawgit.com/ZenHubIO/support/master/zenhub-badge.svg"></a>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
 
