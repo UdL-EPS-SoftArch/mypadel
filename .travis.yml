@@ -1,0 +1,45 @@
+language: node_js
+node_js:
+- '7'
+cache:
+  directories:
+  - node_modules
+sudo: true
+dist: trusty
+services:
+- docker
+branches:
+  only:
+  - master
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo apt-get update
+- sudo apt-get install -y libappindicator1 fonts-liberation
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb
+- docker run -d -p 8080:8080 udlepssoftarch/mydata-api
+- while ! nc -z localhost 8080; do sleep 10; done
+- docker ps -a
+install:
+- npm install
+script:
+- ng lint
+- ng test --watch=false
+- ng serve &
+- npm run e2e
+notifications:
+  slack:
+    on_success: change
+    on_failure: always
+    on_pull_request: true
+    rooms:
+    - secure: kut1YmBV4IkttKS7ybDjioLT21LwWgaUv3conq1FEBk86iN4vcqJy34ATJfRbK0XxfhEP0FgNlTRe3ZeyorZeTzbY59zorkf1G6cdJvMWSbZOHdUy9rqiz/aoct/rvAOuW2D2EiG/TtnRrvH81cS3o64Pfw5ZBKx7qEStTkfAvvz4GqQ8zkSqJKMZZqzZ/HYa4jfA4r9SswsPfHxsYWeQ+PlBVdTSWJU4cAmxASha5QvPhcB+3xglYSj3fXxQ6A1/jezCP8P8rvrvx0W58DGf7NdDMLg/Fi67PmVn19h6EwWo0cfOlyBUy6T3jN5EFGFuFBNx7Byf+cmnnNfG7zQa7nt3FUnItGN3DFs4kiEWGJauZEW5BoIgu18ScL7LRnxzM6SDwtSFhZl4brjyWXCJWQ/1jryiWlBYHiENirEYe8oYLBZiD+xto4Yu28kxF4T6lTh4u1jyZvum3CHzoXWkjMSGVyNVEi1zKte8KcaufjNbHoWCqjkElVWnf1mmM2Czjs79DeALGGKrlpWAc8TgTuYYGizPA8yp+1V/rEZ1Xyi7ICm7AjEu7vbAW1kRUBKnH5vmmtP1Y1KnJhJhNtuh0WQ1CoLVO4fAsgystR3gH2eElt6YdDlzTw8YX6IfjV2VOZdA9xRTK5vSEFZn2L9lI25GAPIpqySLDn+vAf+48w=
+deploy:
+  provider: heroku
+  strategy: git
+  app:
+    master: mypadel
+  api_key:
+    secure: BXuOc85W/hCXB8N0l9zbkl9BAu9sqI6FxxQa0eL/AupQ8eq1OskLIXu2QWYqvSmw+Zmbn/av8XuA7kyqeHX9mGcO6TBsnFV3t3f/oyMOcOm2HfUWSN4uVedcBEyU2epAsQLbkbG+BeVLOUFFgwuPajCA9OBuQw5U+d+3T4fqRLSEID3Zd4TaI09I6eOgEX0R4d7lCNSXjJP+MFCZBWUMsbhttXmaDBvMOuhlrWtkXOaRr71FTQOUkd+bIx5vS0OvKPqnkdVFnRueHxM81pwA23vpOlLStCA0qyQVGH1ddS2B89xpWfNZ8ClOw6ps0bO8SvGrbeCV0FSru3S5BuvVZX/ILs8czk7BNpk6YWNVfG303SNTFggLCgOaKJoRtFV5kxHDU3CbobiPBxKkWZJkiMIWafetl8VtDAV/TnlIcnfFCGPWhTOCuSLcQEr6eOyHKI6ad7TpB+/gN/TYAA309u/6w2D8WJ5UbFDInTAEu1Nrsk0AX6+Daj3SlUDjFnGAQD4wgGy2LsGyZ9kX1o1TYlj9LJhWetHe2oq7n39j+gFbRvPNUhkhTKHl5NzK+cCGL4g+icTAqMzLhTpsGXNIC782+c/rGvk38mmWQjzGD1PW4QQMsJXBicJoeL9TLYt8a4vgHjcVrqnwGW/d7U+ivmXDimlSpfcwvysQ0INp8Zo=
