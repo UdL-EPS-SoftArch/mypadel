@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4 i18n>{ admins.length, plural,
+      =0 {There are no registered administrators}
+      =1 {There is 1 registered administrator}
+      other { There are {{admins.length}} registered administrators} }</h4>
+  </div>
+  <div class="col-md-8">
+    <h4>
+      <a class="btn btn-primary" role="button"
+         [routerLink]="['/admins/new']">Register New Administrator</a>
+    </h4>
+  </div>
+</div>
+
+<div class="row">
+  <h3 class="col-md-12">Administrators</h3>
+  <div class="col-md-12">
+    <app-admin-search (onSearchited)="onSearch($event)" [admins]="admins"></app-admin-search>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel-group col-md-12">
+    <div class="panel panel-default" *ngFor="let admin of admins">
+      <div class="panel-heading">
+        <h4>Administrator: <a routerLink="{{admin.uri}}">{{admin.username}}</a></h4>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <h4>E-Mail:</h4>
+          <p>{{admin.email}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

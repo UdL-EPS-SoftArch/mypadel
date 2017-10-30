@@ -1,0 +1,51 @@
+<h2>Register Administrator</h2>
+<form id="dataset-form" [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Text input-->
+    <div class="form-group row" [class.has-error]="adminForm.controls['username'].touched &&
+                  adminForm.controls['username'].hasError('required')">
+      <label class="col-md-3 control-label" for="username">Administrator username*</label>
+      <input id="username" type="text" class="form-control input-md"
+             [formControl]="adminForm.controls['username']"
+             [(ngModel)]="admin.username"/>
+      <div class="col-md-9">
+        <div *ngIf="adminForm.controls['username'].touched &&
+                    adminForm.controls['username'].hasError('required')" class="label-warning">
+           A username is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- E-Mail input-->
+    <div class="form-group row" [class.has-error]="adminForm.controls['email'].touched &&
+                  adminForm.controls['email'].hasError('email')">
+      <label class="col-md-3 control-label" for="email">Administrator E-Mail*</label>
+      <input id="email" type="email" class="form-control input-md"
+             [formControl]="adminForm.controls['email']"
+             [(ngModel)]="admin.email"/>
+      <div class="col-md-9">
+        <div *ngIf="adminForm.controls['email'].touched &&
+                    adminForm.controls['email'].hasError('email')" class="label-warning">
+          The E-Mail should be properly formatted!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <button id="createAdmin" type="submit"
+                    class="btn btn-success pull-right" [disabled]="!adminForm.valid">Register
+            </button>
+        </div>
+    </div>
+
+  </fieldset>
+</form>

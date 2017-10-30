@@ -1,0 +1,6 @@
+<h4>Filter Administrators by username</h4>
+<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+<p i18n>{ admins.length, plural,
+          =0 {No administrators found}
+          =1 {1 administrator found}
+          other { {{admins.length}} administrators found} }</p>
