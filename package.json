@@ -9,7 +9,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "npm-run-all e2e-test e2e-report --continue-on-error",
+    "e2e-test": "ng e2e",
+    "e2e-report": "node e2e/generate-html-report.js",
     "heroku-prebuild": "npm install -g express compression",
     "heroku-postbuild": "ng build --aot -prod"
   },
@@ -52,6 +54,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "npm-run-all": "^4.1.1",
     "protractor": "~5.1.2",
     "protractor-cucumber-framework": "^4.0.9",
     "ts-node": "~3.2.0",
