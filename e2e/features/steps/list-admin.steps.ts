@@ -19,7 +19,7 @@ class ListAdminsSteps {
   public iMInHomePage(callback): void {
     browser.get('http://localhost:4200');
     callback();
-  };
+  }
 
   @given(/^I sign in as "([^"]*)" with password "([^"]*)"$/)
   public iSignInAsWithPassword (username: string, password: string, callback): void {
@@ -29,13 +29,13 @@ class ListAdminsSteps {
     this.loginForm.submitForm();
     browser.waitForAngular();
     callback();
-  };
+  }
 
   @given(/^I'm signed in as "([^"]*)"$/)
   public iMSignedInAs (username: string, callback): void {
     const currentUser = this.navBar.getCurrentUser();
     expect(currentUser)
-      .to.eventually.equal(username.toUpperCase()).and.notify(callback);
+      .to.eventually.equal(username).and.notify(callback);
   }
 
   @given(/^I create an administrator with username "([^"]*)" and e-mail "([^"]*)"$/)
@@ -46,7 +46,7 @@ class ListAdminsSteps {
     this.datasetForm.submitForm();
     browser.waitForAngular();
     callback();
-  };
+  }
 
   @when(/^I click menu option "([^"]*)"$/)
   public WhenIClickMenuOption (option: string, callback): void {
@@ -59,7 +59,7 @@ class ListAdminsSteps {
   public iSeeAds(count: string, callback): void {
     expect(this.datasetsList.getAdminsCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
-  };
+  }
 }
 
 export = ListAdminsSteps;
