@@ -13,7 +13,8 @@
     "e2e-test": "ng e2e",
     "e2e-report": "node e2e/generate-html-report.js",
     "heroku-prebuild": "npm install -g express compression",
-    "heroku-postbuild": "ng build --aot -prod"
+    "heroku-postbuild": "ng build --aot -prod",
+    "//": "Requires configuring Heroku: heroku config:set NPM_CONFIG_PRODUCTION=false"
   },
   "private": true,
   "dependencies": {
