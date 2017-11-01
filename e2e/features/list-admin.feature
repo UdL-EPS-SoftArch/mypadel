@@ -10,6 +10,7 @@ Feature: List Datasets
 
   Scenario: List all datasets when one created
     Given I sign in as "admin@mypadel.cat" with password "password"
+    And I'm signed in as "admin"
     And I create an administrator with username "admin2" and e-mail "admin2@mypadel.cat"
     When I click menu option "Admins"
     Then I see 2 administrators
