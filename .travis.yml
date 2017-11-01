@@ -28,7 +28,7 @@ script:
 - ng lint
 - ng test --watch=false
 - ng serve &
-- npm run e2e
+- ng e2e
 notifications:
   slack:
     on_success: change
