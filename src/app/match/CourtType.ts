@@ -1,4 +1,4 @@
-export enum CourtType{
+export enum CourtType {
   INDOOR,
   OUTDOOR,
   UNDEFINED
