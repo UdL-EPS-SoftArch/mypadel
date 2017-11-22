@@ -3,10 +3,10 @@ import {Player} from '../admin/player';
 
 export class Match {
   id: number;
-  startDate: String;
+  startDate: Date;
   duration: String;
   courtType: CourtType;
-  cancelationDeadline: String;
+  cancelationDeadline: Date;
   isCancelled: boolean;
   matchCreator: Player;
   invitations: any = [];
