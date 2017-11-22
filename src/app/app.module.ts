@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,6 +17,7 @@ import { AdminService } from './admin/admin.service';
 import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
+import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdminSearchComponent } from './admin/admin-search/admin-search.componen
     AdminDetailComponent,
     AdminFormComponent,
     AdminEditComponent,
-    AdminSearchComponent
+    AdminSearchComponent,
+    AdminDeleteComponent
   ],
   imports: [
     BrowserModule,
