@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginBasicModule } from './login-basic/login-basic.module';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { LoggedInGuard } from './login-basic/loggedin.guard';
-
+import {PlayerListComponent} from "./player/player-list/player-list.component";
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
 import { AdminService } from './admin/admin.service';
@@ -26,7 +26,8 @@ import { AdminSearchComponent } from './admin/admin-search/admin-search.componen
     AdminDetailComponent,
     AdminFormComponent,
     AdminEditComponent,
-    AdminSearchComponent
+    AdminSearchComponent,
+    PlayerListComponent
   ],
   imports: [
     BrowserModule,
