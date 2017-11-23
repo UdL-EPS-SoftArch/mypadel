@@ -19,4 +19,15 @@ export class PlayerService {
       .map((res: Response) => res.json()._embedded.players.map(json => new Player(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
+  // POST /admins
+  addPlayer(player: Player): Observable<Player> {
+    const body = JSON.stringify(player);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.post(`${environment.API}/players`, body, options)
+      .map((res: Response) => new Player(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 }
