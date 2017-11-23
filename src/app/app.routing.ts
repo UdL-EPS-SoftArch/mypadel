@@ -17,6 +17,6 @@ export const routes: Routes = [
   { path: 'admins', component: AdminListComponent },
   { path: 'admins/:id', component: AdminDetailComponent },
   {path: 'players',component:PlayerListComponent},
-  {path: 'player/new',component:PlayerFormComponent},
-  { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
+  {path: 'players/new',component:PlayerFormComponent},
+  { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] }
 ];

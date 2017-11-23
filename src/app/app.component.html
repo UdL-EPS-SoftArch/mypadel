@@ -23,6 +23,11 @@
             <span class="fa fa-user"></span> Admins
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/players']">
+            <span class="fa fa-user"></span> Players
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>
