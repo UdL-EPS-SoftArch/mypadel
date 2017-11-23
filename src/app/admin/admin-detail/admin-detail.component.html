@@ -1,27 +1,27 @@
-<div class="row">
-  <h3 class="col-md-12">Details about Administrator {{admin.username}}</h3>
-</div>
-
-<div class="row">
-  <p class="col-md-12">List other <a [routerLink]="['/admins']">administrators</a></p>
-</div>
-
-<div class="row">
+<div class="panel panel-primary">
   <div class="panel-heading">
-    <h4>Username: {{admin.username}}</h4>
+    <div>{{admin.username}}</div>
   </div>
   <div class="panel-body">
-    <div class="col-md-6">
-      <h4>E-Mail:</h4>
+    <div class="col-md-4">
+      <h5>Username:</h5>
+      <p>{{admin.username}}</p>
+    </div>
+    <div class="col-md-4">
+      <h5>E-Mail:</h5>
       <p><a href="mailto:{{admin.email}}">{{admin.email}}</a></p>
     </div>
+    <div class="col-md-4">
+      <h5>Role:</h5>
+      <p>{{admin.authorities[0].authority}}</p>
+    </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
+  <div class="panel-footer text-center">
+    <button id="adminsList" type="button" [routerLink]="['/admins']"
+            class="btn btn-primary">Back to List</button>
     <button id="editAdmin" type="button" [routerLink]="['edit']"
-            class="btn btn-success pull-right">Edit
-    </button>
+            class="btn btn-success">Edit</button>
+    <button id="deleteAdmin" type="button" [routerLink]="['delete']"
+            class="btn btn-danger">Delete</button>
   </div>
 </div>
