@@ -3,6 +3,8 @@ module.exports = {
   stripPrefix: "dist",
   root: "dist/",
   staticFileGlobs: [
-    "dist/**/*"
+    "dist/index.html",
+    "dist/**/*.js",
+    "dist/**/*.css"
   ]
 };
