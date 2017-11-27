@@ -9,7 +9,7 @@ export class ListPublicMatchesSteps {
   private adminsList = new PublicMatchListPage();
 
   @then(/^I see (\d+) public matches/)
-  public iSeeAds(count: string, callback): void {
+  public iSeePubMa(count: string, callback): void {
     expect(this.adminsList.getAdminsCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
   }
