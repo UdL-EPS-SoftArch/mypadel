@@ -9,8 +9,8 @@ export class Match {
   cancelationDeadline: Date;
   isCancelled: boolean;
   matchCreator: Player;
-  invitations: any = [];//invitation[] = []
   /*Waiting for other components being implemented
+  invitations: any = [];//invitation[] = []
   reservation: Reservation;
   */
 
