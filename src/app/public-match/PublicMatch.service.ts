@@ -40,7 +40,7 @@ export class PublicMatchService {
   }
 
   // PUT /publicMatches/id
-  updatePublicMatches(publicMatch: PublicMatch): Observable<PublicMatch> {
+  updatePublicMatch(publicMatch: PublicMatch): Observable<PublicMatch> {
     const body = JSON.stringify(publicMatch);
     const headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);
@@ -48,6 +48,17 @@ export class PublicMatchService {
 
     return this.http.put(`${environment.API}${publicMatch.uri}`, body, options)
       .map((res: Response) => new PublicMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  // DELETE /publicMatches/{id}
+  deletePublicMatch(publicMatch: PublicMatch): Observable<Response> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.delete(`${environment.API}${publicMatch.uri}`, options)
+      .map((res: Response) => res)
       .catch((error: any) => Observable.throw(error.json()));
   }
 
