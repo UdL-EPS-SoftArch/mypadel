@@ -10,7 +10,7 @@ import {PublicMatchService} from "../PublicMatch.service";
 
 export class PublicMatchSearchComponent {
   @Input()
-  publicMatch: PublicMatch[];
+  publicMatches: PublicMatch[];
   @Output()
   onSearchited: EventEmitter<any> = new EventEmitter();
 
