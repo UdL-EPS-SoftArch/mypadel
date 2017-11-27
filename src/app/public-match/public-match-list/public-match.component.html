@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4 i18n>{ totalPublicMatches, plural,
+      =0 {There are no pending public matches}
+      =1 {There is 1 pending public match}
+      other { There are {{totalPublicMatches}} pending public matches} }</h4>
+  </div>
+  <div class="col-md-8">
+    <h4>
+      <a class="btn btn-primary" role="button"
+         [routerLink]="['/publicMatches/new']">Create New Public Match</a>
+    </h4>
+  </div>
+</div>
+
+<div class="row">
+  <h3 class="col-md-12">Public Matches</h3>
+  <div class="col-md-12">
+    <app-publicMatch-search (onSearchited)="onSearch($event)" [publicMatches]="publicMatches"></app-publicMatch-search>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel-group col-md-12">
+    <div class="panel panel-default" *ngFor="let publicMatch of publicMatches">
+      <div class="panel-heading">
+        <h4>Administrator: <a routerLink="{{publicMatch.uri}}">{{publicMatch.id}}</a></h4>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <h4>Creator:</h4>
+          <p>{{publicMatch.matchCreator}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
