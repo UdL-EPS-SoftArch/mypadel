@@ -39,7 +39,17 @@ export class PublicMatchService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
+  // PUT /publicMatches/id
+  updatePublicMatches(publicMatch: PublicMatch): Observable<PublicMatch> {
+    const body = JSON.stringify(publicMatch);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
 
+    return this.http.put(`${environment.API}${publicMatch.uri}`, body, options)
+      .map((res: Response) => new PublicMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 
 
 }
