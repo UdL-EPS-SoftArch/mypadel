@@ -19,7 +19,7 @@ import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { PublicMatchService } from "./public-match/PublicMatch.service";
-import { PublicMatchListComponent } from "./public-match/public-match-list/public-match.component";
+import { PublicMatchListComponent } from "./public-match/public-match-list/public-match-list.component";
 
 @NgModule({
   declarations: [
