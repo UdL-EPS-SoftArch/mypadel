@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+  ],
+  "name": "My Padel",
+  "orientation": "portrait",
+  "short_name": "My Padel",
+  "start_url": "/",
+  "theme_color": "#eeeeee"
+}
