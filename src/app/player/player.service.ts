@@ -30,4 +30,9 @@ export class PlayerService {
       .map((res: Response) => new Player(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
+  getPlayersByUsername(searchTerm: string): Observable<Player[]> {
+    return this.http.get(`${environment.API}/players/search/findByUsernameContaining?text=${searchTerm}`)
+      .map((res: Response) => res.json()._embedded.players.map(json => new Player(json)))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 }

@@ -12,4 +12,26 @@
     </h4>
   </div>
 </div>
+<div class="row">
+  <h3 class="col-md-12">Players</h3>
+  <div class="col-md-12">
+    <app-player-search (onSearchited)="onSearch($event)" [players]="players"></app-player-search>
+  </div>
+</div>
+<div class="row">
+  <div class="panel-group col-md-12">
+    <div class="panel panel-default" *ngFor="let player of players">
+      <div class="panel-heading">
+        <h4>Player: <a routerLink="{{player.uri}}">{{player.username}}</a></h4>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <h4>E-Mail:</h4>
+          <p>{{player.email}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 

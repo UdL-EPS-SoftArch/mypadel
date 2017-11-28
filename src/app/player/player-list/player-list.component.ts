@@ -22,6 +22,9 @@ export class PlayerListComponent implements OnInit {
           this.totalPlayers = players.length; },
         error => this.errorMessage = <any>error.message);
   }
+  onSearch(players) {
+    this.players = players;
+  }
 
 
 }

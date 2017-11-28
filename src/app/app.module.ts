@@ -20,6 +20,7 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import {PlayerListComponent} from "./player/player-list/player-list.component";
 import {PlayerFormComponent} from "./player/player-form/player-form.component";
 import {PlayerService} from "./player/player.service";
+import {PlayerSearchComponent} from "./player/player-search/player-search.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {PlayerService} from "./player/player.service";
     AdminDeleteComponent,
     AdminSearchComponent,
     PlayerListComponent,
-    PlayerFormComponent
+    PlayerFormComponent,
+    PlayerSearchComponent
   ],
   imports: [
     BrowserModule,
