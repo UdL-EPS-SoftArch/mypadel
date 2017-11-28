@@ -3,7 +3,3 @@ Feature: List Public Matches
   As a user
   I want to list them
 
-  Scenario: List all public matches when just default one
-    Given I'm in the home page
-    When I click menu option "Public Matches"
-    Then I see 1 public matches
