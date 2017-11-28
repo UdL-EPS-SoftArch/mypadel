@@ -13,11 +13,11 @@ export class PublicMatchListPage {
     return element.all(by.css('div.panel'));
   }
 
-  getAdminInPosition(position: number): ElementFinder {
+  getPublicMatchInPosition(position: number): ElementFinder {
     return this.publicMatches.get(position - 1);
   }
 
-  getAdminsCount(): promise.Promise<number> {
+  getPublicMatchesCount(): promise.Promise<number> {
     return this.publicMatches.count();
   }
 }
