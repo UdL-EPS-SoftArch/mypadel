@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {PublicMatch} from "../PublicMatch";
-import {PublicMatchService} from "../PublicMatch.service";
+import {PublicMatch} from '../PublicMatch';
+import {PublicMatchService} from '../PublicMatch.service';
 
 @Component({
-  selector: 'app-publicMatch-list',
+  selector: 'app-public-match-list',
   templateUrl: './public-match-list.component.html'
 })
 export class PublicMatchListComponent implements OnInit {

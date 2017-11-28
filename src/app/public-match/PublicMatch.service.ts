@@ -1,12 +1,12 @@
-import {Injectable} from "@angular/core";
-import {AuthenticationBasicService} from "../login-basic/authentication-basic.service";
-import {Http, Response, Headers, RequestOptions} from "@angular/http";
+import {Injectable} from '@angular/core';
+import {AuthenticationBasicService} from '../login-basic/authentication-basic.service';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
-import {PublicMatch} from "./PublicMatch";
+import {PublicMatch} from './PublicMatch';
 
 @Injectable()
 export class PublicMatchService {
