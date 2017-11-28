@@ -1,6 +1,5 @@
 import { binding, then } from 'cucumber-tsflow';
 import {PublicMatchListPage} from '../../../pages/public-match/public-match-list.page';
-import {and} from "@angular/router/src/utils/collection";
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;
