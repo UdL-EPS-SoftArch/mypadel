@@ -1,7 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {PublicMatch} from "../PublicMatch";
-import {PublicMatchService} from "../PublicMatch.service";
+import {PublicMatch} from '../PublicMatch';
+import {PublicMatchService} from '../PublicMatch.service';
 
 @Component({
   selector: 'app-public-match-search',
