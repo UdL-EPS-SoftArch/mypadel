@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginBasicModule } from './login-basic/login-basic.module';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { LoggedInGuard } from './login-basic/loggedin.guard';
-import { MomentPicker } from 'angular-moment-picker';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
@@ -43,7 +43,8 @@ import {PublicMatchFormComponent} from './public-match/public-match-form/public-
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    LoginBasicModule
+    LoginBasicModule,
+    DateTimePickerModule
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
   bootstrap: [AppComponent]
