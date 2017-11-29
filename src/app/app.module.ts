@@ -21,6 +21,9 @@ import {PlayerListComponent} from "./player/player-list/player-list.component";
 import {PlayerFormComponent} from "./player/player-form/player-form.component";
 import {PlayerService} from "./player/player.service";
 import {PlayerSearchComponent} from "./player/player-search/player-search.component";
+import {PlayerDetailComponent} from "./player/player-detail/player-detail.component";
+import {PlayerEditComponent} from "./player/player-edit/player-edit.component";
+import {PlayerDeleteComponent} from "./player/player-delete/player-delete.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +38,11 @@ import {PlayerSearchComponent} from "./player/player-search/player-search.compon
     AdminSearchComponent,
     PlayerListComponent,
     PlayerFormComponent,
-    PlayerSearchComponent
+    PlayerSearchComponent,
+    PlayerDetailComponent,
+    PlayerEditComponent,
+    PlayerDeleteComponent,
+
   ],
   imports: [
     BrowserModule,

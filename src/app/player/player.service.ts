@@ -19,7 +19,7 @@ export class PlayerService {
       .map((res: Response) => res.json()._embedded.players.map(json => new Player(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
-  // POST /admins
+  // POST /players
   addPlayer(player: Player): Observable<Player> {
     const body = JSON.stringify(player);
     const headers = new Headers({'Content-Type': 'application/json'});
@@ -35,4 +35,33 @@ export class PlayerService {
       .map((res: Response) => res.json()._embedded.players.map(json => new Player(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
+  // GET /players/id
+  getPlayer(id: string): Observable<Player> {
+    return this.http.get(`${environment.API}/players/${id}`)
+      .map((res: Response) => new Player(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+  updatePlayer(player: Player): Observable<Player> {
+    const playerNoAuthorities = player;
+    playerNoAuthorities.authorities = [];
+    const body = JSON.stringify(playerNoAuthorities);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.put(`${environment.API}${player.uri}`, body, options)
+      .map((res: Response) => new Player(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+  // DELETE /player/{id}
+  deletePlayer(player: Player): Observable<Response> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.delete(`${environment.API}${player.uri}`, options)
+      .map((res: Response) => res)
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
 }
