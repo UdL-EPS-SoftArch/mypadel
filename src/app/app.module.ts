@@ -22,6 +22,7 @@ import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { CourtListComponent } from './court/court-list/court-list.component';
+import { CourtFormComponent } from './court/court-form/court-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CourtListComponent } from './court/court-list/court-list.component';
     AdminDeleteComponent,
     PublicMatchSearchComponent,
     PublicMatchListComponent,
-    CourtListComponent
+    CourtListComponent,
+    CourtFormComponent
   ],
   imports: [
     BrowserModule,
