@@ -27,7 +27,7 @@ export class CourtService {
   }
 
   // TODO: POST a new court
-  addAdmin(court: Court): Observable<Court> {
+  addCourt(court: Court): Observable<Court> {
     const body = JSON.stringify(court);
     const headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);
@@ -40,4 +40,13 @@ export class CourtService {
 
   // TODO: PUT a court
   // TODO: DELETE a court
+  // deleteCourt(court: Court): Observable<Response> {
+  //   const headers = new Headers({'Content-Type': 'application/json'});
+  //   headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+  //   const options = new RequestOptions({headers: headers});
+  //
+  //   return this.http.delete(`${environment.API}${court.uri}`, options)
+  //     .map((res: Response) => res)
+  //     .catch((error: any) => Observable.throw(error.json()));
+  // }
 }
