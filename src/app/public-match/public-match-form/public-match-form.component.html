@@ -9,6 +9,7 @@
       <input id="startDate" type="text" class="form-control input-md"
              [formControl]="publicMatchForm.controls['startDate']"
              [(ngModel)]="publicMatch.startDate"/>
+      <owl-date-time></owl-date-time>
       <div class="col-md-9">
         <div *ngIf="publicMatchForm.controls['startDate'].touched &&
                     publicMatchForm.controls['startDate'].hasError('required')" class="label-warning">
