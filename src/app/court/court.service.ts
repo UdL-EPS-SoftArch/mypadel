@@ -20,5 +20,13 @@ export class CourtService {
   }
 
   // TODO: GET court by id
+  getCourt(id: string): Observable<Court> {
+    return this.http.get(`${environment.API}/courts/${id}`)
+      .map((res: Response) => new Court(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
   // TODO: POST a new court
+  // TODO: PUT a court
+  // TODO: DELETE a court
 }
