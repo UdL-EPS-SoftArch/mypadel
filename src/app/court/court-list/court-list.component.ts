@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Court} from '../Court';
+import {CourtService} from '../court.service';
 
 @Component({
   selector: 'app-court-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourtListComponent implements OnInit {
 
-  constructor() { }
+  public courts: Court[] = [];
+  public totalCourts: number;
+  public errorMessage = '';
+
+  constructor(private courtService: CourtService) {
+  }
 
   ngOnInit() {
+    this.courtService.getAllCourts()
+      .subscribe(
+        (courts: Court[]) => {
+          this.courts = courts;
+          this.totalCourts = courts.length;
+        },
+        error => this.errorMessage = <any>error.message);
   }
 
 }
