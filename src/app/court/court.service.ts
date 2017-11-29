@@ -14,14 +14,25 @@ export class CourtService {
 
   // TODO: GET all courts
   getAllCourts(): Observable<Court[]> {
-    return this.http.get(`${environment.API}/courts`)
+    const options = this.createAuthenticationHeader();
+
+    return this.http.get(`${environment.API}/courts`, options)
       .map((res: Response) => res.json()._embedded.courts.map(json => new Court(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-  // TODO: GET court by id
+  private createAuthenticationHeader() {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+    return options;
+  }
+
+// TODO: GET court by id
   getCourt(id: string): Observable<Court> {
-    return this.http.get(`${environment.API}/courts/${id}`)
+    const options = this.createAuthenticationHeader();
+
+    return this.http.get(`${environment.API}/courts/${id}`, options)
       .map((res: Response) => new Court(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
