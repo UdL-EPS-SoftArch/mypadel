@@ -8,6 +8,7 @@ import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
 import {CourtListComponent} from './court/court-list/court-list.component';
+import {CourtFormComponent} from './court/court-form/court-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -18,5 +19,6 @@ export const routes: Routes = [
   { path: 'admins/:id', component: AdminDetailComponent },
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'publicMatches', component: PublicMatchListComponent},
-  {path: 'courts', component: CourtListComponent}
+  { path: 'courts', component: CourtListComponent},
+  { path: 'courts/new', component: CourtFormComponent}
 ];
