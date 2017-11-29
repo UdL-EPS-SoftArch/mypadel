@@ -43,8 +43,7 @@ import {PublicMatchFormComponent} from './public-match/public-match-form/public-
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    LoginBasicModule,
-    MomentPicker
+    LoginBasicModule
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
   bootstrap: [AppComponent]

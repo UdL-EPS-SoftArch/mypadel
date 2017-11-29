@@ -8,11 +8,7 @@
       <label class="col-md-3 control-label" for="StartDate">Match StartDate*</label>
       <input id="startDate" type="text" class="form-control input-md"
              [formControl]="publicMatchForm.controls['startDate']"
-             [(ngModel)]="publicMatch.startDate"
-             ng-model="ctrl.input"
-             ng-model-options="{ updateOn: 'blur' }"
-             placeholder="Select a date..."
-             moment-picker="ctrl.input"/>
+             [(ngModel)]="publicMatch.startDate"/>
       <div class="col-md-9">
         <div *ngIf="publicMatchForm.controls['startDate'].touched &&
                     publicMatchForm.controls['startDate'].hasError('required')" class="label-warning">
@@ -68,7 +64,3 @@
 
   </fieldset>
 </form>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
-<script src="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.js"></script>
-<link href="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.css" rel="stylesheet">
