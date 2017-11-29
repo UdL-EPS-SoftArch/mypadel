@@ -28,6 +28,11 @@
             <span class="fa fa-user"></span> Players
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/publicMatches']">
+            <span class="fa fa-user"></span> Public Matches
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>

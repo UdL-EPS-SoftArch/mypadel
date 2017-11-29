@@ -1,0 +1,6 @@
+<h4>Filter public matches by identificator</h4>
+<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+<p i18n>{ publicMatches.length, plural,
+  =0 {No public matches found}
+  =1 {1 public match found}
+  other { {{publicMatches.length}} public matches found} }</p>

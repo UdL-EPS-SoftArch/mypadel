@@ -11,6 +11,7 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import {PlayerDetailComponent} from "./player/player-detail/player-detail.component";
 import {PlayerEditComponent} from "./player/player-edit/player-edit.component";
 import {PlayerDeleteComponent} from "./player/player-delete/player-delete.component";
+import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -26,4 +27,5 @@ export const routes: Routes = [
   { path: 'players/:id/edit', component: PlayerEditComponent, canActivate: [LoggedInGuard] },
   { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
 
+  { path: 'publicMatches', component: PublicMatchListComponent},
 ];
