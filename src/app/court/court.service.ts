@@ -27,6 +27,17 @@ export class CourtService {
   }
 
   // TODO: POST a new court
+  addAdmin(court: Court): Observable<Court> {
+    const body = JSON.stringify(court);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.post(`${environment.API}/courts`, body, options)
+      .map((res: Response) => new Court(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
   // TODO: PUT a court
   // TODO: DELETE a court
 }
