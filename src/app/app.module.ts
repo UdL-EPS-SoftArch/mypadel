@@ -23,6 +23,7 @@ import { PublicMatchSearchComponent } from './public-match/public-match-search/p
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
+import {CourtService} from "./court/court.service";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { CourtFormComponent } from './court/court-form/court-form.component';
     RouterModule.forRoot(routes),
     LoginBasicModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, CourtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
