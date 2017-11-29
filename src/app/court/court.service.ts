@@ -12,7 +12,6 @@ export class CourtService {
               private authentication: AuthenticationBasicService) {
   }
 
-  // TODO: GET all courts
   getAllCourts(): Observable<Court[]> {
     const options = this.createAuthenticationHeader();
 
@@ -28,7 +27,6 @@ export class CourtService {
     return options;
   }
 
-// TODO: GET court by id
   getCourt(id: string): Observable<Court> {
     const options = this.createAuthenticationHeader();
 
@@ -37,7 +35,6 @@ export class CourtService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-  // TODO: POST a new court
   addCourt(court: Court): Observable<Court> {
     const body = JSON.stringify(court);
     const headers = new Headers({'Content-Type': 'application/json'});
@@ -50,7 +47,8 @@ export class CourtService {
   }
 
   // TODO: PUT a court
-  // TODO: DELETE a court
+
+
   deleteCourt(court: Court): Observable<Response> {
     const headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);
