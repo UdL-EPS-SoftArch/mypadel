@@ -19,6 +19,7 @@ import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationService} from "./reservation/reservation.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ReservationFormComponent } from './reservation/reservation-form/reserva
     AdminEditComponent,
     AdminSearchComponent,
     AdminDeleteComponent,
-    ReservationFormComponent
+    ReservationFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,7 @@ import { ReservationFormComponent } from './reservation/reservation-form/reserva
     RouterModule.forRoot(routes),
     LoginBasicModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService,ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
