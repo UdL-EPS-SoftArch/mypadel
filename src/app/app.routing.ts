@@ -7,6 +7,7 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationListComponent } from "./reservation/reservation-list/reservation-list.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -17,4 +18,5 @@ export const routes: Routes = [
   { path: 'admins/:id', component: AdminDetailComponent },
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'reservations/new', component: ReservationFormComponent },
+  { path: 'reservations', component: ReservationListComponent }
 ];

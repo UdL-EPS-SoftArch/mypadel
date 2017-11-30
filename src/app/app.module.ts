@@ -20,6 +20,7 @@ import { AdminSearchComponent } from './admin/admin-search/admin-search.componen
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
 import { ReservationService} from "./reservation/reservation.service";
+import {ReservationListComponent} from "./reservation/reservation-list/reservation-list.component";
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ReservationService} from "./reservation/reservation.service";
     AdminSearchComponent,
     AdminDeleteComponent,
     ReservationFormComponent,
+    ReservationListComponent,
   ],
   imports: [
     BrowserModule,
