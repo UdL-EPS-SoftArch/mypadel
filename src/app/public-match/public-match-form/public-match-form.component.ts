@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {PublicMatch} from '../PublicMatch';
 import {PublicMatchService} from '../PublicMatch.service';
+import {Player} from "../../admin/player";
 
 @Component({
   selector: 'app-public-match-form',
@@ -17,7 +18,6 @@ export class PublicMatchFormComponent implements OnInit {
               private router: Router,
               private publicMatchService: PublicMatchService) {
     this.publicMatchForm = fb.group({
-      'matchCreator': ['The player creating the match', Validators.required],
       'startDate': ['Match start hour', Validators.required],
       'duration': ['Duration of the match', Validators.required],
       'courtType': ['Type of court', Validators.required],
