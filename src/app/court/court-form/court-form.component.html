@@ -3,31 +3,31 @@
   <fieldset>
 
     <!-- Text input-->
-    <div class="form-group row" [class.has-error]="courtForm.controls['username'].touched &&
-                  courtForm.controls['username'].hasError('required')">
-      <label class="col-md-3 control-label" for="username">Administrator username*</label>
-      <input id="username" type="checkbox" class="form-control input-md"
-             [formControl]="courtForm.controls['username']"
-             [(ngModel)]="court.username"/>
+    <div class="form-group row" [class.has-error]="courtForm.controls['available'].touched &&
+                  courtForm.controls['available'].hasError('required')">
+      <label class="col-md-3 control-label" for="available">Is the Court available?*</label>
+      <input id="available" type="checkbox" class=" input-md"
+             [formControl]="courtForm.controls['available']"
+             [(ngModel)]="court.available"/>
       <div class="col-md-9">
-        <div *ngIf="courtForm.controls['username'].touched &&
-                    courtForm.controls['username'].hasError('required')" class="label-warning">
-           A username is required!
+        <div *ngIf="courtForm.controls['available'].touched &&
+                    courtForm.controls['available'].hasError('required')" class="label-warning">
+           A available is required!
         </div>
       </div>
     </div>
 
-    <!-- E-Mail input-->
-    <div class="form-group row" [class.has-error]="courtForm.controls['email'].touched &&
-                  courtForm.controls['email'].hasError('email')">
-      <label class="col-md-3 control-label" for="email">Administrator E-Mail*</label>
-      <input id="email" type="checkbox" class="form-control input-md"
-             [formControl]="courtForm.controls['email']"
-             [(ngModel)]="court.email"/>
+    <!-- isIndoor input-->
+    <div class="form-group row" [class.has-error]="courtForm.controls['isIndoor'].touched &&
+                  courtForm.controls['isIndoor'].hasError('isIndoor')">
+      <label class="col-md-3 control-label" for="isIndoor">Is the Court indoor?*</label>
+      <input id="isIndoor" type="checkbox" class=" input-md"
+             [formControl]="courtForm.controls['isIndoor']"
+             [(ngModel)]="court.isIndoor"/>
       <div class="col-md-9">
-        <div *ngIf="courtForm.controls['email'].touched &&
-                    courtForm.controls['email'].hasError('email')" class="label-warning">
-          The E-Mail should be properly formatted!
+        <div *ngIf="courtForm.controls['isIndoor'].touched &&
+                    courtForm.controls['isIndoor'].hasError('isIndoor')" class="label-warning">
+          The isIndoor should be properly formatted!
         </div>
       </div>
     </div>
