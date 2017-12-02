@@ -17,13 +17,13 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import {PlayerListComponent} from "./player/player-list/player-list.component";
-import {PlayerFormComponent} from "./player/player-form/player-form.component";
-import {PlayerService} from "./player/player.service";
-import {PlayerSearchComponent} from "./player/player-search/player-search.component";
-import {PlayerDetailComponent} from "./player/player-detail/player-detail.component";
-import {PlayerEditComponent} from "./player/player-edit/player-edit.component";
-import {PlayerDeleteComponent} from "./player/player-delete/player-delete.component";
+import {PlayerListComponent} from './player/player-list/player-list.component';
+import {PlayerFormComponent} from './player/player-form/player-form.component';
+import {PlayerService} from './player/player.service';
+import {PlayerSearchComponent} from './player/player-search/player-search.component';
+import {PlayerDetailComponent} from './player/player-detail/player-detail.component';
+import {PlayerEditComponent} from './player/player-edit/player-edit.component';
+import {PlayerDeleteComponent} from './player/player-delete/player-delete.component';
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -57,7 +57,7 @@ import { PublicMatchListComponent } from './public-match/public-match-list/publi
     RouterModule.forRoot(routes),
     LoginBasicModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,PlayerService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

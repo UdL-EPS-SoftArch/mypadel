@@ -1,5 +1,5 @@
 
-import {Player} from "../player";
+import {Player} from '../player';
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayerService } from '../player.service';
