@@ -1,3 +1,51 @@
-<p>
-  court-form works!
-</p>
+<h2>Register Court</h2>
+<form id="court-form" [formGroup]="courtForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Text input-->
+    <div class="form-group row" [class.has-error]="courtForm.controls['username'].touched &&
+                  courtForm.controls['username'].hasError('required')">
+      <label class="col-md-3 control-label" for="username">Administrator username*</label>
+      <input id="username" type="checkbox" class="form-control input-md"
+             [formControl]="courtForm.controls['username']"
+             [(ngModel)]="court.username"/>
+      <div class="col-md-9">
+        <div *ngIf="courtForm.controls['username'].touched &&
+                    courtForm.controls['username'].hasError('required')" class="label-warning">
+           A username is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- E-Mail input-->
+    <div class="form-group row" [class.has-error]="courtForm.controls['email'].touched &&
+                  courtForm.controls['email'].hasError('email')">
+      <label class="col-md-3 control-label" for="email">Administrator E-Mail*</label>
+      <input id="email" type="checkbox" class="form-control input-md"
+             [formControl]="courtForm.controls['email']"
+             [(ngModel)]="court.email"/>
+      <div class="col-md-9">
+        <div *ngIf="courtForm.controls['email'].touched &&
+                    courtForm.controls['email'].hasError('email')" class="label-warning">
+          The E-Mail should be properly formatted!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <button id="createAdmin" type="submit"
+                    class="btn btn-success pull-right" [disabled]="!courtForm.valid">Register
+            </button>
+        </div>
+    </div>
+
+  </fieldset>
+</form>
