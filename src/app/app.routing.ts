@@ -20,5 +20,6 @@ export const routes: Routes = [
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'publicMatches', component: PublicMatchListComponent},
   { path: 'courts', component: CourtListComponent},
-  { path: 'courts/new', component: CourtFormComponent}
+  { path: 'courts/new', component: CourtFormComponent},
+  { path: 'courts/:id' , redirectTo: 'courts', pathMatch: 'full'}
 ];

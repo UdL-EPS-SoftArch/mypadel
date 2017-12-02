@@ -19,8 +19,6 @@ export class CourtFormComponent implements OnInit {
               private router: Router,
               private courtService: CourtService) {
     this.courtForm = fb.group({
-      'isIndoor': ['Is court indoor?', Validators.required],
-      'available': ['Availability', Validators.required]
     });
   }
 

@@ -26,7 +26,22 @@
   <div class="panel-group col-md-12">
     <div class="panel panel-default" *ngFor="let court of courts">
       <div class="panel-heading">
-        <h4>Court: <!--<a routerLink="{{court.uri}}">{{court.id}}</a>--></h4>
+        <h4>Court:
+          <span *ngIf="court.isIndoor">
+            is indoor
+            {{court.isIndoor}}
+          </span>
+          <span *ngIf="!court.isIndoor">
+            outdoor
+            {{court.isIndoor}}
+          </span>
+          <span *ngIf="court.available">
+            available
+          </span>
+          <span *ngIf="!court.available">
+            not available
+          </span>
+          <!--<a routerLink="{{court.uri}}">{{court.id}}</a>--></h4>
       </div>
     </div>
   </div>
