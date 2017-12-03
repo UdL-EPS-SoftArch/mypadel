@@ -9,6 +9,9 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
 import {CourtListComponent} from './court/court-list/court-list.component';
 import {CourtFormComponent} from './court/court-form/court-form.component';
+import {CourtEditComponent} from './court/court-edit/court-edit.component';
+import {CourtDetailComponent} from './court/court-detail/court-detail.component';
+import {CourtDeleteComponent} from './court/court-delete/court-delete.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -21,5 +24,7 @@ export const routes: Routes = [
   { path: 'publicMatches', component: PublicMatchListComponent},
   { path: 'courts', component: CourtListComponent},
   { path: 'courts/new', component: CourtFormComponent},
-  { path: 'courts/:id' , redirectTo: 'courts', pathMatch: 'full'}
+  { path: 'courts/:id', component: CourtDetailComponent},
+  { path: 'courts/:id/edit', component: CourtEditComponent},
+  { path: 'courts/:id/delete', component: CourtDeleteComponent}
 ];

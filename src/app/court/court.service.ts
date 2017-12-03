@@ -46,8 +46,17 @@ export class CourtService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-  // TODO: PUT a court
+  updateCourt(court: Court): Observable<Court> {
+    const body = JSON.stringify(court);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
 
+    return this.http.put(
+      `${environment.API}/courts/${court.id}`, body, options)
+      .map((res: Response) => new Court(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 
   deleteCourt(court: Court): Observable<Response> {
     const headers = new Headers({'Content-Type': 'application/json'});
