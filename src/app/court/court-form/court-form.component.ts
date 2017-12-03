@@ -24,7 +24,7 @@ export class CourtFormComponent implements OnInit {
     });
     this.court = new Court();
     this.court.available = false;
-    this.court.isIndoor = false;
+    this.court.indoor = false;
   }
 
   ngOnInit() {
@@ -47,9 +47,9 @@ export class CourtFormComponent implements OnInit {
   }
 
   changeIndoor(): void {
-    const prevValue = this.court.isIndoor;
-    this.court.isIndoor = !prevValue;
-    console.log(this.court.isIndoor);
+    const prevValue = this.court.indoor;
+    this.court.indoor = !prevValue;
+    console.log(this.court.indoor);
   }
 
 }

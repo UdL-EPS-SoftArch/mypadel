@@ -27,10 +27,10 @@
     <div class="panel panel-default" *ngFor="let court of courts">
       <div class="panel-heading">
         <h4>Court:
-          <span *ngIf="court.isIndoor">
+          <span *ngIf="court.indoor">
             Indoor
           </span>
-          <span *ngIf="!court.isIndoor">
+          <span *ngIf="!court.indoor">
             Outdoor
           </span>
           <span *ngIf="court.available">
