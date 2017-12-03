@@ -1,3 +1,30 @@
-<p>
-  court-detail works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div>Court nº {{court.id}}</div>
+  </div>
+  <div class="panel-body">
+    <span *ngIf="court.indoor">
+            Indoor |
+          </span>
+    <span *ngIf="!court.indoor">
+            Outdoor |
+          </span>
+    <span *ngIf="court.available">
+            Available
+          </span>
+    <span *ngIf="!court.available">
+            Unavailable
+          </span>
+  </div>
+  <div class="panel-footer text-center">
+    <button id="courtsList" type="button" [routerLink]="['/courts']"
+            class="btn btn-primary">Back to List
+    </button>
+    <button id="editAdmin" type="button" [routerLink]="['edit']"
+            class="btn btn-success">Edit
+    </button>
+    <button id="deleteAdmin" type="button" [routerLink]="['delete']"
+            class="btn btn-danger">Delete
+    </button>
+  </div>
+</div>
