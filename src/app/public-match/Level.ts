@@ -1,0 +1,7 @@
+export enum Level {
+  NOVICE,
+  BEGINNER,
+  INTERMEDIATE,
+  ADVANCED,
+  BRUTAL
+}

@@ -18,6 +18,9 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
+import { PublicMatchService } from './public-match/PublicMatch.service';
+import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
+import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
     AdminFormComponent,
     AdminEditComponent,
     AdminSearchComponent,
-    AdminDeleteComponent
+    AdminDeleteComponent,
+    PublicMatchSearchComponent,
+    PublicMatchListComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
     RouterModule.forRoot(routes),
     LoginBasicModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
