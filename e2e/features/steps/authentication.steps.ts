@@ -1,5 +1,5 @@
 import { binding, given } from 'cucumber-tsflow';
-import { browser } from 'protractor';
+import {browser, by, element} from 'protractor';
 import { NavigationBar } from '../../pages/navbar.page';
 import { LoginForm } from '../../pages/login-form.page';
 
@@ -26,6 +26,12 @@ class AuthenticationSteps {
     const currentUser = this.navBar.getCurrentUser();
     expect(currentUser)
       .to.eventually.equal(username).and.notify(callback);
+  }
+
+  @given(/^I logout$/)
+  public iLogout(callback):void{
+    element(by.linkText(' Logout')).click();
+    callback();
   }
 }
 
