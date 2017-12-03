@@ -19,23 +19,37 @@ export class CourtFormComponent implements OnInit {
               private router: Router,
               private courtService: CourtService) {
     this.courtForm = fb.group({
-      'available': ['Administrator username'],
-      'isIndoor': ['Administrator e-mail'],
+      'available': ['Available'],
+      'isIndoor': ['Indoor'],
     });
+    this.court = new Court();
+    this.court.available = false;
+    this.court.isIndoor = false;
   }
 
   ngOnInit() {
-    this.court = new Court();
+
   }
 
   onSubmit(): void {
+    console.log('adding: ', this.court);
     this.courtService.addCourt(this.court)
       .subscribe(
-        court => this.router.navigate(['/courts/' + court.id]),
+        court => this.router.navigate(['/courts/' + this.court.id]),
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });
   }
 
+  changeAvailability(): void {
+    const prevValue = this.court.available;
+    this.court.available = !prevValue;
+  }
+
+  changeIndoor(): void {
+    const prevValue = this.court.isIndoor;
+    this.court.isIndoor = !prevValue;
+    console.log(this.court.isIndoor);
+  }
 
 }

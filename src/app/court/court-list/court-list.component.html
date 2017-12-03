@@ -28,18 +28,16 @@
       <div class="panel-heading">
         <h4>Court:
           <span *ngIf="court.isIndoor">
-            is indoor
-            {{court.isIndoor}}
+            Indoor
           </span>
           <span *ngIf="!court.isIndoor">
-            outdoor
-            {{court.isIndoor}}
+            Outdoor
           </span>
           <span *ngIf="court.available">
-            available
+            Available
           </span>
           <span *ngIf="!court.available">
-            not available
+            Unavailable
           </span>
           <!--<a routerLink="{{court.uri}}">{{court.id}}</a>--></h4>
       </div>
