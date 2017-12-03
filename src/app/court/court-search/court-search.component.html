@@ -1,0 +1,6 @@
+<h4>Filter Courts by id</h4>
+<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+<p i18n>{ courts.length, plural,
+          =0 {No courts found}
+          =1 {1 court found}
+          other { {{courts.length}} courts found} }</p>
