@@ -19,6 +19,8 @@ export class CourtFormComponent implements OnInit {
               private router: Router,
               private courtService: CourtService) {
     this.courtForm = fb.group({
+      'available': ['Administrator username'],
+      'isIndoor': ['Administrator e-mail'],
     });
   }
 

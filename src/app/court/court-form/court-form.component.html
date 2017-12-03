@@ -2,36 +2,22 @@
 <form id="court-form" [formGroup]="courtForm" (ngSubmit)="onSubmit()">
   <fieldset>
 
-    <!-- Text input-->
     <div class="form-group row" [class.has-error]="courtForm.controls['available'].touched &&
                   courtForm.controls['available'].hasError('required')">
       <label class="col-md-3 control-label" for="available">Is the Court available?*</label>
-      <input id="available" type="checkbox" class=" input-md"
+      <input id="available" type="checkbox" class="input-md"
              [formControl]="courtForm.controls['available']"
-               value="{{court.available}}"
+             [(ngModel)]="court.available"
       />
-      <div class="col-md-9">
-        <div *ngIf="courtForm.controls['available'].touched &&
-                    courtForm.controls['available'].hasError('required')" class="label-warning">
-           A available is required!
-        </div>
-      </div>
     </div>
 
-    <!-- isIndoor input-->
     <div class="form-group row" [class.has-error]="courtForm.controls['isIndoor'].touched &&
                   courtForm.controls['isIndoor'].hasError('isIndoor')">
       <label class="col-md-3 control-label" for="isIndoor">Is the Court indoor?*</label>
-      <input id="isIndoor" type="checkbox" class=" input-md"
+      <input id="isIndoor" type="checkbox" class="input-md"
              [formControl]="courtForm.controls['isIndoor']"
-              value="{{court.isIndoor}}"
+             [(ngModel)]="court.isIndoor"
       />
-      <div class="col-md-9">
-        <div *ngIf="courtForm.controls['isIndoor'].touched &&
-                    courtForm.controls['isIndoor'].hasError('isIndoor')" class="label-warning">
-          The isIndoor should be properly formatted!
-        </div>
-      </div>
     </div>
 
     <div *ngIf="errorMessage" class="form-group row">
