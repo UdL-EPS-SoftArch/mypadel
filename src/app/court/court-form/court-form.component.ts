@@ -32,7 +32,6 @@ export class CourtFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('adding: ', this.court);
     this.courtService.addCourt(this.court)
       .subscribe(
         court => this.router.navigate(['/courts/' + this.court.id]),
@@ -49,7 +48,6 @@ export class CourtFormComponent implements OnInit {
   changeIndoor(): void {
     const prevValue = this.court.indoor;
     this.court.indoor = !prevValue;
-    console.log(this.court.indoor);
   }
 
 }
