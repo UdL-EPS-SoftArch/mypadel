@@ -1,3 +1,15 @@
-<p>
-  court-delete works!
-</p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <div class="panel-title">Please, confirm deletion:</div>
+  </div>
+  <div class="panel-body">
+    <div class="text-center">
+      <button id="confirm" type="button" (click)="deleteCourt()"
+              class="btn btn-danger">Delete
+      </button>
+      <button id="cancel" type="button" [routerLink]="[court.uri]"
+              class="btn btn-primary">Cancel
+      </button>
+    </div>
+  </div>
+</div>
