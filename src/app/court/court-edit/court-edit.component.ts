@@ -36,6 +36,18 @@ export class CourtEditComponent implements OnInit {
           error => this.errorMessage = <any>error.message
         )
       );
+
+  }
+
+  changeAvailable(): void {
+    const prevValue = this.court.available;
+    this.court.available = !this.court.available;
+  }
+
+
+  changeIndoor(): void {
+    const prevValue = this.court.indoor;
+    this.court.indoor = !this.court.indoor;
   }
 
   onSubmit(): void {

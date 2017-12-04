@@ -6,7 +6,9 @@
       <label class="col-md-3 control-label" for="available">Is the Court available?</label>
       <input id="available" type="checkbox" class="input-md"
              [formControl]="courtForm.controls['available']"
-             [(ngModel)]="court.available"/>
+             [checked]="court.available"
+             (change)="changeAvailable()"
+      />
       <div class="col-md-9">
       </div>
     </div>
@@ -15,7 +17,9 @@
       <label class="col-md-3 control-label" for="indoor">Is the Court indoor?</label>
       <input id="indoor" type="checkbox" class="input-md"
              [formControl]="courtForm.controls['indoor']"
-             [ngModel]="court.indoor"/>
+             [checked]="court.indoor"
+             (change)="changeIndoor()"
+      />
     </div>
 
     <div *ngIf="errorMessage" class="form-group row">
