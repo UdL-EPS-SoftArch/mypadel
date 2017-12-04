@@ -1,5 +1,3 @@
-import {Authority} from '../login-basic/authority';
-
 export class Court {
   id: number;
   indoor: boolean;
