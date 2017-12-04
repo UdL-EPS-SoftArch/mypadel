@@ -34,7 +34,7 @@ export class CourtFormComponent implements OnInit {
   onSubmit(): void {
     this.courtService.addCourt(this.court)
       .subscribe(
-        court => this.router.navigate(['/courts/' + this.court.id]),
+        court => this.router.navigate(['/courts/' + court.id]),
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });
