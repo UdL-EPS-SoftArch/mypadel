@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {PublicMatch} from "../PublicMatch";
+import {PublicMatch} from '../PublicMatch';
 import {PublicMatchService} from '../PublicMatch.service';
 
 @Component({
