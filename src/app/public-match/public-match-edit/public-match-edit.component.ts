@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {PublicMatch} from "../PublicMatch";
-import {PublicMatchService} from "../PublicMatch.service";
+import {PublicMatchService} from '../PublicMatch.service';
 
 @Component({
   selector: 'app-public-match-edit',
