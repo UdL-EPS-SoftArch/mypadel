@@ -21,7 +21,7 @@ export class PublicMatchService {
   }
 
   // GET /publicMatches /id
-  getPublicMatch(id: string): Observable<PublicMatch> {
+  getPublicMatch(id: number): Observable<PublicMatch> {
     return this.http.get(`${environment.API}/publicMatches/${id}`)
       .map((res: Response) => new PublicMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
