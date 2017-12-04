@@ -25,6 +25,12 @@
     <div class="panel panel-default" *ngFor="let publicMatch of publicMatches">
       <div class="panel-heading">
         <h4>Public Match: <a routerLink="{{publicMatch.uri}}">{{publicMatch.id}}</a></h4>
+        <div class="panel-footer text-center">
+          <button id="editPublicMatch" type="button" [routerLink]="['/publicMatches/'+publicMatch.id+'/edit']"
+                  class="btn btn-success">Edit</button>
+          <button id="deletePublicMatch" type="button" [routerLink]="['/publicMatches/'+publicMatch.id+'/delete']"
+                  class="btn btn-danger">Delete</button>
+        </div>
       </div>
       <div class="panel-body">
         <div class="col-md-6">
