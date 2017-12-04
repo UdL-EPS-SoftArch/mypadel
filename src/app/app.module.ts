@@ -23,7 +23,7 @@ import { PublicMatchSearchComponent } from './public-match/public-match-search/p
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
-import {CourtService} from "./court/court.service";
+import {CourtService} from './court/court.service';
 import { CourtDeleteComponent } from './court/court-delete/court-delete.component';
 import { CourtDetailComponent } from './court/court-detail/court-detail.component';
 import { CourtEditComponent } from './court/court-edit/court-edit.component';
