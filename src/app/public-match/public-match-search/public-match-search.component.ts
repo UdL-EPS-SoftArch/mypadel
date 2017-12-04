@@ -19,7 +19,7 @@ export class PublicMatchSearchComponent {
               private route: ActivatedRoute) {
   }
 
-  performSearch(searchTerm: string): void {
+  performSearch(searchTerm: number): void {
     this.publicMatchService.getPublicMatch(searchTerm).subscribe(
       publicMatches => { this.onSearchited.emit(publicMatches); },
       error => this.errorMessage = <any>error.message);

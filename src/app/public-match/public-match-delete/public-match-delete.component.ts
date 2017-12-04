@@ -21,7 +21,7 @@ export class PublicMatchDeleteComponent implements OnInit {
     this.route.params
       .map(params => params['id'])
       .subscribe((id) => {
-          this.publicMatchService.getPublicMatch(`${id}`).subscribe(
+          this.publicMatchService.getPublicMatch(Number(`${id}`)).subscribe(
             publicMatch => this.publicMatch = publicMatch,
             error => this.errorMessage = <any>error.message);
         }
