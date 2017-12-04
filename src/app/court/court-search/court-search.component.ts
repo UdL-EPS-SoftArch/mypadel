@@ -22,10 +22,11 @@ export class CourtSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  performSearch(searchTerm: string): void {
-    this.courtService.getCourt(searchTerm).subscribe(
+  performSearch(): void {
+    this.courtService.getCourtByAvailable().subscribe(
       courts => {
         this.onSearchited.emit(courts);
+        console.log(courts);
       },
       error => this.errorMessage = <any>error.message
     );

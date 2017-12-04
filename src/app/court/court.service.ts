@@ -35,6 +35,13 @@ export class CourtService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
+  getCourtByAvailable(): Observable<Court[]> {
+    const options = this.createAuthenticationHeader();
+    return this.http.get(`${environment.API}/courts/search/findByAvailableTrue`, options)
+      .map((res: Response) => res.json()._embedded.courts.map(json => new Court(json)))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
   addCourt(court: Court): Observable<Court> {
     const body = JSON.stringify(court);
     const headers = new Headers({'Content-Type': 'application/json'});
