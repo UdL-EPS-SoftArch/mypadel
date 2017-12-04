@@ -13,7 +13,7 @@ class CreatePublicMatchSteps {
   public iCreateAPublicMatch(date: string, courtType: string, level: string, callback): void{
     element(by.linkText('Public Matches')).click();
     element(by.linkText('Create New Public Match')).click();
-    this.datasetForm.setStartDate(date);
+    // this.datasetForm.setStartDate(date);
     this.datasetForm.setDuration("PT60M");
     this.datasetForm.setCourtType(courtType);
     this.datasetForm.setLevel(level);
