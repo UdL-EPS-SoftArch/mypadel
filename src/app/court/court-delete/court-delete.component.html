@@ -7,7 +7,7 @@
       <button id="confirm" type="button" (click)="deleteCourt()"
               class="btn btn-danger">Delete
       </button>
-      <button id="cancel" type="button" [routerLink]="[court.uri]"
+      <button id="cancel" type="button" [routerLink]="['/courts/' + court.id]"
               class="btn btn-primary">Cancel
       </button>
     </div>
