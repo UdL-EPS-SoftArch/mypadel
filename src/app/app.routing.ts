@@ -8,7 +8,6 @@ import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
 import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
-import {PublicMatchDeleteComponent} from './public-match/public-match-delete/public-match-delete.component';
 import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
 
 export const routes: Routes = [

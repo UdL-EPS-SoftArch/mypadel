@@ -24,7 +24,6 @@ import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
-import {PublicMatchDeleteComponent} from './public-match/public-match-delete/public-match-delete.component';
 import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
 
 @NgModule({
