@@ -40,7 +40,6 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
     PublicMatchSearchComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
-    PublicMatchDeleteComponent,
     PublicMatchEditComponent
   ],
   imports: [

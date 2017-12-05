@@ -21,6 +21,5 @@ export const routes: Routes = [
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'publicMatches', component: PublicMatchListComponent},
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
-  { path: 'publicMatches/:id/delete', component: PublicMatchDeleteComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
 ];
