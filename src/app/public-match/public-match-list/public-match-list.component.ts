@@ -8,7 +8,7 @@ import {PublicMatchService} from '../PublicMatch.service';
 })
 export class PublicMatchListComponent implements OnInit {
   public publicMatches: PublicMatch[] = [];
-  public totalPublicMatches: number;
+  public totalPublicMatches: number = 0;
   public errorMessage = '';
 
   constructor(private publicMatchService: PublicMatchService) {}

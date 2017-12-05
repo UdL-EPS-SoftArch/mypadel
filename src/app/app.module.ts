@@ -43,6 +43,7 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
