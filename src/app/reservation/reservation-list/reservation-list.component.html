@@ -11,10 +11,18 @@
   <div class="col-md-8">
     <h4>
       <a class="btn btn-primary" role="button"
-         [routerLink]="['/reservations/new']">Register New Reservations</a>
+         [routerLink]="['/reservations/new']">Make a new Reservation</a>
     </h4>
   </div>
 </div>
+
+<div class="row">
+  <h3 class="col-md-12">Reservations</h3>
+  <div class="col-md-12">
+    <app-reservation-search (onSearchited)="onSearch($event)" [reservations]="reservations"></app-reservation-search>
+  </div>
+</div>
+
 
 <div class="row">
   <div class="panel-group col-md-12">
