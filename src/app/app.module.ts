@@ -21,6 +21,7 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
 import { ReservationService} from "./reservation/reservation.service";
 import {ReservationListComponent} from "./reservation/reservation-list/reservation-list.component";
+import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {ReservationListComponent} from "./reservation/reservation-list/reservati
     AdminDeleteComponent,
     ReservationFormComponent,
     ReservationListComponent,
+    ReservationSearchComponent,
   ],
   imports: [
     BrowserModule,
