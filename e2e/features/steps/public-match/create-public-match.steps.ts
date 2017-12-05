@@ -10,7 +10,7 @@ class CreatePublicMatchSteps {
   private datasetForm = new PublicMatchFormPage();
 
   @when(/^I create a public match with date "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
-  public iCreateAPublicMatch (date: string, courtType: string, level: string, callback): void{
+  public iCreateAPublicMatch (date: string, courtType: string, level: string, callback): void {
     element(by.linkText('Public Matches')).click();
     element(by.linkText('Create New Public Match')).click();
     this.datasetForm.setStartDate(date);

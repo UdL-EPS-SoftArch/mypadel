@@ -29,7 +29,7 @@ class AuthenticationSteps {
   }
 
   @given(/^I logout$/)
-  public iLogout (callback): void{
+  public iLogout (callback): void {
     element(by.linkText('Logout')).click();
     callback();
   }
