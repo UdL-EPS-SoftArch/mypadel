@@ -24,12 +24,16 @@
   <div class="panel-group col-md-12">
     <div class="panel panel-default" *ngFor="let publicMatch of publicMatches">
       <div class="panel-heading">
-        <h4>Administrator: <a routerLink="{{publicMatch.uri}}">{{publicMatch.id}}</a></h4>
+        <h4>Public Match: <a routerLink="{{publicMatch.uri}}">{{publicMatch.id}}</a></h4>
+        <div class="panel-footer text-center">
+          <button id="editPublicMatch" type="button" [routerLink]="['/publicMatches/'+publicMatch.id+'/edit']"
+                  class="btn btn-success">Edit</button>
+        </div>
       </div>
       <div class="panel-body">
         <div class="col-md-6">
-          <h4>Creator:</h4>
-          <p>{{publicMatch.matchCreator}}</p>
+          <h4>Start Date:</h4>
+          <p>{{publicMatch.startDate}}</p>
         </div>
       </div>
     </div>

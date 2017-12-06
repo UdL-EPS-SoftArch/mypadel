@@ -7,6 +7,8 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
+import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
+import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -17,4 +19,6 @@ export const routes: Routes = [
   { path: 'admins/:id', component: AdminDetailComponent },
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'publicMatches', component: PublicMatchListComponent},
+  { path: 'publicMatches/new', component: PublicMatchFormComponent },
+  { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
 ];
