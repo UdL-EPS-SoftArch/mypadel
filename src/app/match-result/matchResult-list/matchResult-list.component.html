@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-4">
+        <h4 i18n>{ totalMatchResults, plural, =0 {There are no match results available} =1 {There are 1 match result} other { There
+            are {{totalMatchResults}} match results} }</h4>
+    </div>
+    <div class="col-md-8">
+        <h4>
+            <a class="btn btn-primary" role="button" [routerLink]="['/matchResults/new']">Register New match result</a>
+        </h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel-group col-md-12">
+        <div class="panel panel-default" *ngFor="let MatchResult of MatchResults">
+            <div class="panel-heading">
+                <h4>MatchResultID:
+                    <a routerLink="{MatchResult.id}">{{MatchResult.id}}</a>
+                </h4>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <h4>E-Mail:</h4>
+                    <p>{{admin.email}}</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Winning pair:</h4>
+                    <div *ngFor="let player of MatchResult.winningPair">
+                        <p>{{player.username}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Loosing pair:</h4>
+                    <div *ngFor="let player of MatchResult.loosingPair">
+                        <p>{{player.username}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div ng-if="MatchResult.isDraw == true">
+                        <p i18n>The match result ended with draw</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>MatchID:</h4>
+                    <p>{{MatchResult.match.id}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,7 @@ export class MatchResultService {
     }
 
     //Request Method: GET /matchResults -> Get all the MatchResults
-    public getAllMathReults(): Observable<MatchResult[]> {
+    public getAllMatchReults(): Observable<MatchResult[]> {
         return this.http.get(`${environment.API}/matchResults`)
             .map((res: Response): MatchResult => res.json())
             .catch((error: any) => Observable.throw(error.json()));
