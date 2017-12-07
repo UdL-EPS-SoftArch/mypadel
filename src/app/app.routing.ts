@@ -14,6 +14,8 @@ import {PlayerDeleteComponent} from './player/player-delete/player-delete.compon
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
 import {CustomMatchListComponent} from "./custom-match/custom-match-list/custom-match-list.component";
 import {CustomMatchFormComponent} from "./custom-match/custom-match-form/custom-match-form.component";
+import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
+import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -32,4 +34,6 @@ export const routes: Routes = [
   { path: 'publicMatches', component: PublicMatchListComponent},
   { path: 'customMatches', component: CustomMatchListComponent },
   {path: 'customMatches/new', component: CustomMatchFormComponent},
+  { path: 'publicMatches/new', component: PublicMatchFormComponent },
+  { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
 ];

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -10,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { LoginBasicModule } from './login-basic/login-basic.module';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { LoggedInGuard } from './login-basic/loggedin.guard';
+import { DateTimePickerModule } from 'ng-pick-datetime';
+
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
 import { AdminService } from './admin/admin.service';
@@ -30,6 +33,8 @@ import { PublicMatchListComponent } from './public-match/public-match-list/publi
 import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
 import {CustomMatchService} from './custom-match/custom-match.service';
 import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
+import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
+import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
 
 @NgModule({
   declarations: [
@@ -54,13 +59,18 @@ import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-
     PublicMatchListComponent,
     CustomMatchListComponent,
     CustomMatchFormComponent,
+    PublicMatchListComponent,
+    PublicMatchFormComponent,
+    PublicMatchEditComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    LoginBasicModule
+    LoginBasicModule,
+    DateTimePickerModule
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService],
   bootstrap: [AppComponent]
