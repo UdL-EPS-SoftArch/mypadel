@@ -12,8 +12,8 @@ import {PlayerDetailComponent} from './player/player-detail/player-detail.compon
 import {PlayerEditComponent} from './player/player-edit/player-edit.component';
 import {PlayerDeleteComponent} from './player/player-delete/player-delete.component';
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
-import {CustomMatchListComponent} from "./custom-match/custom-match-list/custom-match-list.component";
-import {CustomMatchFormComponent} from "./custom-match/custom-match-form/custom-match-form.component";
+import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
+import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
 import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
 import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
 

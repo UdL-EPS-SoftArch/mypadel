@@ -25,10 +25,10 @@ export class PlayerListComponent implements OnInit {
   onSearch(players) {
     this.players = players;
   }
-  isLoggedIn():boolean{
+  isLoggedIn(): boolean {
     return this.userService.isLoggedIn();
   }
-  isAdmin():boolean{
+  isAdmin(): boolean {
     return this.userService.isAdmin();
   }
 

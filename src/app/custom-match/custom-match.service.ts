@@ -1,12 +1,11 @@
 import {Injectable, OnInit} from '@angular/core';
-import {Http,Response, Headers, RequestOptions} from '@angular/http';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {AuthenticationBasicService} from '../login-basic/authentication-basic.service';
-import {Observable} from "rxjs/Observable";
-import {CustomMatch} from "./custom-match";
+import {Observable} from 'rxjs/Observable';
+import {CustomMatch} from './custom-match';
 import { environment } from '../../environments/environment';
-import {PublicMatch} from "../public-match/PublicMatch";
 @Injectable()
-export class CustomMatchService{
+export class CustomMatchService {
   constructor(private http: Http,
               private authentication: AuthenticationBasicService) {}
   // GET /customMatches

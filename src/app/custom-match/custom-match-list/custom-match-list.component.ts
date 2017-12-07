@@ -8,7 +8,7 @@ import {CustomMatchService} from '../custom-match.service';
 })
 export class CustomMatchListComponent implements OnInit {
   public customMatches: CustomMatch[] = [];
-  public totalCustomMatches=0;
+  public totalCustomMatches = 0;
   public errorMessage = '';
 
   constructor(private customMatchService: CustomMatchService) {}

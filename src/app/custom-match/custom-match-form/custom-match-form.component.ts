@@ -10,7 +10,6 @@ import {CourtType} from '../../match/CourtType';
   templateUrl: './custom-match-form.component.html'
 })
 export class CustomMatchFormComponent implements OnInit {
-  public courts: CourtType[]=[CourtType.INDOOR,CourtType.OUTDOOR,CourtType.UNDEFINED]
   public customMatch: CustomMatch;
   public customMatchForm: FormGroup;
   public errorMessage: string;

@@ -1,6 +1,6 @@
-import {Match} from "../match/Match";
+import {Match} from '../match/Match';
 export class CustomMatch extends Match {
-  uri : string;
+  uri: string;
 
 
 }

@@ -66,7 +66,7 @@ export class PlayerService {
   isLoggedIn(): boolean {
     return this.authentication.isLoggedIn();
   }
-  isAdmin(): boolean{
+  isAdmin(): boolean {
     return this.authentication.isAdmin();
   }
 
