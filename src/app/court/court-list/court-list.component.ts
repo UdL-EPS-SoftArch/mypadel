@@ -10,7 +10,7 @@ import {CourtService} from '../court.service';
 export class CourtListComponent implements OnInit {
 
   public courts: Court[] = [];
-  public totalCourts: number;
+  public totalCourts = 0;
   public errorMessage = '';
 
   constructor(private courtService: CourtService) {
