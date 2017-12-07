@@ -12,6 +12,8 @@ import {PlayerDetailComponent} from './player/player-detail/player-detail.compon
 import {PlayerEditComponent} from './player/player-edit/player-edit.component';
 import {PlayerDeleteComponent} from './player/player-delete/player-delete.component';
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
+import {CustomMatchListComponent} from "./custom-match/custom-match-list/custom-match-list.component";
+import {CustomMatchFormComponent} from "./custom-match/custom-match-form/custom-match-form.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -28,4 +30,6 @@ export const routes: Routes = [
   { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
 
   { path: 'publicMatches', component: PublicMatchListComponent},
+  { path: 'customMatches', component: CustomMatchListComponent },
+  {path: 'customMatches/new', component: CustomMatchFormComponent},
 ];

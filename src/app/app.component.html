@@ -33,6 +33,11 @@
             <span class="fa fa-user"></span> Public Matches
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/customMatches']">
+            <span class="fa fa-play" aria-hidden="true"></span> Custom Matches
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>

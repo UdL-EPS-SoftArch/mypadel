@@ -27,6 +27,9 @@ import {PlayerDeleteComponent} from './player/player-delete/player-delete.compon
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
+import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
+import {CustomMatchService} from './custom-match/custom-match.service';
+import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { PublicMatchListComponent } from './public-match/public-match-list/publi
 
     AdminDeleteComponent,
     PublicMatchSearchComponent,
-    PublicMatchListComponent
+    PublicMatchListComponent,
+    CustomMatchListComponent,
+    CustomMatchFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import { PublicMatchListComponent } from './public-match/public-match-list/publi
     RouterModule.forRoot(routes),
     LoginBasicModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

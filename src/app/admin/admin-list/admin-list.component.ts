@@ -17,6 +17,7 @@ export class AdminListComponent implements OnInit {
     this.userService.getAllAdmins()
       .subscribe(
         (admins: Admin[]) => {
+          console.log(admins)
           this.admins = admins;
           this.totalAdmins = admins.length; },
         error => this.errorMessage = <any>error.message);

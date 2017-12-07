@@ -1,0 +1,64 @@
+<h2>Register CustomMatch</h2>
+<form id="custom-match-form" [formGroup]="customMatchForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Text input-->
+    <div class="form-group row" [class.has-error]="customMatchForm.controls['duration'].touched &&
+                  customMatchForm.controls['duration'].hasError('required')">
+      <label class="col-md-3 control-label" for="duration">CustomMatch duration(min)*</label>
+      <input id="duration" type="number" class="form-control input-md"
+             [formControl]="customMatchForm.controls['duration']"
+             [(ngModel)]="customMatch.duration"
+             name="usr_time"
+             min="30"
+             max="90"
+      />
+
+      <div class="col-md-9">
+        <div *ngIf="customMatchForm.controls['duration'].touched &&
+                    customMatchForm.controls['duration'].hasError('required')" class="label-warning">
+          A duration is required!
+        </div>
+      </div>
+    </div>
+    <div class="form-group row" [class.has-error]="customMatchForm.controls['courtType'].touched &&
+                  customMatchForm.controls['courtType'].hasError('courtType')">
+      <label class="col-md-3 control-label" for="courtType">CustomMatch CourtType*</label>
+      <select id="courtType" class="form-control"
+             [formControl]="customMatchForm.controls['courtType']"
+             [(ngModel)]="customMatch.courtType" > <option *ngFor="let court of courts" [ngValue]="court"> {{court}} </option>
+
+      </select>
+      <div class="col-md-9">
+        <div *ngIf="customMatchForm.controls['courtType'].touched &&
+                    customMatchForm.controls['courtType'].hasError('courtType')" class="label-warning">
+          The CourtType has to be chosen!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button id="createCustomMatch" type="submit"
+                class="btn btn-success pull-right" [disabled]="!customMatchForm.valid">Register
+        </button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+
