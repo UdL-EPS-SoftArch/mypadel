@@ -9,7 +9,7 @@ import { Player } from '../player';
 })
 export class PlayerListComponent implements OnInit {
   public players: Player[] = [];
-  public totalPlayers: number;
+  public totalPlayers = 0;
   public errorMessage = '';
 
   constructor(private userService: PlayerService) {}
@@ -25,6 +25,13 @@ export class PlayerListComponent implements OnInit {
   onSearch(players) {
     this.players = players;
   }
+  isLoggedIn():boolean{
+    return this.userService.isLoggedIn();
+  }
+  isAdmin():boolean{
+    return this.userService.isAdmin();
+  }
+
 
 
 }
