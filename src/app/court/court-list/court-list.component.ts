@@ -26,4 +26,8 @@ export class CourtListComponent implements OnInit {
         error => this.errorMessage = <any>error.message);
   }
 
+  onSearch(courts) {
+    this.courts = courts;
+  }
+
 }

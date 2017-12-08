@@ -26,7 +26,6 @@ export class CourtSearchComponent implements OnInit {
     this.courtService.getCourtByAvailable().subscribe(
       courts => {
         this.onSearchited.emit(courts);
-        console.log(courts);
       },
       error => this.errorMessage = <any>error.message
     );
