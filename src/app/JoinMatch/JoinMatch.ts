@@ -1,7 +1,3 @@
-
-
-
-
 import { Player } from "../admin/player";
 import { Match } from "../match/Match";
 import { PublicMatch } from "../public-match/PublicMatch";
