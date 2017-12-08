@@ -1,18 +1,18 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <div>Court nº {{court.id}}</div>
+    <div>Court nº {{court?.id}}</div>
   </div>
   <div class="panel-body">
-    <span *ngIf="court.indoor">
+    <span *ngIf="court?.indoor">
             Indoor |
           </span>
-    <span *ngIf="!court.indoor">
+    <span *ngIf="!court?.indoor">
             Outdoor |
           </span>
-    <span *ngIf="court.available">
+    <span *ngIf="court?.available">
             Available
           </span>
-    <span *ngIf="!court.available">
+    <span *ngIf="!court?.available">
             Unavailable
           </span>
   </div>
