@@ -14,6 +14,8 @@ export class CourtSearchComponent implements OnInit {
   @Output()
   onSearchited: EventEmitter<any> = new EventEmitter();
   public errorMessage: string;
+  private checked = false;
+
 
   constructor(private courtService: CourtService,
               private route: ActivatedRoute) {
@@ -23,11 +25,21 @@ export class CourtSearchComponent implements OnInit {
   }
 
   performSearch(): void {
-    this.courtService.getCourtByAvailable().subscribe(
-      courts => {
-        this.onSearchited.emit(courts);
-      },
-      error => this.errorMessage = <any>error.message
-    );
+    this.checked = !this.checked;
+    if (!this.checked) {
+      this.courtService.getAllCourts().subscribe(
+        courts => {
+          this.onSearchited.emit(courts);
+        },
+        error => this.errorMessage = <any>error.message
+      );
+    } else {
+      this.courtService.getCourtByAvailable().subscribe(
+        courts => {
+          this.onSearchited.emit(courts);
+        },
+        error => this.errorMessage = <any>error.message
+      );
+    }
   }
 }
