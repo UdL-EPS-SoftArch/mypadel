@@ -23,7 +23,7 @@ export class JoinMatchService{
 
   // GET /JoinMatches/id
   getJoinMatch(id: number): Observable<JoinMatch> {
-    return this.http.get(`${environment.API}/publicMatches/${id}`)
+    return this.http.get(`${environment.API}/joinMatches/${id}`)
       .map((res: Response) => new JoinMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
@@ -35,7 +35,7 @@ export class JoinMatchService{
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);
     const options = new RequestOptions({headers: headers});
 
-    return this.http.post(`${environment.API}/PublicMatches`, body, options)
+    return this.http.post(`${environment.API}/joinMatches`, body, options)
       .map((res: Response) => new JoinMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }

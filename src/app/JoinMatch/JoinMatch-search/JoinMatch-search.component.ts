@@ -12,7 +12,7 @@ export class JoinMatchSearchComponent {
   @Input()
   joinMatches: JoinMatch[];
   @Output()
-  onSearchited: EventEmitter<any> = new EventEmitter();
+  onSearch: EventEmitter<any> = new EventEmitter();
 
   public errorMessage: string;
   constructor(private joinMatchService: JoinMatchService,
@@ -21,7 +21,7 @@ export class JoinMatchSearchComponent {
 
   performSearch(idJoin: number): void {
     this.joinMatchService.getJoinMatch(idJoin).subscribe(
-      joinMatches => { this.onSearchited.emit(joinMatches); },
+      joinMatches => { this.onSearch.emit(joinMatches); },
       error => this.errorMessage = <any>error.message);
   }
 }
