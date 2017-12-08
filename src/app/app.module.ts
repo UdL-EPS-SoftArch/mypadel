@@ -25,6 +25,9 @@ import { PublicMatchSearchComponent } from './public-match/public-match-search/p
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
 import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
+import { JoinMatch } from "./JoinMatch/JoinMatch";
+import { JoinMatchService } from "./JoinMatch/JoinMatch.service";
+import { JoinMatchListComponent } from "./JoinMatch/JoinMatch-list/JoinMatch-component";
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
     PublicMatchSearchComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
-    PublicMatchEditComponent
+    PublicMatchEditComponent,
+    JoinMatch,
+    JoinMatchService,
+    JoinMatchListComponent
   ],
   imports: [
     BrowserModule,
