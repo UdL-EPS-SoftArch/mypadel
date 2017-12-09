@@ -16,21 +16,21 @@ export class MatchResultService {
         this.authenticationBasicService = authenticationBasicService;
     }
 
-    //Request Method: GET /matchResults -> Get all the MatchResults
+    // Request Method: GET /matchResults -> Get all the MatchResults
     public getAllMatchReults(): Observable<MatchResult[]> {
         return this.http.get(`${environment.API}/matchResults`)
             .map((res: Response): MatchResult => res.json())
             .catch((error: any) => Observable.throw(error.json()));
     }
 
-    //Request Method: GET /matchResults/id -> Get the MatchResult with the given id
+    // Request Method: GET /matchResults/id -> Get the MatchResult with the given id
     public getMatchResult(id: string): Observable<MatchResult> {
         return this.http.get(`${environment.API}/matchResults/${id}`)
             .map((res: Response): MatchResult => res.json())
             .catch((error: any) => Observable.throw(error.json()));
     }
 
-    //Request Method: POST /matchResults/ -> add's a new MatchResult
+    // Request Method: POST /matchResults/ -> add's a new MatchResult
     public addMatchResult(matchResult: MatchResult): Observable<MatchResult> {
         const body = JSON.stringify(matchResult);
         const headers = new Headers({ 'Content-Type': 'application/json' });
@@ -42,7 +42,7 @@ export class MatchResultService {
             .catch((error: any) => Observable.throw(error.json()));
     }
 
-    //Request Method: PUT /matchResults/id -> update's the given MatchResult
+    // Request Method: PUT /matchResults/id -> update's the given MatchResult
     public updateMatchResult(matchResult: MatchResult): Observable<MatchResult> {
 
         const body = JSON.stringify(matchResult);
