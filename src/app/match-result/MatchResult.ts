@@ -1,5 +1,5 @@
-import { Player } from "../admin/player";
-import { Match } from "../match/Match";
+import { Player } from '../player/player';
+import { Match } from '../match/Match';
 
 export class MatchResult {
     public id: number;
