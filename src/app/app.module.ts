@@ -23,8 +23,15 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
-import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
-import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
+import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { CourtListComponent } from './court/court-list/court-list.component';
+import { CourtFormComponent } from './court/court-form/court-form.component';
+import { CourtService } from './court/court.service';
+import { CourtDeleteComponent } from './court/court-delete/court-delete.component';
+import { CourtDetailComponent } from './court/court-detail/court-detail.component';
+import { CourtEditComponent } from './court/court-edit/court-edit.component';
+import { CourtSearchComponent } from './court/court-search/court-search.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,13 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
     PublicMatchSearchComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
-    PublicMatchEditComponent
+    PublicMatchEditComponent,
+    CourtListComponent,
+    CourtFormComponent,
+    CourtDeleteComponent,
+    CourtDetailComponent,
+    CourtEditComponent,
+    CourtSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +63,7 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, CourtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

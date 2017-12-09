@@ -28,6 +28,11 @@
             <span class="fa fa-search"></span> Public Matches
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/courts']">
+            <span class="fa fa-hand-spock-o"></span> Courts
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>
