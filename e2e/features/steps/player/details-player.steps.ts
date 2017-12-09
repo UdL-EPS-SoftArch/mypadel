@@ -24,7 +24,7 @@ class DetailsPlayersSteps {
       .to.eventually.equal(name).and.notify(callback);
   }
 
-  @then(/^I see an player with e-mail "([^"]*)"$/)
+  @then(/^I see a player with e-mail "([^"]*)"$/)
   public iSeePlayerWithEMail(email: string, callback): void {
     expect(this.playersDetails.getEMail())
       .to.eventually.equal(email).and.notify(callback);
