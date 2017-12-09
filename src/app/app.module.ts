@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -10,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginBasicModule } from './login-basic/login-basic.module';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { LoggedInGuard } from './login-basic/loggedin.guard';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
@@ -21,6 +23,22 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
+import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
+import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { CourtListComponent } from './court/court-list/court-list.component';
+import { CourtFormComponent } from './court/court-form/court-form.component';
+import { CourtService } from './court/court.service';
+import { CourtDeleteComponent } from './court/court-delete/court-delete.component';
+import { CourtDetailComponent } from './court/court-detail/court-detail.component';
+import { CourtEditComponent } from './court/court-edit/court-edit.component';
+import { CourtSearchComponent } from './court/court-search/court-search.component';
+import { PlayerListComponent } from './player/player-list/player-list.component';
+import { PlayerFormComponent } from './player/player-form/player-form.component';
+import { PlayerService } from './player/player.service';
+import { PlayerSearchComponent } from './player/player-search/player-search.component';
+import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
+import { PlayerEditComponent } from './player/player-edit/player-edit.component';
+import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component'
 
 @NgModule({
@@ -35,16 +53,33 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     AdminDeleteComponent,
     PublicMatchSearchComponent,
     PublicMatchListComponent,
+    PublicMatchFormComponent,
+    PublicMatchEditComponent,
+    CourtListComponent,
+    CourtFormComponent,
+    CourtDeleteComponent,
+    CourtDetailComponent,
+    CourtEditComponent,
+    CourtSearchComponent,
+    PlayerListComponent,
+    PlayerFormComponent,
+    PlayerSearchComponent,
+    PlayerDetailComponent,
+    PlayerEditComponent,
+    PlayerDeleteComponent,
     MatchResultListComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    LoginBasicModule
+    LoginBasicModule,
+    DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+    CourtService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

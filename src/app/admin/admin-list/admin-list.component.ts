@@ -8,7 +8,7 @@ import { Admin } from '../admin';
 })
 export class AdminListComponent implements OnInit {
   public admins: Admin[] = [];
-  public totalAdmins: number;
+  public totalAdmins = 0;
   public errorMessage = '';
 
   constructor(private userService: AdminService) {}

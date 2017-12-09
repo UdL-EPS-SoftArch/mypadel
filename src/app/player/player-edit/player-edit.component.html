@@ -1,0 +1,44 @@
+<h2>Edit Player</h2>
+<form id="player-form" [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Text input-->
+    <div class="form-group row">
+      <label class="col-md-3 control-label" for="username">Player username*</label>
+      <input id="username" type="text" class="form-control input-md"
+             [formControl]="playerForm.controls['username']"
+             [ngModel]="player.username"/>
+    </div>
+
+    <!-- E-Mail input-->
+    <div class="form-group row" [class.has-error]="playerForm.controls['email'].touched &&
+                  playerForm.controls['email'].hasError('email')">
+      <label class="col-md-3 control-label" for="email">Player E-Mail*</label>
+      <input id="email" type="email" class="form-control input-md"
+             [formControl]="playerForm.controls['email']"
+             [(ngModel)]="player.email"/>
+      <div class="col-md-9">
+        <div *ngIf="playerForm.controls['email'].touched &&
+                    playerForm.controls['email'].hasError('email')" class="label-warning">
+          The E-Mail should be properly formatted!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button id="editPlayer" type="submit"
+                class="btn btn-success pull-right" [disabled]="!playerForm.valid">Edit
+        </button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
