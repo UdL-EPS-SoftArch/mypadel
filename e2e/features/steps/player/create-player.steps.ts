@@ -1,6 +1,6 @@
 import { binding, given } from 'cucumber-tsflow';
 import { browser, element, by } from 'protractor';
-import {PlayerFormPage} from "../../../pages/player/player-form.page";
+import {PlayerFormPage} from '../../../pages/player/player-form.page';
 
 
 @binding()
