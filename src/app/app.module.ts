@@ -32,6 +32,14 @@ import { CourtDeleteComponent } from './court/court-delete/court-delete.componen
 import { CourtDetailComponent } from './court/court-detail/court-detail.component';
 import { CourtEditComponent } from './court/court-edit/court-edit.component';
 import { CourtSearchComponent } from './court/court-search/court-search.component';
+import { PlayerListComponent } from './player/player-list/player-list.component';
+import { PlayerFormComponent } from './player/player-form/player-form.component';
+import { PlayerService } from './player/player.service';
+import { PlayerSearchComponent } from './player/player-search/player-search.component';
+import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
+import { PlayerEditComponent } from './player/player-edit/player-edit.component';
+import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +60,13 @@ import { CourtSearchComponent } from './court/court-search/court-search.componen
     CourtDeleteComponent,
     CourtDetailComponent,
     CourtEditComponent,
-    CourtSearchComponent
+    CourtSearchComponent,
+    PlayerListComponent,
+    PlayerFormComponent,
+    PlayerSearchComponent,
+    PlayerDetailComponent,
+    PlayerEditComponent,
+    PlayerDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +77,8 @@ import { CourtSearchComponent } from './court/court-search/court-search.componen
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, CourtService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+    CourtService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

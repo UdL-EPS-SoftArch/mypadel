@@ -14,6 +14,11 @@ import { CourtFormComponent } from './court/court-form/court-form.component';
 import { CourtEditComponent } from './court/court-edit/court-edit.component';
 import { CourtDetailComponent } from './court/court-detail/court-detail.component';
 import { CourtDeleteComponent } from './court/court-delete/court-delete.component';
+import { PlayerListComponent } from './player/player-list/player-list.component';
+import { PlayerFormComponent } from './player/player-form/player-form.component';
+import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
+import { PlayerEditComponent } from './player/player-edit/player-edit.component';
+import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -30,5 +35,10 @@ export const routes: Routes = [
   { path: 'courts/new', component: CourtFormComponent },
   { path: 'courts/:id', component: CourtDetailComponent },
   { path: 'courts/:id/edit', component: CourtEditComponent },
-  { path: 'courts/:id/delete', component: CourtDeleteComponent }
+  { path: 'courts/:id/delete', component: CourtDeleteComponent },
+  { path: 'players', component: PlayerListComponent },
+  { path: 'players/new', component: PlayerFormComponent },
+  { path: 'players/:id', component: PlayerDetailComponent },
+  { path: 'players/:id/edit', component: PlayerEditComponent, canActivate: [LoggedInGuard] },
+  { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
 ];
