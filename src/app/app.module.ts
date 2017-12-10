@@ -39,7 +39,7 @@ import { PlayerSearchComponent } from './player/player-search/player-search.comp
 import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
-
+import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +67,7 @@ import { PlayerDeleteComponent } from './player/player-delete/player-delete.comp
     PlayerDetailComponent,
     PlayerEditComponent,
     PlayerDeleteComponent,
+    MatchResultListComponent
   ],
   imports: [
     BrowserModule,

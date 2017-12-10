@@ -19,6 +19,7 @@ import { PlayerFormComponent } from './player/player-form/player-form.component'
 import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
+import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -41,4 +42,5 @@ export const routes: Routes = [
   { path: 'players/:id', component: PlayerDetailComponent },
   { path: 'players/:id/edit', component: PlayerEditComponent, canActivate: [LoggedInGuard] },
   { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'matchResults', component: MatchResultListComponent }
 ];
