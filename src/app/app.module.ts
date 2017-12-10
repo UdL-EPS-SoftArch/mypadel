@@ -23,8 +23,23 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
-import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
-import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
+import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { CourtListComponent } from './court/court-list/court-list.component';
+import { CourtFormComponent } from './court/court-form/court-form.component';
+import { CourtService } from './court/court.service';
+import { CourtDeleteComponent } from './court/court-delete/court-delete.component';
+import { CourtDetailComponent } from './court/court-detail/court-detail.component';
+import { CourtEditComponent } from './court/court-edit/court-edit.component';
+import { CourtSearchComponent } from './court/court-search/court-search.component';
+import { PlayerListComponent } from './player/player-list/player-list.component';
+import { PlayerFormComponent } from './player/player-form/player-form.component';
+import { PlayerService } from './player/player.service';
+import { PlayerSearchComponent } from './player/player-search/player-search.component';
+import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
+import { PlayerEditComponent } from './player/player-edit/player-edit.component';
+import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
+import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +54,20 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
     PublicMatchSearchComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
-    PublicMatchEditComponent
+    PublicMatchEditComponent,
+    CourtListComponent,
+    CourtFormComponent,
+    CourtDeleteComponent,
+    CourtDetailComponent,
+    CourtEditComponent,
+    CourtSearchComponent,
+    PlayerListComponent,
+    PlayerFormComponent,
+    PlayerSearchComponent,
+    PlayerDetailComponent,
+    PlayerEditComponent,
+    PlayerDeleteComponent,
+    MatchResultListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +78,8 @@ import {PublicMatchEditComponent} from './public-match/public-match-edit/public-
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+    CourtService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
