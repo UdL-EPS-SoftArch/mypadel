@@ -1,5 +1,5 @@
 import {CourtType} from './CourtType';
-import {Player} from '../admin/player';
+import {Player} from '../player/player';
 
 export class Match {
   uri: string;
