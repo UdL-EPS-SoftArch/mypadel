@@ -1,7 +1,9 @@
 import {CourtType} from './CourtType';
-import {Player} from '../admin/player';
+import {Player} from '../player/player';
 
 export class Match {
+  uri: string;
+  _links: any = {};
   id: number;
   startDate: Date;
   duration: String;

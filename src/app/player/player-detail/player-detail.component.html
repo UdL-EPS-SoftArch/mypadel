@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div>{{player.username}}</div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-4">
+      <h5>Username:</h5>
+      <p>{{player.username}}</p>
+    </div>
+    <div class="col-md-4">
+      <h5>E-Mail:</h5>
+      <p><a href="mailto:{{player.email}}">{{player.email}}</a></p>
+    </div>
+    <div class="col-md-4">
+      <h5>Role:</h5>
+      <p>{{player.authorities[0].authority}}</p>
+    </div>
+  </div>
+  <div class="panel-footer text-center">
+    <button id="playersList" type="button" [routerLink]="['/players']"
+            class="btn btn-primary">Back to List</button>
+    <button id="editPlayer" type="button" [routerLink]="['edit']"
+            class="btn btn-success">Edit</button>
+    <button id="deletePlayer" type="button" [routerLink]="['delete']"
+            class="btn btn-danger">Delete</button>
+  </div>
+</div>
