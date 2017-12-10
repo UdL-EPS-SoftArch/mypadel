@@ -11,7 +11,7 @@ import { MatchResultService } from '../MatchResult.service';
 export class MatchResultListComponent implements OnInit {
 
   public MatchResults: MatchResult[];
-  public totalMatchResults: number;
+  public totalMatchResults = 0;
   public errorMessage = '';
 
   constructor(private matchResultService: MatchResultService) {
