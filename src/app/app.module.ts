@@ -40,6 +40,11 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { PrivateMatchService } from './private-match/private-match.service';
+import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
+import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
+import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
+import { PrivateMatchSearchComponent } from './private-match/private-match-search/private-match-search.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +72,11 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     PlayerDetailComponent,
     PlayerEditComponent,
     PlayerDeleteComponent,
-    MatchResultListComponent
+    MatchResultListComponent,
+    PrivateMatchEditComponent,
+    PrivateMatchFormComponent,
+    PrivateMatchListComponent,
+    PrivateMatchSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +88,7 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     DateTimePickerModule
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-    CourtService, PlayerService],
+    CourtService, PlayerService, PrivateMatchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
