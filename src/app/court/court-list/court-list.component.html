@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4 i18n>{ totalCourts, plural,
+      =0 {There are no courts}
+      =1 {There is 1 court}
+      other { There are {{totalCourts}} courts} }</h4>
+  </div>
+  <div class="col-md-8">
+    <h4>
+      <a class="btn btn-primary" role="button"
+         [routerLink]="['/courts/new']">Create a new Court</a>
+    </h4>
+  </div>
+</div>
+
+<div class="row">
+  <h3 class="col-md-12">Courts</h3>
+  <div class="col-md-12">
+    <app-court-search (onSearchited)="onSearch($event)" [courts]="courts"></app-court-search>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel-group col-md-12">
+    <div class="panel panel-default" *ngFor="let court of courts">
+      <div class="panel-heading">
+        <h4>Court:<a routerLink="{{court.id}}">{{court.id}}</a></h4>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <span *ngIf="court.indoor">
+            Indoor
+          </span>
+          <span *ngIf="!court.indoor">
+            Outdoor
+          </span>
+          <span *ngIf="court.available">
+            Available
+          </span>
+          <span *ngIf="!court.available">
+            Unavailable
+          </span>
+          <!--<a routerLink="{{court.uri}}">{{court.id}}</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

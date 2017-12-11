@@ -5,6 +5,7 @@ Feature: Delete Administrator
 
   Scenario: Delete an existing administrator
     Given I'm signed in as "admin"
+    And I see an administrator with name "admin2"
     When I delete the current administrator
     And I confirm the deletion
     Then I see 1 administrators
