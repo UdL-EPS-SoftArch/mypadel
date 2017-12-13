@@ -1,5 +1,5 @@
 import { binding, given, when } from 'cucumber-tsflow';
-import { browser } from 'protractor';
+import {browser, by, element} from 'protractor';
 import { NavigationBar } from '../../pages/navbar.page';
 
 @binding()
@@ -18,6 +18,17 @@ class NavigationSteps {
     browser.waitForAngular();
     callback();
   }
+
+  @given(/^I'm on the home page and logged out$/)
+  public iMOnTheHomePageAndLoggedOut(callback): void {
+    browser.get('http://localhost:4200');
+    const logoutButton = element(by.linkText('Logout'));
+    if (logoutButton.isDisplayed()) {
+      logoutButton.click();
+    }
+    callback();
+  }
+
 }
 
 export = NavigationSteps;
