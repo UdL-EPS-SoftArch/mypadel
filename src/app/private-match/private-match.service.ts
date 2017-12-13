@@ -21,7 +21,7 @@ export class PrivateMatchService {
   }
 
   // GET /privateMatches /id
-  getPrivateMatch(id: number): Observable<PrivateMatch> {
+  getPrivateMatch(id: string): Observable<PrivateMatch> {
     return this.http.get(`${environment.API}/privateMatches/${id}`)
       .map((res: Response) => new PrivateMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
