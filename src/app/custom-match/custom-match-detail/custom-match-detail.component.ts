@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {CustomMatchService} from '../custom-match.service';
-import {CustomMatch} from "../custom-match";
+import {CustomMatch} from '../custom-match';
 
 @Component({
   selector: 'app-custom-match-detail',
