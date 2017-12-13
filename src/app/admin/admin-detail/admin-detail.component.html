@@ -1,19 +1,19 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <div>{{admin.username}}</div>
+    <div>{{admin?.username}}</div>
   </div>
   <div class="panel-body">
     <div class="col-md-4">
       <h5>Username:</h5>
-      <p>{{admin.username}}</p>
+      <p>{{admin?.username}}</p>
     </div>
     <div class="col-md-4">
       <h5>E-Mail:</h5>
-      <p><a href="mailto:{{admin.email}}">{{admin.email}}</a></p>
+      <p><a href="mailto:{{admin?.email}}">{{admin?.email}}</a></p>
     </div>
     <div class="col-md-4">
       <h5>Role:</h5>
-      <p>{{admin.authorities[0].authority}}</p>
+      <p>{{admin.authorities[0]?.authority}}</p>
     </div>
   </div>
   <div class="panel-footer text-center">
