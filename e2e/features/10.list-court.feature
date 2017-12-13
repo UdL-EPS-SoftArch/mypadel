@@ -7,4 +7,3 @@ Feature: List courts
     Given I sign in as "player@mypadel.cat" with password "password"
     When I click menu option "Courts"
     Then I see 0 courts
-
