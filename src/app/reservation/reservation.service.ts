@@ -44,4 +44,26 @@ export class ReservationService {
       .map((res: Response) => res.json()._embedded.reservations.map(json => new Reservation(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
+  // DELETE /reservation/{id}
+  deleteReservation(reservation: Reservation): Observable<Response> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.delete(`${environment.API}${reservation.uri}`, options)
+      .map((res: Response) => res)
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  // PUT /reservation/id
+  updateReservation(reservation: Reservation): Observable<Reservation> {
+    const body = JSON.stringify(reservation);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.put(`${environment.API}${reservation.uri}`, body, options)
+      .map((res: Response) => new Reservation(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 }

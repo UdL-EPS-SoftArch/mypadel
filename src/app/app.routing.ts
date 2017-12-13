@@ -24,6 +24,8 @@ import { PlayerDeleteComponent } from './player/player-delete/player-delete.comp
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
 import { ReservationListComponent } from "./reservation/reservation-list/reservation-list.component";
+import { ReservationEditComponent } from "./reservation/reservation-edit/reservation-edit.component";
+import { ReservationDeleteComponent } from "./reservation/reservation-delete/reservation-delete.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -52,7 +54,9 @@ export const routes: Routes = [
   {path: 'customMatches/new', component: CustomMatchFormComponent},
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
-  { path: 'matchResults', component: MatchResultListComponent }
+  { path: 'matchResults', component: MatchResultListComponent },
   { path: 'reservations/new', component: ReservationFormComponent },
-  { path: 'reservations', component: ReservationListComponent }
+  { path: 'reservations', component: ReservationListComponent },
+  { path: 'reservations/:id/edit', component: ReservationEditComponent, canActivate: [LoggedInGuard] },
+  { path: 'reservations/:id/delete', component: ReservationDeleteComponent, canActivate: [LoggedInGuard] },
 ];

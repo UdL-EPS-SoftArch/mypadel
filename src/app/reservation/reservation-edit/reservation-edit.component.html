@@ -1,4 +1,4 @@
-<h2>Create a new Reservation</h2>
+<h2>Edit Reservation</h2>
 <form id="reservation-form" [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
   <fieldset>
 
@@ -51,7 +51,6 @@
 
 
 
-
     <div *ngIf="errorMessage" class="form-group row">
       <div class="col-md-3"></div>
       <div class="label-danger col-md-9">{{ errorMessage }}</div>
@@ -62,10 +61,11 @@
       <div class="col-md-3"></div>
       <div class="col-md-9">
         <button id="createReservation" type="submit"
-                class="btn btn-success pull-right" [disabled]="!reservationForm.valid">Create a reservation
+                class="btn btn-success pull-right" [disabled]="!reservationForm.valid">Edit the reservation
         </button>
       </div>
     </div>
 
   </fieldset>
 </form>
+

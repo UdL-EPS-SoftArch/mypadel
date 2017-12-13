@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+
 import { routes } from './app.routing';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -48,6 +49,11 @@ import { ReservationFormComponent } from './reservation/reservation-form/reserva
 import { ReservationService} from "./reservation/reservation.service";
 import {ReservationListComponent} from "./reservation/reservation-list/reservation-list.component";
 import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
+import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+
+
 
 @NgModule({
   declarations: [
@@ -88,6 +94,9 @@ import { ReservationSearchComponent } from './reservation/reservation-search/res
     ReservationFormComponent,
     ReservationListComponent,
     ReservationSearchComponent,
+    ReservationEditComponent,
+    ReservationDeleteComponent,
+    ReservationDetailComponent
   ],
   imports: [
     BrowserModule,
