@@ -6,14 +6,14 @@
     <!-- Text input-->
     <div class="form-group row" [class.has-error]="matchInvitationForm.controls['message'].touched &&
                   matchInvitationForm.controls['message'].hasError('required')">
-      <label class="col-md-3 control-label" for="message">Send message to player you are inviting</label>
+      <label class="col-md-6 control-label" for="message">Send a message to player you are inviting</label>
       <input id="message" type="text" class="form-control input-md"
              [formControl]="matchInvitationForm.controls['message']"
              [(ngModel)]="matchInvitation.message"/>
       <div class="col-md-9">
         <div *ngIf="matchInvitationForm.controls['message'].touched &&
-                    matchInvitationForm.controls['message'].hasError('required')" class="label-warning">
-          A username is required!
+                    matchInvitationForm.controls['message'].hasError('required')" class="alert alert-danger">
+          A message is required for now
         </div>
       </div>
     </div>

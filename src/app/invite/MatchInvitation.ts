@@ -6,10 +6,10 @@ export class MatchInvitation {
   id: number;
   eventDate: Date;
   message: string;
-  createdBy: User;
+  /*createdBy: User;
   invitedPlayer: Player;
   invitesToMatch: Match;
-
+*/
   constructor(values: Object = {}) {
     Object.assign(this, values);
   }

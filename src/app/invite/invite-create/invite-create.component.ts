@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {MatchInvitation} from '../MatchInvitation';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {MatchInvitationService} from '../MatchInvitation.service';
 
 @Component({
   selector: 'app-invite-create',
   templateUrl: './invite-create.component.html',
-  styleUrls: ['./invite-create.component.css']
+  providers: [MatchInvitationService]
 })
 export class InviteCreateComponent implements OnInit {
   public matchInvitation: MatchInvitation;
@@ -17,6 +17,9 @@ export class InviteCreateComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private router: Router,
               private matchInvitationService: MatchInvitationService) {/*dohvataj sa forme podatke i validiraj*/
+    this.matchInvitationForm = fb.group({
+      'message': ['Match invitation message', Validators.required]
+    });
   }
 
   ngOnInit() {
