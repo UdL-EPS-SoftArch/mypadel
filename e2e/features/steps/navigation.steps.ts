@@ -18,17 +18,6 @@ class NavigationSteps {
     browser.waitForAngular();
     callback();
   }
-
-  @given(/^I'm on the home page and logged out$/)
-  public iMOnTheHomePageAndLoggedOut(callback): void {
-    browser.get('http://localhost:4200');
-    const logoutButton = element(by.linkText('Logout'));
-    if (logoutButton.isDisplayed()) {
-      logoutButton.click();
-    }
-    callback();
-  }
-
 }
 
 export = NavigationSteps;
