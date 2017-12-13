@@ -1,3 +1,6 @@
-<p>
-  private-match-search works!
-</p>
+<h4>Filter private matches by identificator</h4>
+<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+<p i18n>{ privateMatches.length, plural,
+  =0 {No private matches found}
+  =1 {1 private match found}
+  other { {{privateMatches.length}} private matches found} }</p>
