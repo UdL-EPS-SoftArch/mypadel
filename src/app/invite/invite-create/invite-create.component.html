@@ -1,3 +1,37 @@
-<p>
-  invite-create works!
-</p>
+<h2>Invite player to match</h2>
+
+<form id="match-invitation-form" [formGroup]="matchInvitationForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Text input-->
+    <div class="form-group row" [class.has-error]="matchInvitationForm.controls['message'].touched &&
+                  matchInvitationForm.controls['message'].hasError('required')">
+      <label class="col-md-3 control-label" for="message">Send message to player you are inviting</label>
+      <input id="message" type="text" class="form-control input-md"
+             [formControl]="matchInvitationForm.controls['message']"
+             [(ngModel)]="matchInvitation.message"/>
+      <div class="col-md-9">
+        <div *ngIf="matchInvitationForm.controls['message'].touched &&
+                    matchInvitationForm.controls['message'].hasError('required')" class="label-warning">
+          A username is required!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button id="invitePlayer" type="submit"
+                class="btn btn-success pull-right" [disabled]="!matchInvitationForm.valid">Invite
+        </button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
