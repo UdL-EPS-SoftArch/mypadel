@@ -36,25 +36,6 @@
       </div>
     </div>
 
-    <!-- PrivateMatch level input-->
-    <div class="form-group row" [class.has-error]="privateMatchForm.controls['level'].touched &&
-                  privateMatchForm.controls['level'].hasError('required')">
-      <label class="col-md-3 control-label" for="level">Match level*</label>
-      <select name="level" [(ngModel)]="privateMatch.level" [formControl]="privateMatchForm.controls['level']" id="level" class="form-control input-md">
-        <option value="NOVICE">Novice</option>
-        <option value="BEGINNER">Beginner</option>
-        <option value="INTERMEDIATE">Intermediate</option>
-        <option value="ADVANCED">Advanced</option>
-        <option value="BRUTAL">Expert</option>
-      </select>
-      <div class="col-md-9">
-        <div *ngIf="privateMatchForm.controls['level'].touched &&
-                    privateMatchForm.controls['level'].hasError('required')" class="label-warning">
-          A level selection is required!
-        </div>
-      </div>
-    </div>
-
     <!-- Start date input-->
     <div class="form-group row" [class.has-error]="privateMatchForm.controls['startDate'].touched &&
                   privateMatchForm.controls['startDate'].hasError('required')">
