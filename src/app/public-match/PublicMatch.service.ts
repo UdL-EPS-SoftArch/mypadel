@@ -63,6 +63,8 @@ export class PublicMatchService {
   }
 
   getPublicMatchByStartDate(from: string, to: string): Observable<Response> {
+    from = from.split(".")[0]+"+00:00";
+    to = to.split(".")[0]+"+00:00";
     return this.http.get(`${environment.API}/matches/search/findByStartDateBetween?from=${from}&to=${to}`)
       .map((res: Response) => res.json()._embedded.admins.map(json => new PublicMatch(json)))
       .catch((error: any) => Observable.throw(error.json()));
