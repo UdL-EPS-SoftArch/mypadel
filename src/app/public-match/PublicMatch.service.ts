@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 import {Observable} from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import {PublicMatch} from './PublicMatch';
-import {Match} from "../match/Match";
+import {Match} from '../match/Match';
 
 @Injectable()
 export class PublicMatchService {
