@@ -1,5 +1,4 @@
 import { element, by, ElementFinder } from 'protractor';
-import { promise } from 'selenium-webdriver';
 
 export class CourtDetailsPage {
 

@@ -19,16 +19,16 @@ class DetailCourtSteps {
     callback();
   }
 
-  @then(/^I see an administrator with name "([^"]*)"$/)
-  public iSeeAdminWithName(name: string, callback): void {
-    expect(this.courtDetails.getUsername())
-      .to.eventually.equal(name).and.notify(callback);
+  @then(/^I see a court with availability "([^"]*)" $/)
+  public iSeeACourtWithAvailability(available: string, callback): void {
+    expect(this.courtDetails.getAvailable())
+      .to.eventually.equal(available).and.notify(callback);
   }
 
-  @then(/^I see an administrator with e-mail "([^"]*)"$/)
-  public iSeeAdminWithEMail(email: string, callback): void {
-    expect(this.courtDetails.getEMail())
-      .to.eventually.equal(email).and.notify(callback);
+  @then(/^I see a court "([^"]*)" $/)
+  public iSeeACourt(indoor: string, callback): void {
+    expect(this.courtDetails.getIndoor())
+      .to.eventually.equal(indoor).and.notify(callback);
   }
 }
 
