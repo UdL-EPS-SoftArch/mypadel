@@ -1,8 +1,8 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import {PrivateMatch} from '../PrivateMatch';
-import {PrivateMatchService} from '../private-match.service';
 import {Component, OnInit} from '@angular/core';
+import {PrivateMatch} from '../PrivateMatch';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {PrivateMatchService} from '../private-match.service';
 
 @Component({
   selector: 'app-private-match-form',
