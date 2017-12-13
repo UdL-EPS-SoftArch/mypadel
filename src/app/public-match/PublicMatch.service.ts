@@ -7,6 +7,7 @@ import 'rxjs/add/observable/throw';
 import {Observable} from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import {PublicMatch} from './PublicMatch';
+import {Match} from "../match/Match";
 
 @Injectable()
 export class PublicMatchService {
@@ -63,10 +64,10 @@ export class PublicMatchService {
   }
 
   getPublicMatchByStartDate(from: string, to: string): Observable<Response> {
-    from = from.split(".")[0]+"+00:00";
-    to = to.split(".")[0]+"+00:00";
+    // from = from.split(".")[0]+"Z";
+    // to = to.split(".")[0]+"Z";
     return this.http.get(`${environment.API}/matches/search/findByStartDateBetween?from=${from}&to=${to}`)
-      .map((res: Response) => res.json()._embedded.admins.map(json => new PublicMatch(json)))
+      .map((res: Response) => res.json()._embedded.matches.map(json => new Match(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
 

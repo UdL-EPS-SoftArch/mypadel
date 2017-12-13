@@ -22,7 +22,7 @@ export class PublicMatchSearchComponent {
   performSearch(from: Date, to: Date): void {
     this.publicMatchService.getPublicMatchByStartDate(from.toISOString(), to.toISOString()).subscribe(
       publicMatches => { this.onSearchited.emit(publicMatches); },
-      error => this.errorMessage = <any>error.message);
+      error => {console.log(error); this.errorMessage = <any>error.message});
   }
 }
 
