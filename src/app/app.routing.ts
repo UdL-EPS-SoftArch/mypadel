@@ -23,6 +23,7 @@ import {MatchResultListComponent} from './match-result/matchResult-list/matchRes
 import {PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
 import {PrivateMatchFormComponent} from './private-match/private-match-form/private-match-form.component';
 import {PrivateMatchListComponent} from './private-match/private-match-list/private-match-list.component';
+import {PrivateMatchDetailComponent} from './private-match/private-match-detail/private-match-detail.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'about', pathMatch: 'full'},
@@ -48,5 +49,6 @@ export const routes: Routes = [
   {path: 'matchResults', component: MatchResultListComponent},
   {path: 'privateMatches', component: PrivateMatchListComponent},
   {path: 'privateMatches/new', component: PrivateMatchFormComponent},
+  {path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
   {path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
 ];
