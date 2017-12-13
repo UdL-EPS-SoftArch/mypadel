@@ -25,6 +25,7 @@ import {CustomMatchService} from './custom-match/custom-match.service';
 import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
 import {CustomMatchSearchComponent} from './custom-match/custom-match-search/custom-match-search.component';
 import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
+import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
 
 
 import { PublicMatchService } from './public-match/PublicMatch.service';
@@ -82,6 +83,7 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     CustomMatchFormComponent,
     CustomMatchSearchComponent,
     CustomMatchEditComponent,
+    CustomMatchDetailComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
     PublicMatchEditComponent,

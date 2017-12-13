@@ -4,6 +4,7 @@ import {AuthenticationBasicService} from '../login-basic/authentication-basic.se
 import {Observable} from 'rxjs/Observable';
 import {CustomMatch} from './custom-match';
 import { environment } from '../../environments/environment';
+import {Match} from "../match/Match";
 @Injectable()
 export class CustomMatchService {
   constructor(private http: Http,
@@ -27,7 +28,7 @@ export class CustomMatchService {
   }
 
   // GET /customMatches /id
-  getCustomMatch(id: number): Observable<CustomMatch> {
+  getCustomMatch(id: string): Observable<CustomMatch> {
     return this.http.get(`${environment.API}/customMatches/${id}`)
       .map((res: Response) => new CustomMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
@@ -42,6 +43,13 @@ export class CustomMatchService {
 
     return this.http.put(`${environment.API}${customMatch.uri}`, body, options)
       .map((res: Response) => new CustomMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+  getCustomMatchByStartDate(from: string, to: string): Observable<Response> {
+    // from = from.split(".")[0]+"Z";
+    // to = to.split(".")[0]+"Z";
+    return this.http.get(`${environment.API}/matches/search/findByStartDateBetween?from=${from}&to=${to}`)
+      .map((res: Response) => res.json()._embedded.matches.map(json => new Match(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
 }

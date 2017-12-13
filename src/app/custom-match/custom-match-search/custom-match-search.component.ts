@@ -19,9 +19,11 @@ export class CustomMatchSearchComponent {
               private route: ActivatedRoute) {
   }
 
-  performSearch(searchTerm: number): void {
-    this.customMatchService.getCustomMatch(searchTerm).subscribe(
-      customMatches => { this.onSearchited.emit(customMatches); },
+  performSearch(from: Date, to: Date): void {
+    this.customMatchService.getCustomMatchByStartDate(from.toISOString(), to.toISOString()).subscribe(
+      customMatches => {
+        this.onSearchited.emit(customMatches);
+      },
       error => this.errorMessage = <any>error.message);
   }
 }
