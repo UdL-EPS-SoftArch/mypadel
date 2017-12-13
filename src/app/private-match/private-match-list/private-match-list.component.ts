@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {PrivateMatch} from '../PrivateMatch';
-import {PrivateMatchService} from '../PrivateMatch.service';
+import {PrivateMatchService} from '../private-match.service';
 
 @Component({
   selector: 'app-private-match-list',
   templateUrl: './private-match-list.component.html'
 })
 export class PrivateMatchListComponent implements OnInit {
-  public PrivateMatches: PrivateMatch[] = [];
+  public privateMatches: PrivateMatch[] = [];
   public totalPrivateMatches = 0;
   public errorMessage = '';
 
-  constructor(private PrivateMatchService: PrivateMatchService) {}
+  constructor(private privateMatchService: PrivateMatchService) {}
 
   ngOnInit() {
-    this.PrivateMatchService.getAllPrivateMatches()
+    this.privateMatchService.getAllPrivateMatches()
       .subscribe(
-        (PrivateMatches: PrivateMatch[]) => {
-          this.PrivateMatches = PrivateMatches;
-          this.totalPrivateMatches = PrivateMatches.length; },
+        (privateMatches: PrivateMatch[]) => {
+          this.privateMatches = privateMatches;
+          this.totalPrivateMatches = privateMatches.length; },
         error => this.errorMessage = <any>error.message);
   }
 
-  onSearch(PrivateMatches) {
-    this.PrivateMatches = PrivateMatches;
+  onSearch(privateMatches) {
+    this.privateMatches = privateMatches;
   }
 }
