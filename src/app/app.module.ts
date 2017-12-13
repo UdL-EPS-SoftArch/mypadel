@@ -23,6 +23,9 @@ import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.componen
 import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
 import {CustomMatchService} from './custom-match/custom-match.service';
 import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
+import {CustomMatchSearchComponent} from './custom-match/custom-match-search/custom-match-search.component';
+import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
+
 
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
@@ -77,6 +80,8 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     PublicMatchListComponent,
     CustomMatchListComponent,
     CustomMatchFormComponent,
+    CustomMatchSearchComponent,
+    CustomMatchEditComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
     PublicMatchEditComponent,

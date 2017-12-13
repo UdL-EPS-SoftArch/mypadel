@@ -1,0 +1,6 @@
+<h4>Filter custom matches by identificator</h4>
+<input name="title"  #searchTerm (keyup)="performSearch(searchTerm.value)">
+<p i18n>{ customMatches.length, plural,
+  =0 {No custom matches found}
+  =1 {1 custom match found}
+  other { {{customMatches.length}} custom matches found} }</p>

@@ -25,4 +25,23 @@ export class CustomMatchService {
       .map((res: Response) => new CustomMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
+
+  // GET /customMatches /id
+  getCustomMatch(id: number): Observable<CustomMatch> {
+    return this.http.get(`${environment.API}/customMatches/${id}`)
+      .map((res: Response) => new CustomMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  // PUT /customMatches/id
+  updateCustomMatch(customMatch: CustomMatch): Observable<CustomMatch> {
+    const body = JSON.stringify(customMatch);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.put(`${environment.API}${customMatch.uri}`, body, options)
+      .map((res: Response) => new CustomMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 }
