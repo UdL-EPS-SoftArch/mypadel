@@ -9,15 +9,8 @@ const expect = chai.expect;
 class DetailsCourtSteps {
   private mainContent = new MainContentPage();
 
-  @when(/^I delete the current court$/)
+  @when(/^I click delete the current court$/)
   public iDeleteCurrentCourt(callback): void {
-    this.mainContent.clickButtonWithText('Delete');
-    browser.waitForAngular();
-    callback();
-  }
-
-  @when(/^I confirm the deletion$/)
-  public iConfirmDeletion(callback): void {
     this.mainContent.clickButtonWithText('Delete');
     browser.waitForAngular();
     callback();
