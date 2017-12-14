@@ -9,7 +9,7 @@ export class CourtFormPage {
   private registerButton;
 
   constructor() {
-    this.form = element(by.id('admin-form'));
+    this.form = element(by.id('court-form'));
     this.available = this.form.element(by.id('available'));
     this.indoor = this.form.element(by.id('indoor'));
     this.registerButton = this.form.element(by.tagName('button'));
