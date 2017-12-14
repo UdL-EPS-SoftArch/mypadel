@@ -7,6 +7,7 @@ import 'rxjs/add/observable/throw';
 import {Observable} from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import {PrivateMatch} from './PrivateMatch';
+import {Match} from '../match/Match';
 
 @Injectable()
 export class PrivateMatchService {
@@ -62,5 +63,12 @@ export class PrivateMatchService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
+  getPrivateMatchByStartDate(from: string, to: string): Observable<Response> {
+    // from = from.split(".")[0]+"Z";
+    // to = to.split(".")[0]+"Z";
+    return this.http.get(`${environment.API}/matches/search/findByStartDateBetween?from=${from}&to=${to}`)
+      .map((res: Response) => res.json()._embedded.matches.map(json => new Match(json)))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 
 }

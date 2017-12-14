@@ -1,6 +1,17 @@
-<h4>Filter private matches by identificator</h4>
-<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+<h4>Filter private matches by StartDates</h4>
+<owl-date-time #startDateFrom></owl-date-time>
+<owl-date-time #startDateTo></owl-date-time>
+<!-- Button -->
+<div class="form-group row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9">
+    <button id="searchByDate" type="submit"
+            class="btn btn-success pull-right" (click)="performSearch(startDateFrom.value, startDateTo.value)">Filter
+    </button>
+  </div>
+</div>
+
 <p i18n>{ privateMatches.length, plural,
   =0 {No private matches found}
   =1 {1 private match found}
-  other { {{privateMatches?.length}} private matches found} }</p>
+  other { {{privateMatches.length}} private matches found} }</p>

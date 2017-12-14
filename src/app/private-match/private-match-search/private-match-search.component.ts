@@ -19,8 +19,8 @@ export class PrivateMatchSearchComponent {
               private route: ActivatedRoute) {
   }
 
-  performSearch(searchTerm: string): void {
-    this.privateMatchService.getPrivateMatch(searchTerm).subscribe(
+  performSearch(from: Date, to: Date): void {
+    this.privateMatchService.getPrivateMatchByStartDate(from.toISOString(), to.toISOString()).subscribe(
       privateMatches => { this.onSearchited.emit(privateMatches); },
       error => this.errorMessage = <any>error.message);
   }
