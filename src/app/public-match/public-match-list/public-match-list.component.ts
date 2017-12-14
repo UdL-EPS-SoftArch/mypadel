@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PublicMatch} from '../PublicMatch';
 import {PublicMatchService} from '../PublicMatch.service';
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-public-match-list',
@@ -26,7 +25,7 @@ export class PublicMatchListComponent implements OnInit {
 
   private formattedPublicMatches(publicMatches: PublicMatch[]): PublicMatch[] {
     publicMatches.forEach((match)=>{
-      match.duration = match.duration.split("PT")[1];
+      match.duration = match.duration.split('PT')[1];
     });
     return publicMatches;
   }
