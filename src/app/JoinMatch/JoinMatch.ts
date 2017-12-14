@@ -1,6 +1,7 @@
-import { Player } from "../admin/player";
-import { Match } from "../match/Match";
+import { Player } from "../player/player";
 import { PublicMatch } from "../public-match/PublicMatch";
+import { CustomMatch } from "../custom-match/custom-match";
+
 
 export class JoinMatch{
 
@@ -8,8 +9,8 @@ export class JoinMatch{
   id: number;
   date_match: Date;
   player: Player;
-  match: Match;
   publicMatch: PublicMatch;
+  customMatch: CustomMatch;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

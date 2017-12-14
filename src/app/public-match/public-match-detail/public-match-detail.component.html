@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div>PublicMatch nº {{public_match?.id}}</div>
+  </div>
+  <div class="panel-body">
+    <div>Type of court: {{public_match?.courtType}}</div>
+    <div>Level of match: {{public_match?.level}}</div>
+    <div>Duration of match: {{public_match?.duration}}</div>
+    <div>Date of match: {{public_match?.startDate}}</div>
+  </div>
+  <div class="panel-footer text-center">
+    <button id="JoinMatch" type="submit" (ngSubmit)="onSubmit()" [routerLink]="['/joinMatches']"
+            class="btn btn-primary">Join
+    </button>
+    <button id="publicMatchesList" type="button" [routerLink]="['/publicMatches']"
+            class="btn btn-primary">Back to List
+    </button>
+    <button id="publicMatches" type="button" [routerLink]="['delete']"
+            class="btn btn-danger">Delete
+    </button>
+  </div>
+</div>

@@ -8,7 +8,7 @@ import { JoinMatch } from '../JoinMatch';
 })
 
 export class JoinMatchListComponent implements OnInit {
-  public joinMatch: JoinMatch[] = [];
+  public joinMatches: JoinMatch[] = [];
   public total: number;
   public errorMessage = '';
 
@@ -18,12 +18,12 @@ export class JoinMatchListComponent implements OnInit {
     this.joinMatchService.getAllJoinMatchs()
       .subscribe(
         (joinMatch: JoinMatch[]) => {
-          this.joinMatch = joinMatch;
+          this.joinMatches = joinMatch;
           this.total = joinMatch.length; },
         error => this.errorMessage = <any>error.message);
   }
   onSearch(joinMatch) {
-    this.joinMatch = joinMatch;
+    this.joinMatches = joinMatch;
   }
 
 

@@ -22,6 +22,8 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import {PublicMatchDetailComponent} from "./public-match/public-match-detail/public-match-detail-component";
+import {JoinMatchListComponent} from "./JoinMatch/JoinMatch-list/JoinMatch-component";
 
 
 export const routes: Routes = [
@@ -50,6 +52,8 @@ export const routes: Routes = [
   { path: 'customMatches', component: CustomMatchListComponent },
   {path: 'customMatches/new', component: CustomMatchFormComponent},
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
+  { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
+  { path: 'joinMatches', component: JoinMatchListComponent },
   { path: 'matchResults', component: MatchResultListComponent }
 ];

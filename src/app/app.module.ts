@@ -29,6 +29,7 @@ import { PublicMatchSearchComponent } from './public-match/public-match-search/p
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchDetailComponent } from "./public-match/public-match-detail/public-match-detail-component";
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
 import { CourtService } from './court/court.service';
@@ -44,6 +45,10 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { JoinMatch } from "./JoinMatch/JoinMatch";
+import { JoinMatchService } from "./JoinMatch/JoinMatch.service";
+import { JoinMatchSearchComponent } from "./JoinMatch/JoinMatch-search/JoinMatch-search.component";
+import { JoinMatchListComponent } from "./JoinMatch/JoinMatch-list/JoinMatch-component";
 
 @NgModule({
   declarations: [
@@ -80,7 +85,10 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     PublicMatchListComponent,
     PublicMatchFormComponent,
     PublicMatchEditComponent,
+    PublicMatchDetailComponent,
     MatchResultListComponent,
+    JoinMatchListComponent,
+    JoinMatchSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +99,7 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService, JoinMatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
