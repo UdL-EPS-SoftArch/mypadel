@@ -28,11 +28,18 @@ export class PublicMatchDetailComponent implements OnInit {
       .map(params => params['id'])
       .subscribe((id) => {
           this.publicMatchService.getPublicMatch(id).subscribe(
-            public_match => this.public_match = public_match,
+            public_match => this.public_match = this.formattedPublicMatches(public_match),
             error => this.errorMessage = <any>error.message);
         }
       );
   }
+
+  private formattedPublicMatches(publicMatches: PublicMatch): PublicMatch {
+      publicMatches.duration = publicMatches.duration.split('PT')[1];
+      return publicMatches;
+  }
+
+
   onSubmit(): void {
     this.joinMatchService.addJoinMatch(this.joinMatch)
       .subscribe(

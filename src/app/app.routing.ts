@@ -54,6 +54,5 @@ export const routes: Routes = [
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
-  { path: 'joinMatches', component: JoinMatchListComponent },
   { path: 'matchResults', component: MatchResultListComponent }
 ];
