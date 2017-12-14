@@ -24,7 +24,7 @@ export class PublicMatchListComponent implements OnInit {
   }
 
   private formattedPublicMatches(publicMatches: PublicMatch[]): PublicMatch[] {
-    publicMatches.forEach((match)=>{
+    publicMatches.forEach((match) => {
       match.duration = match.duration.split('PT')[1];
     });
     return publicMatches;
