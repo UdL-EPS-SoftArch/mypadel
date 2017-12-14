@@ -15,6 +15,11 @@
       <h5>Role:</h5>
       <p>{{player.authorities[0]?.authority}}</p>
     </div>
+    <div class="col-md-4">
+      <h5>Level:</h5>
+      <p>{{player.level}}</p>
+
+    </div>
   </div>
   <div class="panel-footer text-center">
     <button id="playersList" type="button" [routerLink]="['/players']"
