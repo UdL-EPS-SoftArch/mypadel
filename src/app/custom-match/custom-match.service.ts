@@ -35,7 +35,7 @@ export class CustomMatchService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-  // GET /customMatches /id / matchCretor
+  // GET /customMatches /id / matchCreator
   getCreatorMatch(id: string): Observable<Player> {
     return this.http.get(`${environment.API}/customMatches/${id}/matchCreator`)
       .map((res: Response) => new Player(res.json()))
