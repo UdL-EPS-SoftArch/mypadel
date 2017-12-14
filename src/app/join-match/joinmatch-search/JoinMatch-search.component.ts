@@ -4,7 +4,7 @@ import { JoinMatch } from '../JoinMatch';
 import { JoinMatchService } from '../JoinMatch.service';
 
 @Component({
-  selector: 'app-JoinMatch-search',
+  selector: 'app-joinmatch-search',
   templateUrl: './JoinMatch-search.component.html'
 })
 

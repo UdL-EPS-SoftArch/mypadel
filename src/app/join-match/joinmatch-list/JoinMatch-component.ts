@@ -3,7 +3,7 @@ import { JoinMatchService } from '../JoinMatch.service';
 import { JoinMatch } from '../JoinMatch';
 
 @Component({
-  selector: 'app-JoinMatch-list',
+  selector: 'app-joinmatch-list',
   templateUrl: './JoinMatch-list.component.html'
 })
 

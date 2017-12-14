@@ -22,8 +22,8 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
-import {PublicMatchDetailComponent} from "./public-match/public-match-detail/public-match-detail-component";
-import {JoinMatchListComponent} from "./JoinMatch/JoinMatch-list/JoinMatch-component";
+import {PublicMatchDetailComponent} from './public-match/public-match-detail/public-match-detail-component';
+
 
 
 export const routes: Routes = [

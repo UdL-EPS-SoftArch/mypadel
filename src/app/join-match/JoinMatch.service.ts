@@ -6,11 +6,10 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {Observable} from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
-import { JoinMatch } from './JoinMatch'
+import { JoinMatch } from './JoinMatch';
 
 @Injectable()
 export class JoinMatchService{
-
   constructor(private http: Http,
               private authentication: AuthenticationBasicService) {}
 
@@ -40,7 +39,7 @@ export class JoinMatchService{
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-  //DELETE /publicMatches/{id}
+  // DELETE /publicMatches/{id}
   deletePublicMatch(joinMatch: JoinMatch): Observable<Response> {
     const headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);

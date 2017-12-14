@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PublicMatch} from '../PublicMatch';
 import { Router } from '@angular/router';
-import {JoinMatch } from "../../JoinMatch/JoinMatch";
+import {JoinMatch } from '../../join-match/JoinMatch';
 import {PublicMatchService} from '../PublicMatch.service';
-import {JoinMatchService} from "../../JoinMatch/JoinMatch.service";
+import {JoinMatchService} from '../../join-match/JoinMatch.service';
 
 @Component({
   selector: 'app-public-match-detail',
