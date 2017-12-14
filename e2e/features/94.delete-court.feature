@@ -8,7 +8,7 @@ Feature: Delete courts
     And I sign in as "admin@mypadel.cat" with password "password"
     And I click menu option "Courts"
     When I click on a court with ID "1"
-    And I click delete
+    And I click delete the current court
     And I confirm the deletion
     Then I see 0 courts
     And I logout
