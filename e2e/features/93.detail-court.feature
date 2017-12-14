@@ -5,7 +5,7 @@ Feature: Detail court
 
   Scenario: Detail court
     Given I'm in the home page
-    And I login as "player@mypadel.cat" with password "password"
+    And I sign in as "player@mypadel.cat" with password "password"
     And I click menu option "Courts"
     When I click on a court with ID "1"
     Then I see a court with availability "unavailable"
