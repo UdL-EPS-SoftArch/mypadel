@@ -50,7 +50,7 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
 import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
-
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +92,7 @@ import { ReservationDeleteComponent } from './reservation/reservation-delete/res
     ReservationSearchComponent,
     ReservationEditComponent,
     ReservationDeleteComponent,
+    ReservationDetailComponent,
   ],
   imports: [
     BrowserModule,
