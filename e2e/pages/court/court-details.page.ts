@@ -1,30 +1,25 @@
-import {element, by, ElementFinder} from 'protractor';
+import {element, by, ElementFinder, browser} from 'protractor';
+import {promise} from 'selenium-webdriver';
 
 export class CourtDetailsPage {
 
   private detailsBody: ElementFinder;
-  private available: string;
-  private indoor: string;
 
   constructor() {
     this.detailsBody = element.all(by.css('div.panel-body')).first();
   }
 
-  getAvailable(): string {
-    this.parseValues();
-    return this.available;
+  getAvailable(): promise.Promise<string> {
+    return this.detailsBody.getText().then((str: string) => {
+      const parts = str.split(' | ');
+      return parts[1];
+    });
   }
 
-  getIndoor(): string {
-    this.parseValues();
-    return this.indoor;
-  }
-
-  private parseValues() {
-    let text: string;
-    this.detailsBody.getText().then((str: string) => text = str);
-    const parts = text.split(' | ');
-    this.indoor = parts[0];
-    this.available = parts[1];
+  getIndoor(): promise.Promise<string> {
+    return this.detailsBody.getText().then((str: string) => {
+      const parts = str.split(' | ');
+      return parts[0];
+    });
   }
 }
