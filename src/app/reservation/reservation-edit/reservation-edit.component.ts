@@ -35,7 +35,7 @@ export class ReservationEditComponent implements OnInit {
       .map(params => params['id'])
       .subscribe((id) =>
         this.reservationService.getReservation(id).subscribe(
-          reservation=> this.reservation = reservation,
+          reservation => this.reservation = reservation,
           error => this.errorMessage = <any>error.message));
   }
 

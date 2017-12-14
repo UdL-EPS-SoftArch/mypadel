@@ -1,13 +1,13 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Reservation } from "../reservation";
-import { ReservationService } from "../reservation.service";
+import { Reservation } from '../reservation';
+import { ReservationService } from '../reservation.service';
 
 @Component({
   selector: 'app-reservation-search',
   templateUrl: './reservation-search.component.html',
 })
-export class ReservationSearchComponent{
+export class ReservationSearchComponent {
 
   @Input()
   reservations: Reservation[];

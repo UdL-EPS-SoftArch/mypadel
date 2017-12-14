@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Reservation } from "./reservation";
+import { Reservation } from './reservation';
 import { Observable } from 'rxjs/Observable';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { AuthenticationBasicService } from '../login-basic/authentication-basic.service';
