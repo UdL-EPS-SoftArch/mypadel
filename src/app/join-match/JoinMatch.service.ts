@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 import { JoinMatch } from './JoinMatch';
 
 @Injectable()
-export class JoinMatchService{
+export class JoinMatchService {
   constructor(private http: Http,
               private authentication: AuthenticationBasicService) {}
 

@@ -98,7 +98,8 @@ import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-co
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService, JoinMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService,
+    CustomMatchService, CourtService, JoinMatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
