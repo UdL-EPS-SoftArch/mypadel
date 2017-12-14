@@ -63,5 +63,11 @@ export class PlayerService {
       .map((res: Response) => res)
       .catch((error: any) => Observable.throw(error.json()));
   }
+  isLoggedIn(): boolean {
+    return this.authentication.isLoggedIn();
+  }
+  isAdmin(): boolean {
+    return this.authentication.isAdmin();
+  }
 
 }
