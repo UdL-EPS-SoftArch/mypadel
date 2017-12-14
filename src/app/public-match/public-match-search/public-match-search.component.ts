@@ -24,5 +24,7 @@ export class PublicMatchSearchComponent {
       publicMatches => { this.onSearchited.emit(publicMatches); },
       error => this.errorMessage = <any>error.message);
   }
+
 }
+
 

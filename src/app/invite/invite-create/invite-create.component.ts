@@ -27,5 +27,11 @@ export class InviteCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.matchInvitationService.addMatchInvitation(this.matchInvitation)
+      .subscribe(
+        matchInvitation => this.router.navigate([matchInvitation.uri]),
+        error => {
+          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
+        });
   }
 }
