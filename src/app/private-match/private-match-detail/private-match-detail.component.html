@@ -4,22 +4,22 @@
   </div>
   <div class="panel-body">
 
-    <span *ngIf=" privateMatch?.duration == 'PT30M' ">
+    <span *ngIf="privateMatch?.duration == 'PT30M'">
             30 minutes |
     </span>
-    <span *ngIf=" privateMatch?.duration == 'PT60M' ">
+    <span *ngIf="privateMatch?.duration == 'PT60M'">
             1 hour |
     </span>
-    <span *ngIf=" privateMatch?.duration == 'PT90M' ">
+    <span *ngIf="privateMatch?.duration == 'PT90M'">
             1 hour and 30 minutes |
     </span>
     <span *ngIf="privateMatch?.courtType == 'INDOOR'">
             Indoor |
           </span>
-    <span *ngIf="privateMatch?.courtType == 'OUTDOOR' ">
+    <span *ngIf="privateMatch?.courtType == 'OUTDOOR'">
             Outdoor |
           </span>
-    <span *ngIf=" privateMatch?.courtType == 'UNDEFINED' ">
+    <span *ngIf="privateMatch?.courtType == 'UNDEFINED'">
             Undefined |
     </span>
     <span>
@@ -32,9 +32,6 @@
     </button>
     <button id="editAdmin" type="button" [routerLink]="['edit']"
             class="btn btn-success">Edit
-    </button>
-    <button id="deleteAdmin" type="button" [routerLink]="['delete']"
-            class="btn btn-danger">Delete
     </button>
   </div>
 </div>
