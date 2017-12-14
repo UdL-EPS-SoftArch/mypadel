@@ -1,4 +1,4 @@
-import { element, by, ElementFinder } from 'protractor';
+import {element, by, ElementFinder} from 'protractor';
 
 export class CourtDetailsPage {
 
@@ -8,7 +8,16 @@ export class CourtDetailsPage {
 
   constructor() {
     this.detailsBody = element.all(by.css('div.panel-body')).first();
+  }
+
+  getAvailable(): string {
     this.parseValues();
+    return this.available;
+  }
+
+  getIndoor(): string {
+    this.parseValues();
+    return this.indoor;
   }
 
   private parseValues() {
@@ -17,13 +26,5 @@ export class CourtDetailsPage {
     const parts = text.split(' | ');
     this.indoor = parts[0];
     this.available = parts[1];
-  }
-
-  getAvailable(): string {
-    return this.available;
-  }
-
-  getIndoor(): string {
-    return this.indoor;
   }
 }
