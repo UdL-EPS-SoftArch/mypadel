@@ -60,4 +60,15 @@ export class CustomMatchService {
       .map((res: Response) => res.json()._embedded.matches.map(json => new Match(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
+
+  // DELETE /customMatch/{id}
+  deleteCustomMatch(customMatch: CustomMatch): Observable<Response> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.delete(`${environment.API}${customMatch.uri}`, options)
+      .map((res: Response) => res)
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 }
