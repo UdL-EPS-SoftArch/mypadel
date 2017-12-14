@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-
 import { routes } from './app.routing';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -21,9 +20,9 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
-import {CustomMatchService} from './custom-match/custom-match.service';
-import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
+import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
+import { CustomMatchService } from './custom-match/custom-match.service';
+import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
@@ -46,14 +45,11 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
-import { ReservationService} from "./reservation/reservation.service";
-import {ReservationListComponent} from "./reservation/reservation-list/reservation-list.component";
+import { ReservationService } from './reservation/reservation.service';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
-import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
-
-
 
 @NgModule({
   declarations: [
@@ -96,7 +92,6 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
     ReservationSearchComponent,
     ReservationEditComponent,
     ReservationDeleteComponent,
-    ReservationDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +102,8 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService, ReservationService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+    PlayerService, CustomMatchService, CourtService, ReservationService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

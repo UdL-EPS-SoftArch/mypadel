@@ -6,7 +6,6 @@ import { ReservationService } from '../reservation.service';
 @Component({
   selector: 'app-reservation-delete',
   templateUrl: './reservation-delete.component.html',
-  styleUrls: ['./reservation-delete.component.css']
 })
 export class ReservationDeleteComponent implements OnInit {
 
@@ -22,7 +21,7 @@ export class ReservationDeleteComponent implements OnInit {
       .map(params => params['id'])
       .subscribe((id) => {
           this.reservationService.getReservation(`${id}`).subscribe(
-            reservation=> this.reservation = reservation,
+            reservation => this.reservation = reservation,
             error => this.errorMessage = <any>error.message);
         }
       );

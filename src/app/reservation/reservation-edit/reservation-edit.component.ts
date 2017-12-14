@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Reservation } from "../reservation";
-import { ReservationService } from '../reservation.service'
+import { Reservation } from '../reservation';
+import { ReservationService } from '../reservation.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-reservation-edit',
   templateUrl: './reservation-edit.component.html',
-  styleUrls: ['./reservation-edit.component.css']
 })
 export class ReservationEditComponent implements OnInit {
 

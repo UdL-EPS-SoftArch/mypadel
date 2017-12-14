@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-reservation-form',
   templateUrl: './reservation-form.component.html',
-  styleUrls: ['./reservation-form.component.css']
 })
 export class ReservationFormComponent implements OnInit {
 
@@ -20,9 +19,9 @@ export class ReservationFormComponent implements OnInit {
               private reservationService: ReservationService) {
 
    this.reservationForm = fb.group({
-      'startdate': ['Reservation startDate', Validators.required],
+      'startDate': ['Reservation startDate', Validators.required],
       'duration': ['Reservation duration', Validators.required],
-      'courtType':['Court type',Validators.required]
+      'courtType': ['Court type', Validators.required]
     });
 
   }
