@@ -40,7 +40,7 @@
     <div class="form-group row" [class.has-error]="reservationForm.controls['startdate'].touched &&
                   reservationForm.controls['startDate'].hasError('required')">
       <label class="col-md-3 control-label" for="startdate">StartDate*</label>
-      <owl-date-time id="startdate" [(ngModel)]="reservation.startdate" [formControl]="reservationForm.controls['startdate']"></owl-date-time>
+      <owl-date-time id="startdate" [(ngModel)]="reservation.startDate" [formControl]="reservationForm.controls['startdate']"></owl-date-time>
       <div class="col-md-9">
         <div *ngIf="reservationForm.controls['startdate'].touched &&
                     reservationForm.controls['startdate'].hasError('required')" class="label-warning">

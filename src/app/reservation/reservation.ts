@@ -4,7 +4,7 @@ export class Reservation {
   uri: string;
   _links: any = {};
   id: number;
-  startdate: Date;
+  startDate: Date;
   duration: string;
   courtType: CourtType;
 
