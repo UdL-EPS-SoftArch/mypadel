@@ -34,6 +34,11 @@
           </a>
         </li>
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/customMatches']">
+            <span class="fa fa-play" aria-hidden="true"></span> Custom Matches
+          </a>
+        </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
           <a [routerLink]="['/courts']">
             <span class="fa fa-hand-spock-o"></span> Courts
           </a>
