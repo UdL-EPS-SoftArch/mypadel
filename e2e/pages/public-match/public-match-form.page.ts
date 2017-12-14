@@ -12,10 +12,19 @@ export class PublicMatchFormPage {
 
   constructor() {
     this.form = element(by.id('public-match-form'));
-    this.startDate = this.form.element(by.id('startDate'));
-    this.duration = this.form.element(by.id('duration'));
-    this.courtType = this.form.element(by.id('courtType'));
-    this.level = this.form.element(by.id('level'));
+    this.startDate = this.form.element(by.className("owl-datetime-main-input"));
+    this.duration = this.form.element(by.id('duration'))
+      .then((options)=>{
+        options[0].click();
+      });
+    this.courtType = this.form.element(by.id('courtType'))
+      .then((options)=>{
+        options[0].click();
+      });
+    this.level = this.form.element(by.id('level'))
+      .then((options)=>{
+        options[0].click();
+      });
     this.registerButton = this.form.element(by.tagName('button'));
   }
 
@@ -40,15 +49,15 @@ export class PublicMatchFormPage {
   }
 
   setDuration(value: string): promise.Promise<void> {
-    return this.duration.clear().sendKeys(value);
+    return this.duration;
   }
 
   setCourtType(value: string): promise.Promise<void> {
-    return this.courtType.clear().sendKeys(value);
+    return this.courtType;
   }
 
   setLevel(value: string): promise.Promise<void> {
-    return this.level.clear().sendKeys(value);
+    return this.level;
   }
 
   submitForm(): promise.Promise<void> {
