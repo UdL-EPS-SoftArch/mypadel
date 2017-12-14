@@ -24,5 +24,14 @@ export class CustomMatchDetailComponent implements OnInit {
             error => this.errorMessage = <any>error.message);
         }
       );
+
+    this.route.params
+      .map(params => params['id'])
+      .subscribe((id) => {
+          this.customMatchService.getCreatorMatch(`${id}`).subscribe(
+            player => this.customMatch.matchCreator = player,
+            error => this.errorMessage = <any>error.message);
+        }
+      );
   }
 }

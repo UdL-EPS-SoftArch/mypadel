@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {CustomMatch} from './custom-match';
 import { environment } from '../../environments/environment';
 import {Match} from '../match/Match';
+import {Player} from "../player/player";
 @Injectable()
 export class CustomMatchService {
   constructor(private http: Http,
@@ -31,6 +32,13 @@ export class CustomMatchService {
   getCustomMatch(id: string): Observable<CustomMatch> {
     return this.http.get(`${environment.API}/customMatches/${id}`)
       .map((res: Response) => new CustomMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  // GET /customMatches /id / matchCretor
+  getCreatorMatch(id: string): Observable<Player> {
+    return this.http.get(`${environment.API}/customMatches/${id}/matchCreator`)
+      .map((res: Response) => new Player(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
 
