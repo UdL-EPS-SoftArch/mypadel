@@ -48,7 +48,7 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
-import {CustomMatchDeleteComponent} from './custom-match/custom-match-delete/custom-match-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -89,7 +89,6 @@ import {CustomMatchDeleteComponent} from './custom-match/custom-match-delete/cus
     PublicMatchFormComponent,
     PublicMatchEditComponent,
     MatchResultListComponent,
-    CustomMatchDeleteComponent,
   ],
   imports: [
     BrowserModule,
