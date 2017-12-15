@@ -42,15 +42,15 @@ export class PublicMatchFormPage {
   }
 
   setDuration(value: string): promise.Promise<void> {
-    return this.duration.clear().sendKeys(value);
+    return this.duration = this.form.element(by.css('option[value="'+ value +'"]')).click();
   }
 
   setCourtType(value: string): promise.Promise<void> {
-    return this.courtType.clear().sendKeys(value);
+    return this.duration = this.form.element(by.css('option[value="'+ value +'"]')).click();
   }
 
   setLevel(value: string): promise.Promise<void> {
-    return this.level.clear().sendKeys(value);
+    return this.duration = this.form.element(by.css('option[value="'+ value +'"]')).click();
   }
 
   submitForm(): promise.Promise<void> {
