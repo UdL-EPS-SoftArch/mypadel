@@ -19,7 +19,7 @@ export class JoinMatchSearchComponent {
               private route: ActivatedRoute) {
   }
 
-  performSearch(idJoin: number): void {
+  performSearch(idJoin: string): void {
     this.joinMatchService.getJoinMatch(idJoin).subscribe(
       joinMatches => { this.onSearch.emit(joinMatches); },
       error => this.errorMessage = <any>error.message);

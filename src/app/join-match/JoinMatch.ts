@@ -5,7 +5,7 @@ import { CustomMatch } from '../custom-match/custom-match';
 export class JoinMatch {
   uri: string;
   id: number;
-  date_match: Date;
+  date_match: string;
   player: Player;
   publicMatch: PublicMatch;
   customMatch: CustomMatch;

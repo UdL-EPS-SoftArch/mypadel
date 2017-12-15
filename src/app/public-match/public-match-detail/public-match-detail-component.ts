@@ -14,7 +14,7 @@ import {JoinMatchService} from '../../join-match/JoinMatch.service';
 export class PublicMatchDetailComponent implements OnInit {
   public public_match: PublicMatch;
   public errorMessage: string;
-  public joinMatch: JoinMatch;
+  public joinMatch;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -32,6 +32,16 @@ export class PublicMatchDetailComponent implements OnInit {
             error => this.errorMessage = <any>error.message);
         }
       );
+
+  }
+
+  submitMatch() {
+    this.joinMatchService.addJoinMatch(this.joinMatch)
+      .subscribe(
+        joinMatch => this.router.navigate([joinMatch.uri]),
+        error => {
+          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
+        });
   }
 
   private formattedPublicMatches(publicMatches: PublicMatch): PublicMatch {
@@ -40,13 +50,6 @@ export class PublicMatchDetailComponent implements OnInit {
   }
 
 
-  onSubmit(): void {
-    this.joinMatchService.addJoinMatch(this.joinMatch)
-      .subscribe(
-        joinMatch => this.router.navigate(['joinMatches' + joinMatch.id]),
-        error => {
-          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
-        });
-  }
+
 
 }

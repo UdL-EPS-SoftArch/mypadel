@@ -15,16 +15,15 @@ export class JoinMatchListComponent implements OnInit {
   constructor(private joinMatchService: JoinMatchService) {}
 
   ngOnInit() {
-    this.joinMatchService.getAllJoinMatchs()
+    this.joinMatchService.getAllJoinMatches()
       .subscribe(
         (joinMatch: JoinMatch[]) => {
           this.joinMatches = joinMatch;
           this.total = joinMatch.length; },
         error => this.errorMessage = <any>error.message);
   }
-  onSearch(joinMatch) {
-    this.joinMatches = joinMatch;
+  onSearch(joinMatches) {
+    this.joinMatches = joinMatches;
   }
-
 
 }

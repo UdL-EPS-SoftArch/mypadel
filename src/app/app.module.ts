@@ -47,7 +47,9 @@ import { PlayerDeleteComponent } from './player/player-delete/player-delete.comp
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import { JoinMatchService } from './join-match/JoinMatch.service';
 import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
-import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,8 @@ import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-co
     MatchResultListComponent,
     JoinMatchListComponent,
     JoinMatchSearchComponent,
+    JoinMatchDeleteComponent,
+    JoinMatchDetailComponent
   ],
   imports: [
     BrowserModule,

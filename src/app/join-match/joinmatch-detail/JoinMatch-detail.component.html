@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div>JoinMatch nº {{joinMatch?.id}}</div>
+  </div>
+  <div class="panel-footer text-center">
+    <button id="publicMatchesList" type="button" [routerLink]="['/joinMatches']"
+            class="btn btn-primary">Back to List
+    </button>
+    <button id="publicMatches" type="button" [routerLink]="['delete']"
+            class="btn btn-danger">Leave the match
+    </button>
+  </div>
+</div>
