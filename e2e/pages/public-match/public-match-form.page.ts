@@ -1,4 +1,4 @@
-import { element, by } from 'protractor';
+import {element, by, protractor} from 'protractor';
 import { promise } from 'selenium-webdriver';
 
 export class PublicMatchFormPage {
@@ -12,19 +12,11 @@ export class PublicMatchFormPage {
 
   constructor() {
     this.form = element(by.id('public-match-form'));
-    this.startDate = this.form.element(by.className("owl-datetime-main-input"));
-    this.duration = this.form.element(by.id('duration'))
-      .then((options)=>{
-        options[0].click();
-      });
-    this.courtType = this.form.element(by.id('courtType'))
-      .then((options)=>{
-        options[0].click();
-      });
-    this.level = this.form.element(by.id('level'))
-      .then((options)=>{
-        options[0].click();
-      });
+    this.duration = this.form.element(by.css('option[value="PT60M"]')).click();
+    this.courtType = this.form.element(by.css('option[value="INDOOR"]')).click();
+    this.level = this.form.element(by.css('option[value="NOVICE"]')).click();
+    this.form.element(by.id('startDate')).click();
+    this.startDate = this.form.element(by.className('owl-calendar-outFocus')).click();
     this.registerButton = this.form.element(by.tagName('button'));
   }
 
@@ -45,19 +37,20 @@ export class PublicMatchFormPage {
   }
 
   setStartDate(value: string): promise.Promise<void> {
+    this.startDate.sendKeys(protractor.Key.DELETE);
     return this.startDate.clear().sendKeys(value);
   }
 
   setDuration(value: string): promise.Promise<void> {
-    return this.duration;
+    return this.duration.clear().sendKeys(value);
   }
 
   setCourtType(value: string): promise.Promise<void> {
-    return this.courtType;
+    return this.courtType.clear().sendKeys(value);
   }
 
   setLevel(value: string): promise.Promise<void> {
-    return this.level;
+    return this.level.clear().sendKeys(value);
   }
 
   submitForm(): promise.Promise<void> {
