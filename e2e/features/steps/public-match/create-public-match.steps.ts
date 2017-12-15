@@ -10,14 +10,13 @@ const expect = chai.expect;
 class CreatePublicMatchSteps {
   private datasetForm;
 
-  @when(/^I create a public match with date "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
-  public iCreateAPublicMatch (date: string, courtType: string, level: string, callback): void {
+  @when(/^I create a public match with duration "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
+  public iCreateAPublicMatch (duration: string, courtType: string, level: string, callback): void {
     new MainContentPage().clickLinkWithText('Create New Public Match');
     this.datasetForm = new PublicMatchFormPage();
-    // this.datasetForm.setStartDate(date);
-    // this.datasetForm.setDuration('PT60M');
-    // this.datasetForm.setCourtType(courtType);
-    // this.datasetForm.setLevel(level);
+    this.datasetForm.setDuration(duration);
+    this.datasetForm.setCourtType(courtType);
+    this.datasetForm.setLevel(level);
     this.datasetForm.submitForm();
     browser.waitForAngular();
     callback();
