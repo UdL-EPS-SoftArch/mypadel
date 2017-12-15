@@ -1,4 +1,4 @@
-export enum Status{
+export enum Status {
   PENDING,
   ACCEPTED,
   REJECTED
