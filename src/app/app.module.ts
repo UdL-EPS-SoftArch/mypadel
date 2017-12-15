@@ -20,6 +20,10 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
+import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
+import {CustomMatchService} from './custom-match/custom-match.service';
+import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
+
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -67,7 +71,16 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     PlayerDetailComponent,
     PlayerEditComponent,
     PlayerDeleteComponent,
-    MatchResultListComponent
+
+    AdminDeleteComponent,
+    PublicMatchSearchComponent,
+    PublicMatchListComponent,
+    CustomMatchListComponent,
+    CustomMatchFormComponent,
+    PublicMatchListComponent,
+    PublicMatchFormComponent,
+    PublicMatchEditComponent,
+    MatchResultListComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,8 +91,7 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-    CourtService, PlayerService],
-  bootstrap: [AppComponent]
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
