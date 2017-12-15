@@ -1,7 +1,7 @@
 import {binding, when} from 'cucumber-tsflow';
 import {browser, by, element} from 'protractor';
 import {PublicMatchFormPage} from '../../../pages/public-match/public-match-form.page';
-import {MainContentPage} from "../../../pages/main-content.page";
+import {MainContentPage} from '../../../pages/main-content.page';
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;

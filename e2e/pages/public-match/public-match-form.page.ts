@@ -1,5 +1,5 @@
 import {element, by, protractor} from 'protractor';
-import { promise } from 'selenium-webdriver';
+import {promise} from 'selenium-webdriver';
 
 export class PublicMatchFormPage {
 
@@ -42,15 +42,15 @@ export class PublicMatchFormPage {
   }
 
   setDuration(value: string): promise.Promise<void> {
-    return this.duration = this.form.element(by.css('option[value="'+ value +'"]')).click();
+    return this.duration = this.form.element(by.css('option[value="' + value + '"]')).click();
   }
 
   setCourtType(value: string): promise.Promise<void> {
-    return this.duration = this.form.element(by.css('option[value="'+ value +'"]')).click();
+    return this.duration = this.form.element(by.css('option[value="' + value + '"]')).click();
   }
 
   setLevel(value: string): promise.Promise<void> {
-    return this.duration = this.form.element(by.css('option[value="'+ value +'"]')).click();
+    return this.duration = this.form.element(by.css('option[value="' + value + '"]')).click();
   }
 
   submitForm(): promise.Promise<void> {
