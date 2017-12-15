@@ -7,6 +7,6 @@ Feature: Create public match
     Given I logout
     And I sign in as "player@mypadel.cat" with password "password"
     When I click menu option "Public Matches"
-    And I create a public match with date "2022-12-02T00:00:00.000Z", court type "INDOOR" and level "BEGINNER"
+    And I create a public match with duration "PT60M", court type "INDOOR" and level "BEGINNER"
     Then I click menu option "Public Matches"
     And I see 1 public matches
