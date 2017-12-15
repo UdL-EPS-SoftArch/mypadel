@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {CustomMatchService} from '../custom-match.service';
 import {CustomMatch} from '../custom-match';
-import {Player} from "../../player/player";
+import {Player} from '../../player/player';
 
 @Component({
   selector: 'app-custom-match-detail',

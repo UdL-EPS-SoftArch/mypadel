@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {CustomMatch} from './custom-match';
 import { environment } from '../../environments/environment';
 import {Match} from '../match/Match';
-import {Player} from "../player/player";
+import {Player} from '../player/player';
 @Injectable()
 export class CustomMatchService {
   constructor(private http: Http,
