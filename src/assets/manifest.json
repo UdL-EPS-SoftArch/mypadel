@@ -1,0 +1,21 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    {
+      "src":"/assets/logo/logo.svg",
+      "sizes":"8x8 16x16 32x32 64x64 128x128 256x256 512x512 1024x1024 2024x2024",
+      "type":"image/svg"
+    },
+    {
+      "src":"/assets/logo/logo.png",
+      "sizes":"8x8 16x16 32x32 64x64 128x128 256x256 512x512 1024x1024 2024x2024",
+      "type":"image/png"
+    }
+  ],
+  "name": "My Padel",
+  "orientation": "portrait",
+  "short_name": "My Padel",
+  "start_url": "/",
+  "theme_color": "#eeeeee"
+}

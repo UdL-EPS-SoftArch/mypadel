@@ -8,7 +8,7 @@ import {PublicMatchService} from '../PublicMatch.service';
 })
 export class PublicMatchListComponent implements OnInit {
   public publicMatches: PublicMatch[] = [];
-  public totalPublicMatches: number;
+  public totalPublicMatches = 0;
   public errorMessage = '';
 
   constructor(private publicMatchService: PublicMatchService) {}
@@ -17,9 +17,17 @@ export class PublicMatchListComponent implements OnInit {
     this.publicMatchService.getAllPublicMatches()
       .subscribe(
         (publicMatches: PublicMatch[]) => {
-          this.publicMatches = publicMatches;
+          this.publicMatches = this.formattedPublicMatches(publicMatches);
+          console.log(this.publicMatches);
           this.totalPublicMatches = publicMatches.length; },
         error => this.errorMessage = <any>error.message);
+  }
+
+  private formattedPublicMatches(publicMatches: PublicMatch[]): PublicMatch[] {
+    publicMatches.forEach((match) => {
+      match.duration = match.duration.split('PT')[1];
+    });
+    return publicMatches;
   }
 
   onSearch(publicMatches) {

@@ -1,0 +1,8 @@
+<h4>Filter Courts by avalability</h4>
+<label for="available">Available: </label>
+
+<input id="available" name="title" type="checkbox" (change)="performSearch()">
+<p i18n>{ courts.length, plural,
+          =0 {No courts found}
+          =1 {1 court found}
+          other { {{courts.length}} courts found} }</p>
