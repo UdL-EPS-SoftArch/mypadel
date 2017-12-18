@@ -1,5 +1,4 @@
 import {User} from '../login-basic/user';
-import {Player} from '../admin/player';
 import {Match} from '../match/Match';
 
 export class MatchInvitation {
