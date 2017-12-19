@@ -8,3 +8,4 @@ Feature: Player Details
     When I click player with name "player2"
     Then I see a player with name "player2"
     And I see a player with e-mail "player2@mypadel.cat"
+    And I logout
