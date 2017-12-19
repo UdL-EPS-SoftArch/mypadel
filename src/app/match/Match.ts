@@ -6,7 +6,7 @@ export class Match {
   _links: any = {};
   id: number;
   startDate: Date;
-  duration: String;
+  duration: string;
   courtType: CourtType;
   cancelationDeadline: Date;
   isCancelled: boolean;

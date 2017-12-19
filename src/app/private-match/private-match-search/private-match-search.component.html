@@ -1,8 +1,9 @@
-<h4>Filter public matches by Start Dates</h4>
+<h4>Filter private matches by StartDates</h4>
 <h5>Since start date:</h5>
 <owl-date-time #startDateFrom></owl-date-time>
 <h5>Until start date:</h5>
 <owl-date-time #startDateTo></owl-date-time>
+
 <!-- Button -->
 <div class="form-group row">
   <div class="col-md-3"></div>
@@ -13,7 +14,7 @@
   </div>
 </div>
 
-<p i18n>{ publicMatches.length, plural,
-  =0 {No public matches found}
-  =1 {1 public match found}
-  other { {{publicMatches.length}} public matches found} }</p>
+<p i18n>{ privateMatches.length, plural,
+  =0 {No private matches found}
+  =1 {1 private match found}
+  other { {{privateMatches.length}} private matches found} }</p>

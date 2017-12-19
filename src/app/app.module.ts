@@ -20,10 +20,9 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
-import {CustomMatchService} from './custom-match/custom-match.service';
-import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
-
+import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
+import { CustomMatchService } from './custom-match/custom-match.service';
+import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -45,6 +44,14 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { PrivateMatchService } from './private-match/private-match.service';
+import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
+import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
+import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
+import { PrivateMatchSearchComponent } from './private-match/private-match-search/private-match-search.component';
+import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
+import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
+import { MatchService} from './match/Match.service';
 import { JoinMatchService } from './join-match/JoinMatch.service';
 import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
@@ -77,7 +84,6 @@ import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatc
     PlayerDetailComponent,
     PlayerEditComponent,
     PlayerDeleteComponent,
-
     AdminDeleteComponent,
     PublicMatchSearchComponent,
     PublicMatchListComponent,
@@ -88,6 +94,12 @@ import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatc
     PublicMatchEditComponent,
     PublicMatchDetailComponent,
     MatchResultListComponent,
+    PrivateMatchEditComponent,
+    PrivateMatchFormComponent,
+    PrivateMatchListComponent,
+    PrivateMatchSearchComponent,
+    PrivateMatchDetailComponent,
+    InviteCreateComponent,
     JoinMatchListComponent,
     JoinMatchSearchComponent,
     JoinMatchDeleteComponent,
@@ -100,10 +112,10 @@ import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatc
     HttpModule,
     RouterModule.forRoot(routes),
     LoginBasicModule,
-    DateTimePickerModule
+    DateTimePickerModule,
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService,
-    CustomMatchService, CourtService, JoinMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService, JoinMatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
