@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Court} from '../../court/Court';
 import {ActivatedRoute} from '@angular/router';
 import {PrivateMatchService} from '../private-match.service';
 import {PrivateMatch} from '../PrivateMatch';

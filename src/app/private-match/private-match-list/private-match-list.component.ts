@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PrivateMatch} from '../PrivateMatch';
 import {PrivateMatchService} from '../private-match.service';
 
@@ -11,14 +11,16 @@ export class PrivateMatchListComponent implements OnInit {
   public totalPrivateMatches = 0;
   public errorMessage = '';
 
-  constructor(private privateMatchService: PrivateMatchService) {}
+  constructor(private privateMatchService: PrivateMatchService) {
+  }
 
   ngOnInit() {
     this.privateMatchService.getAllPrivateMatches()
       .subscribe(
         (privateMatches: PrivateMatch[]) => {
           this.privateMatches = privateMatches;
-          this.totalPrivateMatches = privateMatches.length; },
+          this.totalPrivateMatches = privateMatches.length;
+        },
         error => this.errorMessage = <any>error.message);
   }
 
