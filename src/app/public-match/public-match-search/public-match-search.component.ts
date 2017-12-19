@@ -2,6 +2,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {PublicMatch} from '../PublicMatch';
 import {PublicMatchService} from '../PublicMatch.service';
+import {MatchService} from '../../match/Match.service';
 
 @Component({
   selector: 'app-public-match-search',
@@ -16,12 +17,13 @@ export class PublicMatchSearchComponent {
 
   public errorMessage: string;
   constructor(private publicMatchService: PublicMatchService,
+              private matchService: MatchService,
               private route: ActivatedRoute) {
   }
 
   performSearch(from: Date, to: Date): void {
-    this.publicMatchService.getPublicMatchByStartDate(from.toISOString(), to.toISOString()).subscribe(
-      publicMatches => { this.onSearchited.emit(publicMatches); },
+    this.matchService.getMatchByStartDate(from.toISOString(), to.toISOString()).subscribe(
+      matches => { this.onSearchited.emit(matches); },
       error => this.errorMessage = <any>error.message);
   }
 

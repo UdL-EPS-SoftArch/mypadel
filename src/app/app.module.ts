@@ -44,6 +44,7 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
+import {MatchService} from './match/Match.service';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,7 @@ import { InviteCreateComponent } from './invite/invite-create/invite-create.comp
     DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-    PlayerService, CustomMatchService, CourtService],
+              PlayerService, CustomMatchService, CourtService, MatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
