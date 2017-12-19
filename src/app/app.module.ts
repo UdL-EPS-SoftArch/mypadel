@@ -92,7 +92,8 @@ import {MatchService} from './match/Match.service';
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService, MatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+              PlayerService, CustomMatchService, CourtService, MatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
