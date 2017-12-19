@@ -43,6 +43,11 @@
             <span class="fa fa-hand-spock-o"></span> Courts
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/matchInvitations']">
+            <span class="fa fa-user"></span> Match invitations
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>

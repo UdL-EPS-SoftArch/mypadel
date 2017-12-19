@@ -20,10 +20,9 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
-import {CustomMatchService} from './custom-match/custom-match.service';
-import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
-
+import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
+import { CustomMatchService } from './custom-match/custom-match.service';
+import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -44,6 +43,7 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import {MatchService} from './match/Match.service';
 
 @NgModule({
@@ -72,7 +72,6 @@ import {MatchService} from './match/Match.service';
     PlayerDetailComponent,
     PlayerEditComponent,
     PlayerDeleteComponent,
-
     AdminDeleteComponent,
     PublicMatchSearchComponent,
     PublicMatchListComponent,
@@ -82,6 +81,7 @@ import {MatchService} from './match/Match.service';
     PublicMatchFormComponent,
     PublicMatchEditComponent,
     MatchResultListComponent,
+    InviteCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +90,7 @@ import {MatchService} from './match/Match.service';
     HttpModule,
     RouterModule.forRoot(routes),
     LoginBasicModule,
-    DateTimePickerModule
+    DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
               PlayerService, CustomMatchService, CourtService, MatchService],
