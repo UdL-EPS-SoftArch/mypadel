@@ -31,7 +31,7 @@ export class PublicMatchFormComponent implements OnInit {
   onSubmit(): void {
     this.publicMatchService.addPublicMatch(this.publicMatch)
       .subscribe(
-        publicMatch => this.router.navigate([publicMatch.uri]),
+        publicMatch => this.router.navigate(['/publicMatches']),
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });

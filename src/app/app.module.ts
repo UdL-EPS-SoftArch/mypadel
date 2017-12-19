@@ -20,10 +20,9 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
-import {CustomMatchService} from './custom-match/custom-match.service';
-import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
-
+import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
+import { CustomMatchService } from './custom-match/custom-match.service';
+import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -50,6 +49,8 @@ import { PrivateMatchFormComponent } from './private-match/private-match-form/pr
 import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
 import { PrivateMatchSearchComponent } from './private-match/private-match-search/private-match-search.component';
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
+import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
+import { MatchService} from './match/Match.service';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { PrivateMatchDetailComponent } from './private-match/private-match-detai
     PrivateMatchFormComponent,
     PrivateMatchListComponent,
     PrivateMatchSearchComponent,
-    PrivateMatchDetailComponent
+    PrivateMatchDetailComponent,
+    InviteCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,10 +101,10 @@ import { PrivateMatchDetailComponent } from './private-match/private-match-detai
     HttpModule,
     RouterModule.forRoot(routes),
     LoginBasicModule,
-    DateTimePickerModule
+    DateTimePickerModule,
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService,
-    CourtService, PrivateMatchService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
