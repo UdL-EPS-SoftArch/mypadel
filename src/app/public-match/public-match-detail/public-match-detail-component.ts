@@ -35,15 +35,6 @@ export class PublicMatchDetailComponent implements OnInit {
 
   }
 
-  submitMatch() {
-    this.joinMatchService.addJoinMatch(this.joinMatch)
-      .subscribe(
-        joinMatch => this.router.navigate([joinMatch.uri]),
-        error => {
-          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
-        });
-  }
-
   private formattedPublicMatches(publicMatches: PublicMatch): PublicMatch {
       publicMatches.duration = publicMatches.duration.split('PT')[1];
       return publicMatches;
