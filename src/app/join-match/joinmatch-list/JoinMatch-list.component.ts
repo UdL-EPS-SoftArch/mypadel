@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JoinMatchService } from '../JoinMatch.service';
 import { JoinMatch } from '../JoinMatch';
-import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 
 @Component({
   selector: 'app-joinmatch-list',
@@ -24,10 +24,10 @@ export class JoinMatchListComponent implements OnInit {
           this.total = joinMatch.length; },
         error => this.errorMessage = <any>error.message);
     this.joinMatches.forEach(t => {
-      if(t.player.username === this.authentication.getCurrentUser().username) {
+      if (t.player.username === this.authentication.getCurrentUser().username) {
         this.finaljoinMatches.push(t);
       }
-    })
+    });
 
   }
   onSearch(joinMatches) {
