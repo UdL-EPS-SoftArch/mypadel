@@ -44,6 +44,7 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import {MatchService} from './match/Match.service';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
+              PlayerService, CustomMatchService, CourtService, MatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
