@@ -43,8 +43,14 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { PrivateMatchService } from './private-match/private-match.service';
+import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
+import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
+import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
+import { PrivateMatchSearchComponent } from './private-match/private-match-search/private-match-search.component';
+import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
-import {MatchService} from './match/Match.service';
+import { MatchService} from './match/Match.service';
 
 @NgModule({
   declarations: [
@@ -81,6 +87,11 @@ import {MatchService} from './match/Match.service';
     PublicMatchFormComponent,
     PublicMatchEditComponent,
     MatchResultListComponent,
+    PrivateMatchEditComponent,
+    PrivateMatchFormComponent,
+    PrivateMatchListComponent,
+    PrivateMatchSearchComponent,
+    PrivateMatchDetailComponent,
     InviteCreateComponent,
   ],
   imports: [
@@ -93,7 +104,7 @@ import {MatchService} from './match/Match.service';
     DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-              PlayerService, CustomMatchService, CourtService, MatchService],
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

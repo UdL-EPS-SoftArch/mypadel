@@ -22,6 +22,10 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { PrivateMatchListComponent} from './private-match/private-match-list/private-match-list.component';
+import { PrivateMatchFormComponent} from './private-match/private-match-form/private-match-form.component';
+import { PrivateMatchDetailComponent} from './private-match/private-match-detail/private-match-detail.component';
+import { PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 
 export const routes: Routes = [
@@ -51,5 +55,9 @@ export const routes: Routes = [
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'privateMatches', component: PrivateMatchListComponent},
+  { path: 'privateMatches/new', component: PrivateMatchFormComponent},
+  { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
+  { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
 ];
