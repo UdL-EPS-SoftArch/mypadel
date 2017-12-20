@@ -4,10 +4,9 @@ Feature: Create courts
   I want to create courts
 
   Scenario: Create a new court
-    Given I'm in the home page
+    Given I'm on the home page and logged out
     And I sign in as "admin@mypadel.cat" with password "password"
     When I click menu option "Courts"
     And I create a court
     Then I click menu option "Courts"
     And I see 1 courts
-    And I logout

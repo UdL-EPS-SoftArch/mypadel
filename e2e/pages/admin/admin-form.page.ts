@@ -6,12 +6,14 @@ export class AdminFormPage {
   private form;
   private username;
   private email;
+  private password;
   private registerButton;
 
   constructor() {
     this.form = element(by.id('admin-form'));
     this.username = this.form.element(by.id('username'));
     this.email = this.form.element(by.id('email'));
+    this.password = this.form.element(by.id('password'));
     this.registerButton = this.form.element(by.tagName('button'));
   }
 
@@ -29,6 +31,10 @@ export class AdminFormPage {
 
   setEMail(value: string): promise.Promise<void> {
     return this.email.clear().sendKeys(value);
+  }
+
+  setPassword(value: string): promise.Promise<void> {
+    return this.password.clear().sendKeys(value);
   }
 
   submitForm(): promise.Promise<void> {
