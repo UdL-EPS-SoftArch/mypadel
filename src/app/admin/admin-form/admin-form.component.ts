@@ -19,6 +19,7 @@ export class AdminFormComponent implements OnInit {
     this.adminForm = fb.group({
       'username': ['Administrator username', Validators.required],
       'email': ['Administrator e-mail', Validators.email],
+      'password': ['Administrator password', Validators.required],
     });
   }
 
