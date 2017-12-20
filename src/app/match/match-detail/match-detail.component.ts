@@ -5,8 +5,7 @@ import {MatchService} from "../Match.service";
 
 @Component({
   selector: 'app-match-detail',
-  templateUrl: './match-detail.component.html',
-  styleUrls: ['./match-detail.component.css']
+  templateUrl: './match-detail.component.html'
 })
 export class MatchDetailComponent implements OnInit {
   public match: Match;
