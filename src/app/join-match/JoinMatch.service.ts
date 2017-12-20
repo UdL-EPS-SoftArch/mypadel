@@ -18,6 +18,13 @@ export class JoinMatchService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
+  // GET /joinMatches/id/player
+  getJoinMatchbyPlayer(player: string): Observable<JoinMatch[]> {
+    return this.http.get(`${environment.API}/joinMatches/search/findByPlayer?text=${player}`)
+      .map((res: Response) => res.json()._embedded.joinMatches.map(json => new JoinMatch(json)))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
   // GET /joinMatches/id
   getJoinMatch(id: string): Observable<JoinMatch> {
     return this.http.get(`${environment.API}/joinMatches/${id}`)
