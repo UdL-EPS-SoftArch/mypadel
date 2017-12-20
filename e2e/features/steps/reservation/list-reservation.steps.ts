@@ -8,8 +8,8 @@ const expect = chai.expect;
 class ListReservationSteps {
   private reservationList = new ReservationListPage();
 
-  @then(/^I see (\d+) players/)
-  public iSeePlayers(count: string, callback): void {
+  @then(/^I see (\d+) reservations/)
+  public iSeeP(count: string, callback): void {
     expect(this.reservationList.getReservationCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
   }
