@@ -18,6 +18,7 @@ export class PlayerFormComponent implements OnInit {
     this.playerForm = fb.group({
       'username': ['Player username', Validators.required],
       'email': ['Player e-mail', Validators.email],
+      'password': ['Player password', Validators.required],
     });
   }
   ngOnInit() {
