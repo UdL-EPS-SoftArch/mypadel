@@ -45,7 +45,7 @@ export class MatchBuilder {
     return publicMatch;
   }
 
-  asPriateMatch(): PrivateMatch {
+  asPrivateMatch(): PrivateMatch {
     this.checkFields();
     const privateMatch = new PrivateMatch();
     privateMatch.startDate = this.startDate;
