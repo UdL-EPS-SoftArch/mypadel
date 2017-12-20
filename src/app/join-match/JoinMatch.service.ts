@@ -20,7 +20,7 @@ export class JoinMatchService {
 
   // GET /joinMatches/id/player
   getJoinMatchbyPlayer(player: string): Observable<JoinMatch[]> {
-    return this.http.get(`${environment.API}/joinMatches/search/findByPlayer?text=${player}`)
+    return this.http.get(`${environment.API}/joinMatches/search/findByPlayerUsername?text=${player}`)
       .map((res: Response) => res.json()._embedded.joinMatches.map(json => new JoinMatch(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
