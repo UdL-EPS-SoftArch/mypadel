@@ -48,7 +48,7 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
-import {MatchJoinRequestFormComponent} from './match-join-request/match-join-request-form/match-join-request-form.component';
+import {MatchJoinRequestService} from './match-join-request/match-join-request.service';
 
 
 @NgModule({
@@ -90,7 +90,6 @@ import {MatchJoinRequestFormComponent} from './match-join-request/match-join-req
     PublicMatchFormComponent,
     PublicMatchEditComponent,
     MatchResultListComponent,
-    MatchJoinRequestFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +100,8 @@ import {MatchJoinRequestFormComponent} from './match-join-request/match-join-req
     LoginBasicModule,
     DateTimePickerModule
   ],
-  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService],
+  providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService, PlayerService, CustomMatchService, CourtService,
+  MatchJoinRequestService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

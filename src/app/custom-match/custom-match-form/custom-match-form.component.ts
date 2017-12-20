@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomMatch } from '../custom-match';
 import { CustomMatchService } from '../custom-match.service';
-import {CourtType} from '../../match/CourtType';
 
 @Component({
   selector: 'app-custom-match-form',
@@ -35,4 +34,5 @@ export class CustomMatchFormComponent implements OnInit {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });
   }
+
 }

@@ -6,9 +6,13 @@ export class MatchJoinRequest{
   uri:string;
   status: Status;
   message:string;
-  customMatch: CustomMatch;
+  customMatch: string;
   player: Player;
-  eventDate:Date
+  eventDate:Date;
+
+  constructor(values: Object = {}) {
+    Object.assign(this, values);
+  }
 
 
 

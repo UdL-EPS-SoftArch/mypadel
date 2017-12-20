@@ -55,7 +55,6 @@ export const routes: Routes = [
   { path: 'customMatches/:id', component: CustomMatchDetailComponent },
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
-  { path: 'matchResults', component: MatchResultListComponent },
-
+  { path: 'matchResults', component: MatchResultListComponent }
 
 ];
