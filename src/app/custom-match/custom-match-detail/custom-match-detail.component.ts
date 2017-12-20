@@ -51,6 +51,7 @@ export class CustomMatchDetailComponent implements OnInit {
     this.matchJoinRequest = new MatchJoinRequest();
     this.matchJoinRequest.message="Hi I want to join in your match !";
     this.matchJoinRequest.customMatch=this.customMatch.uri;
+    this.matchJoinRequest.eventDate=this.customMatch.startDate;
 
     this.matchJoinRequestService.addMatchJoinRequest(this.matchJoinRequest)
       .subscribe(

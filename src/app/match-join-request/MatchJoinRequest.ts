@@ -3,6 +3,7 @@ import {CustomMatch} from '../custom-match/custom-match';
 import {Player} from '../player/player';
 
 export class MatchJoinRequest{
+  id : number;
   uri:string;
   status: Status;
   message:string;
