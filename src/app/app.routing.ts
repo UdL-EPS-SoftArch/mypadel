@@ -27,6 +27,7 @@ import { PrivateMatchFormComponent} from './private-match/private-match-form/pri
 import { PrivateMatchDetailComponent} from './private-match/private-match-detail/private-match-detail.component';
 import { PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
+import {MatchFormComponent} from './match/match-form/match-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -60,4 +61,5 @@ export const routes: Routes = [
   { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
+  { path: 'match/new', component: MatchFormComponent}
 ];
