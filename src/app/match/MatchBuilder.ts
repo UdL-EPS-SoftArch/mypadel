@@ -36,6 +36,7 @@ export class MatchBuilder {
   }
 
   asPublicMatch(): PublicMatch {
+    this.checkFieldsForPublicMatch();
     const publicMatch = new PublicMatch();
     publicMatch.startDate = this.startDate;
     publicMatch.duration = this.duration;
@@ -45,6 +46,7 @@ export class MatchBuilder {
   }
 
   asPriateMatch(): PrivateMatch {
+    this.checkFields();
     const privateMatch = new PrivateMatch();
     privateMatch.startDate = this.startDate;
     privateMatch.duration = this.duration;
@@ -53,6 +55,7 @@ export class MatchBuilder {
   }
 
   asCustomMatch(): CustomMatch {
+    this.checkFields();
     const customMatch = new CustomMatch();
     customMatch.startDate = this.startDate;
     customMatch.duration = this.duration;
@@ -60,4 +63,20 @@ export class MatchBuilder {
     return customMatch;
   }
 
+  checkFields(): void {
+    if (this.startDate == null) {
+      throw new Error('StartDate not initiated');
+    } else if (this.duration == null) {
+      throw new Error('Duration not initiated');
+    } else if (this.courtType == null) {
+      throw new Error('CourtType not initiated');
+    }
+  }
+
+  private checkFieldsForPublicMatch() {
+    this.checkFields();
+    if (this.level == null) {
+      throw new Error('Level not initiated');
+    }
+  }
 }
