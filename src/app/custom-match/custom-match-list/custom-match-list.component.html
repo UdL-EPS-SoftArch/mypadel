@@ -23,7 +23,7 @@
   <div class="panel-group col-md-12">
     <div class="panel panel-default" *ngFor="let customMatch of customMatches">
       <div class="panel-heading">
-        <h4>CustomMatch: <a routerLink="{{customMatch.uri}}">{{customMatch.id}}</a></h4>
+        <h4>CustomMatch: <a routerLink="/matches/{{customMatch?.id}}">{{customMatch.id}}</a></h4>
       </div>
       <div class="panel-body">
         <div class="col-md-6">
