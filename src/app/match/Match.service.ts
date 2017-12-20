@@ -14,6 +14,11 @@ export class MatchService {
               private authentication: AuthenticationBasicService) {
   }
 
+  getMatch(id: string): Observable<Match> {
+    return this.http.get(`${environment.API}/matches/${id}`)
+      .map((res: Response) => new Match(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
 
   getMatchByStartDate(from: string, to: string): Observable<Response> {
     return this.http.get(`${environment.API}/matches/search/findByStartDateBetween?from=${from}&to=${to}`)
