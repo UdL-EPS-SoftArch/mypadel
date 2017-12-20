@@ -51,6 +51,7 @@ import { PrivateMatchSearchComponent } from './private-match/private-match-searc
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import { MatchService} from './match/Match.service';
+import {MatchDetailComponent} from "./match/match-detail/match-detail.component";
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { MatchService} from './match/Match.service';
     PrivateMatchSearchComponent,
     PrivateMatchDetailComponent,
     InviteCreateComponent,
+    MatchDetailComponent
   ],
   imports: [
     BrowserModule,
