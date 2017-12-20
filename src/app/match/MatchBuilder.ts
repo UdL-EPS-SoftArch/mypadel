@@ -12,4 +12,24 @@ export class MatchBuilder {
 
   }
 
+  withStartDate(startDate: Date): MatchBuilder {
+    this.startDate = startDate;
+    return this;
+  }
+
+  withDuration(duration: string): MatchBuilder {
+    this.duration = duration;
+    return this;
+  }
+
+  withCourtType(courtType: CourtType): MatchBuilder {
+    this.courtType = courtType;
+    return this;
+  }
+
+  withLevel(level: Level): MatchBuilder {
+    this.level = level;
+    return this;
+  }
+
 }
