@@ -1,15 +1,18 @@
 <div class="row jumbotron">
   <div class="col-md-2">
     <label for="public-match">public match</label>
-    <input type="radio" id="public-match" name="match-group" checked (click)="OnSelect('public')"/>
+    <input type="radio" id="public-match" name="match-group" [checked]="type === 'public'"
+           (click)="onSelect('public')"/>
   </div>
   <div class="col-md-2">
     <label for="custom-match">custom match</label>
-    <input type="radio" id="custom-match" name="match-group" (click)="OnSelect('custom')"/>
+    <input type="radio" id="custom-match" name="match-group" [checked]="type === 'custom'"
+           (click)="onSelect('custom')"/>
   </div>
   <div class="col-md-2">
     <label for="private-match">private match</label>
-    <input type="radio" id="private-match" name="match-group" (click)="OnSelect('private')"/>
+    <input type="radio" id="private-match" name="match-group" [checked]="type === 'private'"
+           (click)="onSelect('private')"/>
   </div>
 </div>
 <h2>Create {{type}} match</h2>
@@ -20,7 +23,7 @@
     <div class="form-group row" [class.has-error]="matchForm.controls['duration'].touched &&
                   matchForm.controls['duration'].hasError('required')">
       <label class="col-md-3 control-label" for="duration">Match duration*</label>
-      <select name="duration" [(ngModel)]="match.duration" [formControl]="matchForm.controls['duration']" id="duration"
+      <select name="duration" [(ngModel)]="duration" [formControl]="matchForm.controls['duration']" id="duration"
               class="form-control input-md">
         <option value="PT30M">30 minutes</option>
         <option value="PT60M">1 hour</option>
@@ -38,7 +41,7 @@
     <div class="form-group row" [class.has-error]="matchForm.controls['courtType'].touched &&
                   matchForm.controls['courtType'].hasError('required')">
       <label class="col-md-3 control-label" for="CourtType">Match CourtType*</label>
-      <select name="courtType" [(ngModel)]="match.courtType" [formControl]="matchForm.controls['courtType']"
+      <select name="courtType" [(ngModel)]="courtType" [formControl]="matchForm.controls['courtType']"
               id="courtType" class="form-control input-md">
         <option value="INDOOR">Indoor</option>
         <option value="OUTDOOR">Outdoor</option>
@@ -56,7 +59,7 @@
       <div class="form-group row" [class.has-error]="matchForm.controls['level'].touched &&
                   matchForm.controls['level'].hasError('required')">
         <label class="col-md-3 control-label" for="level">Match level*</label>
-        <select name="level" [(ngModel)]="match.level" [formControl]="matchForm.controls['level']" id="level"
+        <select name="level" [(ngModel)]="level" [formControl]="matchForm.controls['level']" id="level"
                 class="form-control input-md">
           <option value="NOVICE">Novice</option>
           <option value="BEGINNER">Beginner</option>
@@ -76,7 +79,7 @@
     <div class="form-group row" [class.has-error]="matchForm.controls['startDate'].touched &&
                   matchForm.controls['startDate'].hasError('required')">
       <label class="col-md-3 control-label" for="StartDate">Match StartDate*</label>
-      <owl-date-time id="startDate" [(ngModel)]="match.startDate"
+      <owl-date-time id="startDate" [(ngModel)]="startDate"
                      [formControl]="matchForm.controls['startDate']"></owl-date-time>
       <div class="col-md-9">
         <div *ngIf="matchForm.controls['startDate'].touched &&
