@@ -18,7 +18,7 @@ export class JoinMatchListComponent implements OnInit {
   constructor(private joinMatchService: JoinMatchService, private authentication: AuthenticationBasicService) {}
 
   ngOnInit() {
-    this.joinMatchService.getJoinMatchbyPlayer(this.authentication.getCurrentUser().username)
+    this.joinMatchService.getJoinMatchByPlayer(this.authentication.getCurrentUser().username)
       .subscribe(
         (joinMatch: JoinMatch[]) => {
           this.joinMatches = joinMatch;
