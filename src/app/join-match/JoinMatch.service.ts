@@ -4,6 +4,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { AuthenticationBasicService } from '../login-basic/authentication-basic.service';
 import { environment } from '../../environments/environment';
 import { JoinMatch } from './JoinMatch';
+import {Match} from '../match/Match';
 
 @Injectable()
 export class JoinMatchService {
@@ -19,7 +20,7 @@ export class JoinMatchService {
   }
 
   // GET /joinMatches/id/player
-  getJoinMatchbyPlayer(player: string): Observable<JoinMatch[]> {
+  getJoinMatchByPlayer(player: string): Observable<JoinMatch[]> {
     return this.http.get(`${environment.API}/joinMatches/search/findByPlayerUsername?text=${player}`)
       .map((res: Response) => res.json()._embedded.joinMatches.map(json => new JoinMatch(json)))
       .catch((error: any) => Observable.throw(error.json()));
@@ -29,6 +30,12 @@ export class JoinMatchService {
   getJoinMatch(id: string): Observable<JoinMatch> {
     return this.http.get(`${environment.API}/joinMatches/${id}`)
       .map((res: Response) => new JoinMatch(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+  // GET /joinMatches/id/match
+  getMatchFromJoinMatch(id: string): Observable<Match> {
+    return this.http.get(`${environment.API}/joinMatches/${id}/match`)
+      .map((res: Response) => new Match(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
 
