@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { Router } from '@angular/router';
-import {JoinMatch } from '../../join-match/JoinMatch';
-import {JoinMatchService} from '../../join-match/JoinMatch.service';
+import {JoinMatch } from '../JoinMatch';
+import {JoinMatchService} from '../JoinMatch.service';
+import {Match} from '../../match/Match';
 
 @Component({
   selector: 'app-joinmatch-detail',
@@ -11,6 +12,7 @@ import {JoinMatchService} from '../../join-match/JoinMatch.service';
 
 export class JoinMatchDetailComponent implements OnInit {
   public joinMatch: JoinMatch;
+  public match: Match;
   public errorMessage: string;
 
   constructor(private route: ActivatedRoute,
@@ -22,9 +24,12 @@ export class JoinMatchDetailComponent implements OnInit {
     this.route.params
       .map(params => params['id'])
       .subscribe((id) => {
-          this.joinMatchService.getJoinMatch(id).subscribe(
-            joinMatch => this.joinMatch = joinMatch,
+        this.joinMatchService.getMatchFromJoinMatch(id).subscribe(
+            match => this.match = match,
             error => this.errorMessage = <any>error.message);
+        this.joinMatchService.getJoinMatch(id).subscribe(
+          joinMatch => this.joinMatch = joinMatch,
+          error => this.errorMessage = <any>error.message);
         }
       );
 
