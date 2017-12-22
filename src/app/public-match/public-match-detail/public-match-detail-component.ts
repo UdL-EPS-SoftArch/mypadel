@@ -50,7 +50,7 @@ export class PublicMatchDetailComponent implements OnInit {
         (joinMatch: JoinMatch[]) => {
           this.joinMatches = joinMatch;
 
-          if(this.joinMatches.length === 0){
+          if(this.joinMatches.length === 0) {
             this.showJoin = true;
           }else {
             this.joinMatches.forEach(t => {
@@ -66,11 +66,11 @@ export class PublicMatchDetailComponent implements OnInit {
                     }
                   },
                   error => this.errorMessage = <any>error.message);
-            })
+            });
           }},
         error => this.errorMessage = <any>error.message);
   }
-  public submitJoin(){
+  public submitJoin() {
     this.joinMatch.date_match = this.public_match.startDate;
     this.joinMatch.match = this.public_match;
 
@@ -79,10 +79,10 @@ export class PublicMatchDetailComponent implements OnInit {
         (players: Player[]) => {
           this.players = players;
           this.players.forEach(t => {
-            if(t.username === this.authentication.getCurrentUser().username){
+            if(t.username === this.authentication.getCurrentUser().username) {
               this.joinMatch.player = t;
             }
-          })
+          });
         },
       );
 
