@@ -40,8 +40,8 @@ export class JoinMatchService {
   }
 
   // POST /joinMatches
-  addJoinMatch(joinMatches: JoinMatch): Observable<JoinMatch> {
-    const body = JSON.stringify(joinMatches);
+  addJoinMatch(joinMatch: JoinMatch): Observable<JoinMatch> {
+    const body = JSON.stringify(joinMatch);
     const headers = new Headers({'Content-Type': 'application/json'});
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);
     const options = new RequestOptions({headers: headers});
