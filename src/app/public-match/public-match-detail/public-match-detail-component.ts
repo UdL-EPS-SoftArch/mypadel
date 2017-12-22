@@ -50,7 +50,7 @@ export class PublicMatchDetailComponent implements OnInit {
         (joinMatch: JoinMatch[]) => {
           this.joinMatches = joinMatch;
 
-          if(this.joinMatches.length === 0) {
+          if (this.joinMatches.length === 0) {
             this.showJoin = true;
           }else {
             this.joinMatches.forEach(t => {
@@ -79,7 +79,7 @@ export class PublicMatchDetailComponent implements OnInit {
         (players: Player[]) => {
           this.players = players;
           this.players.forEach(t => {
-            if(t.username === this.authentication.getCurrentUser().username) {
+            if (t.username === this.authentication.getCurrentUser().username) {
               this.joinMatch.player = t;
             }
           });
