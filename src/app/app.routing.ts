@@ -53,8 +53,6 @@ export const routes: Routes = [
   { path: 'publicMatches', component: PublicMatchListComponent },
   { path: 'customMatches', component: CustomMatchListComponent },
   { path: 'customMatches/new/:type', component: MatchFormComponent },
-  { path: 'publicMatches/new', component: PublicMatchFormComponent },
-  { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
   { path: 'privateMatches', component: PrivateMatchListComponent},
   { path: 'privateMatches/new/:type', component: MatchFormComponent},
