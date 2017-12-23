@@ -52,6 +52,7 @@ import { PrivateMatchDetailComponent } from './private-match/private-match-detai
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import { MatchService} from './match/Match.service';
 import { MatchFormComponent } from './match/match-form/match-form.component';
+import { MatchEditComponent } from './match/match-edit/match-edit.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { MatchFormComponent } from './match/match-form/match-form.component';
     PrivateMatchDetailComponent,
     InviteCreateComponent,
     MatchFormComponent,
+    MatchEditComponent,
   ],
   imports: [
     BrowserModule,
