@@ -44,7 +44,6 @@ import { PlayerDeleteComponent } from './player/player-delete/player-delete.comp
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import { PrivateMatchService } from './private-match/private-match.service';
 import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
-import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
 import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
 import { PrivateMatchSearchComponent } from './private-match/private-match-search/private-match-search.component';
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
@@ -82,7 +81,6 @@ import { MatchEditComponent } from './match/match-edit/match-edit.component';
     CustomMatchFormComponent,
     MatchResultListComponent,
     PrivateMatchEditComponent,
-    PrivateMatchFormComponent,
     PrivateMatchListComponent,
     PrivateMatchSearchComponent,
     PrivateMatchDetailComponent,
