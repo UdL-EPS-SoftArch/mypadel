@@ -26,7 +26,6 @@ import { CustomMatchFormComponent } from './custom-match/custom-match-form/custo
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
-import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
@@ -66,7 +65,6 @@ import { MatchEditComponent } from './match/match-edit/match-edit.component';
     AdminDeleteComponent,
     PublicMatchSearchComponent,
     PublicMatchListComponent,
-    PublicMatchFormComponent,
     PublicMatchEditComponent,
     CourtListComponent,
     CourtFormComponent,
@@ -86,7 +84,6 @@ import { MatchEditComponent } from './match/match-edit/match-edit.component';
     CustomMatchListComponent,
     CustomMatchFormComponent,
     PublicMatchListComponent,
-    PublicMatchFormComponent,
     PublicMatchEditComponent,
     MatchResultListComponent,
     PrivateMatchEditComponent,

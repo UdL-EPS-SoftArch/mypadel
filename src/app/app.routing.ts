@@ -9,7 +9,6 @@ import { CustomMatchListComponent } from './custom-match/custom-match-list/custo
 import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
-import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
