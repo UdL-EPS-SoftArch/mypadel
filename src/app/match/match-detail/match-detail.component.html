@@ -59,10 +59,22 @@
     </div>
   </div>
   <div class="panel-footer text-center">
-    <button id="listMatches" type="button" [routerLink]="['/customMatches']"
-            class="btn btn-primary">Go back to list
-    </button>
-    <button id="editMatch" type="button" [routerLink]="['edit']"
+    <span *ngIf="match != null && match['level'] != null">
+      <button id="listMatchesPublic" type="button" [routerLink]="['/publicMatches']"
+              class="btn btn-primary">Go back to list
+      </button>
+    </span>
+    <span *ngIf="match != null && match['isPrivate']">
+      <button id="listMatchesPrivate" type="button" [routerLink]="['/privateMatches']"
+              class="btn btn-primary">Go back to list
+      </button>
+    </span>
+    <span *ngIf="match != null && match['isCustom']">
+      <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
+              class="btn btn-primary">Go back to list
+      </button>
+    </span>
+    <button id="editMatch" type="button" [routerLink]="['']"
             class="btn btn-success">Edit match (Not implemented until manel and roger do it)
     </button>
   </div>
