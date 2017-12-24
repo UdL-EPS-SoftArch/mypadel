@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4 i18n>{ totalPrivateMatches, plural,
+      =0 {There are no pending private matches}
+      =1 {There is 1 pending private match}
+      other { There are {{totalPrivateMatches}} pending private matches} }</h4>
+  </div>
+  <div class="col-md-8">
+    <h4>
+      <a class="btn btn-primary" role="button"
+         [routerLink]="['/privateMatches/new']">Create New Private Match</a>
+    </h4>
+  </div>
+</div>
+
+<div class="row">
+  <h3 class="col-md-12">Private Matches</h3>
+  <div class="col-md-12">
+    <app-private-match-search (onSearchited)="onSearch($event)"
+                              [privateMatches]="privateMatches">
+    </app-private-match-search>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel-group col-md-12">
+    <div class="panel panel-default" *ngFor="let privateMatch of privateMatches">
+      <div class="panel-heading">
+        <h4>Private Match: <a routerLink="{{privateMatch?.uri}}">{{privateMatch?.id}}</a></h4>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <h4>Start Date:</h4>
+          <p>{{privateMatch?.startDate}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
