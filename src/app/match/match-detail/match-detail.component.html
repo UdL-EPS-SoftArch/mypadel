@@ -45,10 +45,22 @@
       </span>
     </div>
     <div class="col-md-4">
-      <h4>Players participating: </h4>
+      <h4>Players invited: </h4>
+      <span *ngIf="match?.invitations.length == 0">
+        No players invited yet.
+      </span>
+      <span *ngIf="match?.invitations.length != 0">
+        {{match?.invitations}}
+      </span>
     </div>
     <div class="col-md-4">
-      <h4>Reservation status: </h4>
+      <h4>Match result: </h4>
+      <span *ngIf="match != null && match['matchResult'] == null">
+        The match has not ended.
+      </span>
+      <span *ngIf="match != null && match['matchResult'] != null">
+        {{match['matchResult']}}
+      </span>
     </div>
     <div class="col-md-4">
       <h4>Match deadline: </h4>
@@ -56,7 +68,9 @@
     </div>
     <div class="col-md-4">
       <h4>Match creator: </h4>
-      {{match?.matchCreator?.username}}
+      <a routerLink="{{match?.matchCreator?.uri}}">
+        {{match?.matchCreator?.username}}
+      </a>
     </div>
   </div>
   <div class="panel-footer text-center">
