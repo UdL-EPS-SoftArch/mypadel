@@ -8,6 +8,7 @@ import 'rxjs/add/observable/throw';
 import {environment} from '../../environments/environment';
 import {Match} from './Match';
 import {Player} from '../player/player';
+import {MatchInvitation} from '../invite/MatchInvitation';
 
 @Injectable()
 export class MatchService {
@@ -31,6 +32,12 @@ export class MatchService {
   getMatchCreator(link: string): Observable<Player> {
     return this.http.get(`${link}`)
       .map((res: Response) => new Player(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  getMatchInvitations(link: string): Observable<MatchInvitation[]> {
+    return this.http.get(`${link}`)
+      .map((res: Response) => res.json()._embedded.matchInvitations.map(json => new MatchInvitation(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
 }
