@@ -1,7 +1,7 @@
-import {Component, OnInit} from "@angular/core";
-import {Match} from "../Match";
-import {ActivatedRoute} from "@angular/router";
-import {MatchService} from "../Match.service";
+import {Component, OnInit} from '@angular/core';
+import {Match} from '../Match';
+import {ActivatedRoute} from '@angular/router';
+import {MatchService} from '../Match.service';
 
 @Component({
   selector: 'app-match-detail',
