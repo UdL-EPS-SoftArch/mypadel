@@ -22,13 +22,17 @@ export class MatchDetailComponent implements OnInit {
           this.matchService.getMatch(`${id}`).subscribe(
             match => {
               this.match = match;
-              this.matchService.getMatchCreator(match._links.matchCreator.href).subscribe(
-                player => this.match.matchCreator = player
-              );
+              this.setLinkedAttributes(match);
             },
             error => this.errorMessage = <any>error.message);
         }
       );
+  }
+
+  setLinkedAttributes(match: Match) {
+    this.matchService.getMatchCreator(match._links.matchCreator.href).subscribe(
+      player => this.match.matchCreator = player
+    );
   }
 
 }
