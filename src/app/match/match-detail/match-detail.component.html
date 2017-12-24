@@ -4,6 +4,7 @@
   </div>
   <div class="panel-body">
     <div class="col-md-4">
+      <h4>Duration of the match: </h4>
       <span *ngIf="match?.duration == 'PT30M'">
         30 minutes
       </span>
@@ -15,6 +16,7 @@
       </span>
     </div>
     <div class="col-md-4">
+      <h4>Court type: </h4>
       <span *ngIf="match?.courtType == 'INDOOR'">
         Indoor
       </span>
@@ -26,9 +28,23 @@
       </span>
     </div>
     <div class="col-md-4">
-      <span>
-        {{match?.startDate.toString()}}
-      </span>
+      <h4>Start date: </h4>
+      {{match?.startDate.toString()}}
+    </div>
+    <div class="col-md-4">
+      <h4>Match creator: </h4>
+    </div>
+    <div class="col-md-4">
+      <h4>Match status: </h4>
+    </div>
+    <div class="col-md-4">
+      <h4>Players participating: </h4>
+    </div>
+    <div class="col-md-4">
+      <h4>Reservation status: </h4>
+    </div>
+    <div class="col-md-4">
+      <h4>Match deadline: </h4>
     </div>
   </div>
   <div class="panel-footer text-center">
