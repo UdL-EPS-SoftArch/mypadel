@@ -31,7 +31,12 @@ export class MatchDetailComponent implements OnInit {
 
   setLinkedAttributes(match: Match) {
     this.matchService.getMatchCreator(match._links.matchCreator.href).subscribe(
-      player => this.match.matchCreator = player
+      player => this.match.matchCreator = player,
+      error => this.errorMessage = <any>error.message
+    );
+    this.matchService.getMatchInvitations(match._links.invitations.href).subscribe(
+      matchInvitations => this.match.invitations = matchInvitations,
+      error => this.errorMessage = <any>error.message
     );
   }
 
