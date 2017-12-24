@@ -52,7 +52,7 @@ import { PrivateMatchSearchComponent } from './private-match/private-match-searc
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import { MatchService} from './match/Match.service';
-import {MatchDetailComponent} from "./match/match-detail/match-detail.component";
+import {MatchDetailComponent} from './match/match-detail/match-detail.component';
 import { JoinMatchService } from './join-match/JoinMatch.service';
 import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';

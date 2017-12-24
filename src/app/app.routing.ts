@@ -27,7 +27,7 @@ import { PrivateMatchFormComponent} from './private-match/private-match-form/pri
 import { PrivateMatchDetailComponent} from './private-match/private-match-detail/private-match-detail.component';
 import { PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
-import {MatchDetailComponent} from "./match/match-detail/match-detail.component";
+import {MatchDetailComponent} from './match/match-detail/match-detail.component';
 import {PublicMatchDetailComponent} from './public-match/public-match-detail/public-match-detail-component';
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
 import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';

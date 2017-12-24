@@ -16,7 +16,7 @@ export class MatchService {
               private authentication: AuthenticationBasicService) {
   }
 
-  //GET /matches /id
+  // GET /matches /id
   getMatch(id: string): Observable<Match> {
     return this.http.get(`${environment.API}/matches/${id}`)
       .map((res: Response) => new Match(res.json()))
