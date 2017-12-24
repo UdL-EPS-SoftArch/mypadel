@@ -3,7 +3,7 @@ import {Match} from '../match/Match';
 
 export class JoinMatch {
   uri: string;
-  _links: any = {}
+  _links: any = {};
   id: number;
   date: Date;
   player: String;

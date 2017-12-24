@@ -23,6 +23,7 @@ export class PublicMatchDetailComponent implements OnInit {
   public showJoin: boolean;
   public match: Match;
   public players: Player[] = [];
+  public auxJoin: JoinMatch;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -63,6 +64,7 @@ export class PublicMatchDetailComponent implements OnInit {
                       this.showJoin = true;
                     } else {
                       this.showJoin = false;
+                      this.auxJoin = t;
                     }
                   },
                   error => this.errorMessage = <any>error.message);
@@ -79,6 +81,12 @@ export class PublicMatchDetailComponent implements OnInit {
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });
+  }
+
+  public deleteJoin() {
+    this.joinMatchService.deleteJoinMatch(this.auxJoin).subscribe(
+      result => this.router.navigate(['publicMatches']),
+      error => this.errorMessage = <any>error.message);
   }
 
   private formattedPublicMatches(publicMatches: PublicMatch): PublicMatch {

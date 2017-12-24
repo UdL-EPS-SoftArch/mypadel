@@ -12,11 +12,14 @@
     <button id="publicMatchesJoin" type="button" *ngIf="showJoin === true" (click)="submitJoin()"
             class="btn btn-primary">Join
     </button>
+    <button id="publicMatchesDelete" type="button" *ngIf="showJoin === false" (click)="deleteJoin()"
+            class="btn btn-primary">Leave the match
+    </button>
     <button id="publicMatchesList" type="button" [routerLink]="['/publicMatches']"
             class="btn btn-primary">Back to List
     </button>
     <button id="publicMatches" type="button" [routerLink]="['delete']"
-            class="btn btn-danger">Delete
+            class="btn btn-danger">Delete match
     </button>
   </div>
 </div>
