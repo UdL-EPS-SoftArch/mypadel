@@ -20,7 +20,12 @@ export class MatchDetailComponent implements OnInit {
       .map(params => params['id'])
       .subscribe((id) => {
           this.matchService.getMatch(`${id}`).subscribe(
-            match => this.match = match,
+            match => {
+              this.match = match;
+              this.matchService.getMatchCreator(match._links.matchCreator.href).subscribe(
+                player => this.match.matchCreator = player
+              );
+            },
             error => this.errorMessage = <any>error.message);
         }
       );

@@ -9,7 +9,7 @@
         Ongoing
       </span>
       <span *ngIf="match?.cancelled == true">
-        Match cancelled
+        Closed
       </span>
     </div>
     <div class="col-md-4">
@@ -56,6 +56,7 @@
     </div>
     <div class="col-md-4">
       <h4>Match creator: </h4>
+      {{match?.matchCreator?.username}}
     </div>
   </div>
   <div class="panel-footer text-center">
