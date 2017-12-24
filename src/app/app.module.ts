@@ -28,6 +28,7 @@ import { PublicMatchSearchComponent } from './public-match/public-match-search/p
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchDetailComponent } from './public-match/public-match-detail/public-match-detail-component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
 import { CourtService } from './court/court.service';
@@ -51,6 +52,11 @@ import { PrivateMatchSearchComponent } from './private-match/private-match-searc
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import { MatchService} from './match/Match.service';
+import { JoinMatchService } from './join-match/JoinMatch.service';
+import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +92,7 @@ import { MatchService} from './match/Match.service';
     PublicMatchListComponent,
     PublicMatchFormComponent,
     PublicMatchEditComponent,
+    PublicMatchDetailComponent,
     MatchResultListComponent,
     PrivateMatchEditComponent,
     PrivateMatchFormComponent,
@@ -93,6 +100,10 @@ import { MatchService} from './match/Match.service';
     PrivateMatchSearchComponent,
     PrivateMatchDetailComponent,
     InviteCreateComponent,
+    JoinMatchListComponent,
+    JoinMatchSearchComponent,
+    JoinMatchDeleteComponent,
+    JoinMatchDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +115,7 @@ import { MatchService} from './match/Match.service';
     DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService],
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService, JoinMatchService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

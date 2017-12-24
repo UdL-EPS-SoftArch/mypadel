@@ -27,6 +27,11 @@ import { PrivateMatchFormComponent} from './private-match/private-match-form/pri
 import { PrivateMatchDetailComponent} from './private-match/private-match-detail/private-match-detail.component';
 import { PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
+import {PublicMatchDetailComponent} from './public-match/public-match-detail/public-match-detail-component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import {JoinMatchDetailComponent} from './join-match/joinmatch-detail/JoinMatch-detail.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -53,6 +58,7 @@ export const routes: Routes = [
   { path: 'customMatches', component: CustomMatchListComponent },
   { path: 'customMatches/new', component: CustomMatchFormComponent },
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
+  { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
   { path: 'privateMatches', component: PrivateMatchListComponent},
@@ -60,4 +66,8 @@ export const routes: Routes = [
   { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
+  { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'joinMatches', component: JoinMatchListComponent},
+  { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
+  { path: 'joinMatches/:id/delete', component: JoinMatchDeleteComponent, canActivate: [LoggedInGuard] },
 ];
