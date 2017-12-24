@@ -3,38 +3,37 @@
     <div>Match nº {{match?.id}}</div>
   </div>
   <div class="panel-body">
-
-    <span *ngIf="match?.duration == 'PT30M'">
-            30 minutes |
-    </span>
-    <span *ngIf="match?.duration == 'PT60M'">
-            1 hour |
-    </span>
-    <span *ngIf="match?.duration == 'PT90M'">
-            1 hour and 30 minutes |
-    </span>
-    <span *ngIf="match?.courtType == 'INDOOR'">
-            Indoor |
-          </span>
-    <span *ngIf="match?.courtType == 'OUTDOOR'">
-            Outdoor |
-          </span>
-    <span *ngIf="match?.courtType == 'UNDEFINED'">
-            Undefined |
-    </span>
-    <span>
-      {{match?.startDate.toString()}}
-    </span>
+    <div class="col-md-4">
+      <span *ngIf="match?.duration == 'PT30M'">
+        30 minutes
+      </span>
+      <span *ngIf="match?.duration == 'PT60M'">
+        1 hour
+      </span>
+      <span *ngIf="match?.duration == 'PT1H30M'">
+        1 hour and 30 minutes
+      </span>
+    </div>
+    <div class="col-md-4">
+      <span *ngIf="match?.courtType == 'INDOOR'">
+        Indoor
+      </span>
+      <span *ngIf="match?.courtType == 'OUTDOOR'">
+        Outdoor
+      </span>
+      <span *ngIf="match?.courtType == 'UNDEFINED'">
+        Undefined
+      </span>
+    </div>
+    <div class="col-md-4">
+      <span>
+        {{match?.startDate.toString()}}
+      </span>
+    </div>
   </div>
   <div class="panel-footer text-center">
-    <button id="listPublicMatches" type="button" [routerLink]="['/publicMatches']"
-            class="btn btn-primary">Go to public matches list
-    </button>
-    <button id="listPrivateMatches" type="button" [routerLink]="['/privateMatches']"
-            class="btn btn-primary">Go to private matches list
-    </button>
-    <button id="listCustomMatches" type="button" [routerLink]="['/customMatches']"
-            class="btn btn-primary">Go to custom matches list
+    <button id="listMatches" type="button" [routerLink]="['/customMatches']"
+            class="btn btn-primary">Go back to list
     </button>
     <button id="editMatch" type="button" [routerLink]="['edit']"
             class="btn btn-success">Edit match (Not implemented until manel and roger do it)
