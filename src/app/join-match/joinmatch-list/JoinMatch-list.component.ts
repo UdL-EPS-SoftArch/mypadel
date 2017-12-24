@@ -13,7 +13,6 @@ export class JoinMatchListComponent implements OnInit {
   public joinMatches: JoinMatch[] = [];
   public total: number;
   public errorMessage = '';
-  public player: Player;
 
   constructor(private joinMatchService: JoinMatchService, private authentication: AuthenticationBasicService) {}
 

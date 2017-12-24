@@ -2,13 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PublicMatch} from '../PublicMatch';
 import { Router } from '@angular/router';
-import {JoinMatch } from '../../join-match/JoinMatch';
 import {PublicMatchService} from '../PublicMatch.service';
 import {JoinMatchService} from '../../join-match/JoinMatch.service';
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {Match} from '../../match/Match';
 import {Player} from '../../player/player';
 import {PlayerService} from '../../player/player.service';
+import {JoinMatch} from '../../join-match/JoinMatch';
 
 @Component({
   selector: 'app-public-match-detail',
@@ -71,35 +71,18 @@ export class PublicMatchDetailComponent implements OnInit {
         error => this.errorMessage = <any>error.message);
   }
   public submitJoin() {
-    this.joinMatch.date_match = this.public_match.startDate;
-    this.joinMatch.match = this.public_match;
-
-    this.playerService.getAllPlayers()
+    this.joinMatch.match = this.public_match.uri;
+    this.joinMatch.player = this.authentication.getCurrentUser().uri;
+    this.joinMatchService.addJoinMatch(this.joinMatch)
       .subscribe(
-        (players: Player[]) => {
-          this.players = players;
-          this.players.forEach(t => {
-            if (t.username === this.authentication.getCurrentUser().username) {
-              this.joinMatch.player = t;
-            }
-          });
-        },
-      );
-
-      this.joinMatchService.addJoinMatch(this.joinMatch)
-        .subscribe(
-          joinMatch => this.router.navigate(['/joinMatches']),
-          error => {
-            this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
-          });
-    }
+        joinMatch => this.router.navigate(['/joinMatches']),
+        error => {
+          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
+        });
+  }
 
   private formattedPublicMatches(publicMatches: PublicMatch): PublicMatch {
       publicMatches.duration = publicMatches.duration.split('PT')[1];
       return publicMatches;
   }
-
-
-
-
 }

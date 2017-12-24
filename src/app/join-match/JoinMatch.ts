@@ -3,10 +3,11 @@ import {Match} from '../match/Match';
 
 export class JoinMatch {
   uri: string;
+  _links: any = {}
   id: number;
-  date_match: Date;
-  player: Player;
-  match: Match;
+  date: Date;
+  player: String;
+  match: String;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
