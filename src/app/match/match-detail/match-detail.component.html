@@ -36,6 +36,16 @@
     </div>
     <div class="col-md-4">
       <h4>Match status: </h4>
+      <span *ngIf="match?.cancelled == false">
+        Ongoing
+      </span>
+      <span *ngIf="match?.cancelled == true">
+        Match cancelled
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h4>Match Level: </h4>
+
     </div>
     <div class="col-md-4">
       <h4>Players participating: </h4>
@@ -45,6 +55,7 @@
     </div>
     <div class="col-md-4">
       <h4>Match deadline: </h4>
+      {{match?.cancelationDeadline}}
     </div>
   </div>
   <div class="panel-footer text-center">

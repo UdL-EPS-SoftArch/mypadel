@@ -10,7 +10,7 @@ export class Match {
   duration: string;
   courtType: CourtType;
   cancelationDeadline: Date;
-  isCancelled: boolean;
+  cancelled: boolean;
   matchCreator: Player;
   invitations: any = [];
   // reservation: Reservation;
