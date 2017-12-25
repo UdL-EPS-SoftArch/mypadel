@@ -22,9 +22,22 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
-import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
-import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
+import { CustomMatchEditComponent } from './custom-match/custom-match-edit/custom-match-edit.component';
+import { CustomMatchDetailComponent } from './custom-match/custom-match-detail/custom-match-detail.component';
+import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
+import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
+import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
+import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
+import { PublicMatchDetailComponent  } from './public-match/public-match-detail/public-match-detail-component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import { JoinMatchDetailComponent} from './join-match/joinmatch-detail/JoinMatch-detail.component';
+import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -34,7 +47,7 @@ export const routes: Routes = [
   { path: 'admins', component: AdminListComponent },
   { path: 'admins/:id', component: AdminDetailComponent },
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
-  { path: 'publicMatches', component: PublicMatchListComponent},
+  { path: 'publicMatches', component: PublicMatchListComponent },
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'courts', component: CourtListComponent },
@@ -53,7 +66,22 @@ export const routes: Routes = [
   { path: 'customMatches/:id/edit', component: CustomMatchEditComponent },
   { path: 'customMatches/:id', component: CustomMatchDetailComponent },
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
+  { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
-  { path: 'matchInvitations', component: InviteCreateComponent},
+  { path: 'privateMatches', component: PrivateMatchListComponent },
+  { path: 'privateMatches/new', component: PrivateMatchFormComponent },
+  { path: 'privateMatches/:id', component: PrivateMatchDetailComponent },
+  { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent },
+  { path: 'matchInvitations', component: InviteCreateComponent },
+  { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'joinMatches', component: JoinMatchListComponent},
+  { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
+  { path: 'joinMatches/:id/delete', component: JoinMatchDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'reservations/new', component: ReservationFormComponent },
+  { path: 'reservations', component: ReservationListComponent },
+  { path: 'reservations/:id/edit', component: ReservationEditComponent, canActivate: [LoggedInGuard] },
+  { path: 'reservations/:id/delete', component: ReservationDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reservations/:id', component: ReservationDetailComponent },
 ];

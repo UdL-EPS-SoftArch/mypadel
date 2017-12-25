@@ -4,7 +4,7 @@ Feature: Create public match
   I should create it
 
   Scenario: Create public match
-    Given I logout
+    Given I'm on the home page and logged out
     And I sign in as "player@mypadel.cat" with password "password"
     When I click menu option "Public Matches"
     And I create a public match with duration "PT60M", court type "INDOOR" and level "BEGINNER"

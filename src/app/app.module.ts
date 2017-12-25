@@ -31,6 +31,7 @@ import { PublicMatchSearchComponent } from './public-match/public-match-search/p
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchDetailComponent } from './public-match/public-match-detail/public-match-detail-component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
 import { CourtService } from './court/court.service';
@@ -46,8 +47,26 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { PrivateMatchService } from './private-match/private-match.service';
+import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
+import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
+import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
+import { PrivateMatchSearchComponent } from './private-match/private-match-search/private-match-search.component';
+import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
-import {MatchService} from './match/Match.service';
+import { MatchService} from './match/Match.service';
+import { JoinMatchService } from './join-match/JoinMatch.service';
+import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
+import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationService } from './reservation/reservation.service';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
+import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 
 @NgModule({
@@ -87,8 +106,24 @@ import {MatchService} from './match/Match.service';
     PublicMatchListComponent,
     PublicMatchFormComponent,
     PublicMatchEditComponent,
+    PublicMatchDetailComponent,
     MatchResultListComponent,
+    PrivateMatchEditComponent,
+    PrivateMatchFormComponent,
+    PrivateMatchListComponent,
+    PrivateMatchSearchComponent,
+    PrivateMatchDetailComponent,
     InviteCreateComponent,
+    JoinMatchListComponent,
+    JoinMatchSearchComponent,
+    JoinMatchDeleteComponent,
+    JoinMatchDetailComponent,
+    ReservationFormComponent,
+    ReservationListComponent,
+    ReservationSearchComponent,
+    ReservationEditComponent,
+    ReservationDeleteComponent,
+    ReservationDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +135,8 @@ import {MatchService} from './match/Match.service';
     DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-              PlayerService, CustomMatchService, CourtService, MatchService],
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService,
+              JoinMatchService, ReservationService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
