@@ -39,7 +39,7 @@ export class ReservationService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-  getReservationsByStartDate(searchTerm: string): Observable<Response>{
+  getReservationsByStartDate(searchTerm: string): Observable<Response> {
     return this.http.get(`${environment.API}/reservations/search/findByStartDateContaining?text=${searchTerm}`)
       .map((res: Response) => res.json()._embedded.reservations.map(json => new Reservation(json)))
       .catch((error: any) => Observable.throw(error.json()));
