@@ -32,9 +32,6 @@ import { MatchDetailComponent } from './match/match-detail/match-detail.componen
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
 import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
 import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
-import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
-import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
-import { JoinMatchDetailComponent} from './join-match/joinmatch-detail/JoinMatch-detail.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
