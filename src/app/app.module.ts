@@ -57,6 +57,13 @@ import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatc
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
 import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
 import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
+import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationService } from './reservation/reservation.service';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
+import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +110,13 @@ import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatc
     JoinMatchListComponent,
     JoinMatchSearchComponent,
     JoinMatchDeleteComponent,
-    JoinMatchDetailComponent
+    JoinMatchDetailComponent,
+    ReservationFormComponent,
+    ReservationListComponent,
+    ReservationSearchComponent,
+    ReservationEditComponent,
+    ReservationDeleteComponent,
+    ReservationDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +128,8 @@ import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatc
     DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService, JoinMatchService],
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService,
+              JoinMatchService, ReservationService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
