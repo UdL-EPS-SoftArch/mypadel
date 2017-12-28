@@ -51,6 +51,16 @@
             <span class="fa fa-user"></span> Match invitations
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/joinMatches']">
+            <span class="fa fa-hand-spock-o"></span> My Games
+          </a>
+        </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/reservations']">
+            <span class="fa fa-reservation"></span> Reservations
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>
