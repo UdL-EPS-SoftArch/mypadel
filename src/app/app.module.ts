@@ -20,9 +20,12 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
-import { CustomMatchService } from './custom-match/custom-match.service';
-import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
+import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
+import {CustomMatchService} from './custom-match/custom-match.service';
+import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
+import {CustomMatchSearchComponent} from './custom-match/custom-match-search/custom-match-search.component';
+import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
+import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -65,6 +68,7 @@ import { ReservationEditComponent } from './reservation/reservation-edit/reserva
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +100,9 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
     PublicMatchListComponent,
     CustomMatchListComponent,
     CustomMatchFormComponent,
+    CustomMatchSearchComponent,
+    CustomMatchEditComponent,
+    CustomMatchDetailComponent,
     PublicMatchListComponent,
     PublicMatchFormComponent,
     PublicMatchEditComponent,
