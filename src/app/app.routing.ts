@@ -5,12 +5,13 @@ import { AdminListComponent } from './admin/admin-list/admin-list.component';
 import { AdminDetailComponent } from './admin/admin-detail/admin-detail.component';
 import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
+import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
 import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
-import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchFormComponent } from './public-match/public-match-form/public-match-form.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchDetailComponent } from './public-match/public-match-detail/public-match-detail-component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
 import { CourtEditComponent } from './court/court-edit/court-edit.component';
@@ -29,10 +30,10 @@ import { PrivateMatchFormComponent } from './private-match/private-match-form/pr
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
-import { PublicMatchDetailComponent  } from './public-match/public-match-detail/public-match-detail-component';
+import { MatchDetailComponent } from './match/match-detail/match-detail.component';
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
 import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
-import { JoinMatchDetailComponent} from './join-match/joinmatch-detail/JoinMatch-detail.component';
+import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
 import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
@@ -69,11 +70,12 @@ export const routes: Routes = [
   { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
-  { path: 'privateMatches', component: PrivateMatchListComponent },
-  { path: 'privateMatches/new', component: PrivateMatchFormComponent },
-  { path: 'privateMatches/:id', component: PrivateMatchDetailComponent },
-  { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent },
-  { path: 'matchInvitations', component: InviteCreateComponent },
+  { path: 'privateMatches', component: PrivateMatchListComponent},
+  { path: 'privateMatches/new', component: PrivateMatchFormComponent},
+  { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
+  { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
+  { path: 'matchInvitations', component: InviteCreateComponent},
+  { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matchResults', component: MatchResultListComponent },
   { path: 'joinMatches', component: JoinMatchListComponent},
   { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
