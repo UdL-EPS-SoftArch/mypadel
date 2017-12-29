@@ -20,12 +20,12 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminSearchComponent } from './admin/admin-search/admin-search.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
-import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
-import {CustomMatchService} from './custom-match/custom-match.service';
-import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
-import {CustomMatchSearchComponent} from './custom-match/custom-match-search/custom-match-search.component';
-import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
-import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
+import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
+import { CustomMatchService } from './custom-match/custom-match.service';
+import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
+import { CustomMatchSearchComponent } from './custom-match/custom-match-search/custom-match-search.component';
+import { CustomMatchEditComponent } from './custom-match/custom-match-edit/custom-match-edit.component';
+import { CustomMatchDetailComponent } from './custom-match/custom-match-detail/custom-match-detail.component';
 import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
@@ -55,7 +55,7 @@ import { PrivateMatchSearchComponent } from './private-match/private-match-searc
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import { MatchService} from './match/Match.service';
-import {MatchDetailComponent} from './match/match-detail/match-detail.component';
+import { MatchDetailComponent } from './match/match-detail/match-detail.component';
 import { JoinMatchService } from './join-match/JoinMatch.service';
 import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
 import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
@@ -68,6 +68,10 @@ import { ReservationSearchComponent } from './reservation/reservation-search/res
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+import { MatchResultEditComponent } from './match-result/matchResult-edit/matchResult-edit.component';
+import { MatchResultFormComponent } from './match-result/matchResult-form/matchResult-form.component';
+import { MatchResultSearchComponent } from './match-result/matchResult-search/matchResult-search.component';
+import { MatchResultService } from './match-result/MatchResult.service';
 
 
 @NgModule({
@@ -126,6 +130,10 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
     ReservationEditComponent,
     ReservationDeleteComponent,
     ReservationDetailComponent,
+    MatchResultEditComponent,
+    MatchResultFormComponent,
+    MatchResultListComponent,
+    MatchResultSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -138,7 +146,7 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
               PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService,
-              JoinMatchService, ReservationService],
+              JoinMatchService, ReservationService, MatchResultService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
