@@ -34,8 +34,31 @@
           </a>
         </li>
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/customMatches']">
+            <span class="fa fa-play" aria-hidden="true"></span> Custom Matches
+          </a>
+        </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
           <a [routerLink]="['/courts']">
             <span class="fa fa-hand-spock-o"></span> Courts
+          </a>
+        </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/privateMatches']">
+            <span class="fa fa-search"></span> Private Matches
+          </a>
+          <a [routerLink]="['/matchInvitations']">
+            <span class="fa fa-user"></span> Match invitations
+          </a>
+        </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/joinMatches']">
+            <span class="fa fa-hand-spock-o"></span> My Games
+          </a>
+        </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/reservations']">
+            <span class="fa fa-reservation"></span> Reservations
           </a>
         </li>
       </ul>

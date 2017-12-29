@@ -1,5 +1,5 @@
 import { binding, given, when } from 'cucumber-tsflow';
-import { browser } from 'protractor';
+import {browser, by, element} from 'protractor';
 import { NavigationBar } from '../../pages/navbar.page';
 
 @binding()

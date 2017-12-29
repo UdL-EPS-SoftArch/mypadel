@@ -1,0 +1,69 @@
+<h2>Edit customMatch</h2>
+<form id="custom-match-form" [formGroup]="customMatchForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Duration input-->
+    <div class="form-group row" [class.has-error]="customMatchForm.controls['duration'].touched &&
+                  customMatchForm.controls['duration'].hasError('required')">
+      <label class="col-md-3 control-label" for="duration">Match duration*</label>
+      <select name="duration" [(ngModel)]="customMatch.duration" [formControl]="customMatchForm.controls['duration']" id="duration" class="form-control input-md">
+        <option value="PT30M">30 minutes</option>
+        <option value="PT60M">1 hour</option>
+        <option value="PT90M">1 hour and 30 minutes</option>
+      </select>
+      <div class="col-md-9">
+        <div *ngIf="customMatchForm.controls['duration'].touched &&
+                    customMatchForm.controls['duration'].hasError('required')" class="label-warning">
+          A duration between 30 and 120 minutes is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- Court type input-->
+    <div class="form-group row" [class.has-error]="customMatchForm.controls['courtType'].touched &&
+                  customMatchForm.controls['courtType'].hasError('required')">
+      <label class="col-md-3 control-label" for="CourtType">Match CourtType*</label>
+      <select name="courtType" [(ngModel)]="customMatch.courtType" [formControl]="customMatchForm.controls['courtType']" id="courtType" class="form-control input-md">
+        <option value="INDOOR">Indoor</option>
+        <option value="OUTDOOR">Outdoor</option>
+        <option value="UNDEFINED">Do not care</option>
+      </select>
+      <div class="col-md-9">
+        <div *ngIf="customMatchForm.controls['courtType'].touched &&
+                    customMatchForm.controls['courtType'].hasError('required')" class="label-warning">
+          A court type selection is required!
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Start date input-->
+    <div class="form-group row" [class.has-error]="customMatchForm.controls['startDate'].touched &&
+                  customMatchForm.controls['startDate'].hasError('required')">
+      <label class="col-md-3 control-label" for="StartDate">Match StartDate*</label>
+      <owl-date-time id="startDate" [(ngModel)]="customMatch.startDate" [formControl]="customMatchForm.controls['startDate']"></owl-date-time>
+      <div class="col-md-9">
+        <div *ngIf="customMatchForm.controls['startDate'].touched &&
+                    customMatchForm.controls['startDate'].hasError('required')" class="label-warning">
+          A starting date is required!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button id="createCustomMatch" type="submit"
+                class="btn btn-success pull-right" [disabled]="!customMatchForm.valid">Edit
+        </button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>

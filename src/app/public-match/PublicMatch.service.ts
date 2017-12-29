@@ -62,5 +62,4 @@ export class PublicMatchService {
       .catch((error: any) => Observable.throw(error.json()));
   }
 
-
 }
