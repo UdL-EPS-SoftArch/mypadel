@@ -5,10 +5,10 @@ import {MatchResult} from '../MatchResult';
 import {MatchResultService} from '../MatchResult.service';
 
 @Component({
-  selector: 'app-matchResult-form',
+  selector: 'app-match-result-form',
   templateUrl: './matchResult-form.component.html'
 })
-export class PublicMatchFormComponent implements OnInit {
+export class MatchResultFormComponent implements OnInit {
   public matchResult: MatchResult;
   public matchResultForm: FormGroup;
   public errorMessage: string;
