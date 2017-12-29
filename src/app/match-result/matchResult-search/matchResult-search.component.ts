@@ -1,10 +1,11 @@
+///<reference path="../../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {MatchResult} from '../MatchResult';
 import {MatchResultService} from '../MatchResult.service';
 
 @Component({
-  selector: 'app-matchResult-search',
+  selector: 'app-match-result-search',
   templateUrl: './matchResult-search.component.html'
 })
 
