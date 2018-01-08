@@ -18,7 +18,6 @@ export class PublicMatchListComponent implements OnInit {
       .subscribe(
         (publicMatches: PublicMatch[]) => {
           this.publicMatches = this.formattedPublicMatches(publicMatches);
-          console.log(this.publicMatches);
           this.totalPublicMatches = publicMatches.length; },
         error => this.errorMessage = <any>error.message);
   }

@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col-md-4">
-        <h4 i18n>{ totalMatchResults, plural, =0 {There are no match results available} =1 {There are 1 match result} other { There
+        <h4 i18n>{ totalMatchResults, plural, 
+            =0 {There are no match results available} 
+            =1 {There are 1 match result} 
+            other { There
             are {{totalMatchResults}} match results} }</h4>
     </div>
     <div class="col-md-8">
@@ -15,7 +18,7 @@
         <div class="panel panel-default" *ngFor="let MatchResult of MatchResults">
             <div class="panel-heading">
                 <h4>MatchResultID:
-                    <a routerLink="{MatchResult.id}">{{MatchResult.id}}</a>
+                    <a routerLink="{MatchResult.uri}">{{MatchResult.id}}</a>
                 </h4>
             </div>
             <div class="panel-body">
@@ -31,7 +34,7 @@
                 </div>
                 <div class="col-md-6">
                     <h4>Loosing pair:</h4>
-                    <div *ngFor="let player of MatchResult.loosingPair">
+                    <div *ngFor="let player of MatchResult.losingPair">
                         <p>{{player.username}}</p>
                     </div>
                 </div>

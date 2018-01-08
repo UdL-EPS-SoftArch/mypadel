@@ -28,9 +28,24 @@ class AuthenticationSteps {
       .to.eventually.equal(username).and.notify(callback);
   }
 
-  @given(/^I logout$/)
+  @given(/^I'm logged out$/)
   public iLogout (callback): void {
-    element(by.linkText('Logout')).click();
+    browser.manage().deleteAllCookies();
+    browser.executeScript('window.sessionStorage.clear();');
+    browser.executeScript('window.localStorage.clear();');
+    browser.refresh();
+    browser.waitForAngular();
+    callback();
+  }
+
+  @given(/^I'm on the home page and logged out$/)
+  public iMInHomePageLoggedOut(callback): void {
+    browser.get('http://localhost:4200');
+    browser.manage().deleteAllCookies();
+    browser.executeScript('window.sessionStorage.clear();');
+    browser.executeScript('window.localStorage.clear();');
+    browser.refresh();
+    browser.waitForAngular();
     callback();
   }
 }

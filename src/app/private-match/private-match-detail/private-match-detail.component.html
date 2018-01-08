@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div>Private Match nº {{privateMatch?.id}}</div>
+  </div>
+  <div class="panel-body">
+
+    <span *ngIf="privateMatch?.duration == 'PT30M'">
+            30 minutes |
+    </span>
+    <span *ngIf="privateMatch?.duration == 'PT60M'">
+            1 hour |
+    </span>
+    <span *ngIf="privateMatch?.duration == 'PT90M'">
+            1 hour and 30 minutes |
+    </span>
+    <span *ngIf="privateMatch?.courtType == 'INDOOR'">
+            Indoor |
+          </span>
+    <span *ngIf="privateMatch?.courtType == 'OUTDOOR'">
+            Outdoor |
+          </span>
+    <span *ngIf="privateMatch?.courtType == 'UNDEFINED'">
+            Undefined |
+    </span>
+    <span>
+      {{privateMatch?.startDate.toString()}}
+    </span>
+  </div>
+  <div class="panel-footer text-center">
+    <button id="courtsList" type="button" [routerLink]="['/privateMatches']"
+            class="btn btn-primary">Back to List
+    </button>
+    <button id="editAdmin" type="button" [routerLink]="['edit']"
+            class="btn btn-success">Edit
+    </button>
+  </div>
+</div>

@@ -24,7 +24,7 @@ export class MatchResultService {
     }
 
     // Request Method: GET /matchResults/id -> Get the MatchResult with the given id
-    public getMatchResult(id: string): Observable<MatchResult> {
+    public getMatchResult(id: number): Observable<MatchResult> {
         return this.http.get(`${environment.API}/matchResults/${id}`)
             .map((res: Response): MatchResult => res.json())
             .catch((error: any) => Observable.throw(error.json()));
@@ -56,7 +56,7 @@ export class MatchResultService {
     }
 
     // DELETE /admin/{id}
-    public deleteAdmin(matchResult: MatchResult): Observable<Response> {
+    public deleteMatchResult(matchResult: MatchResult): Observable<Response> {
         const headers = new Headers({ 'Content-Type': 'application/json' });
         headers.append('Authorization', this.authenticationBasicService.getCurrentUser().authorization);
         const options = new RequestOptions({ headers: headers });

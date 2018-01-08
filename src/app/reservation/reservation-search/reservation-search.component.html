@@ -1,0 +1,9 @@
+<h4>Filter Reservations by day</h4>
+
+
+<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+
+<p i18n>{ reservations.length, plural,
+  =0 {No reservations found}
+  =1 {1 reservations found}
+  other { {{reservations.length}} reservations found} }</p>
