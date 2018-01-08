@@ -25,6 +25,7 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
 import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
 import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
 import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-request-detail/match-join-request-detail.component';
+import {MatchJoinRequestListComponent} from "./match-join-request/match-join-request-list/match-join-request-list.component";
 
 
 export const routes: Routes = [
@@ -57,6 +58,7 @@ export const routes: Routes = [
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
-  { path: 'matchJoinRequests/:id', component: MatchJoinRequestDetailComponent}
+  { path: 'matchJoinRequests/:id', component: MatchJoinRequestDetailComponent},
+  {path: 'customMatches/:id/matchJoinRequests', component: MatchJoinRequestListComponent},
 
 ];

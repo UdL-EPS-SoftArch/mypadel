@@ -50,6 +50,7 @@ import { PlayerDeleteComponent } from './player/player-delete/player-delete.comp
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import {MatchJoinRequestService} from './match-join-request/match-join-request.service';
 import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-request-detail/match-join-request-detail.component';
+import {MatchJoinRequestListComponent} from './match-join-request/match-join-request-list/match-join-request-list.component';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-r
     PublicMatchEditComponent,
     MatchResultListComponent,
     MatchJoinRequestDetailComponent,
+    MatchJoinRequestListComponent,
   ],
   imports: [
     BrowserModule,

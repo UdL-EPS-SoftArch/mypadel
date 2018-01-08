@@ -70,7 +70,7 @@ export class PlayerService {
   isAdmin(): boolean {
     return this.authentication.isAdmin();
   }
-  
+
   getCurrentUser(): User {
     return new User(JSON.parse(localStorage.getItem('currentUser')));
   }
