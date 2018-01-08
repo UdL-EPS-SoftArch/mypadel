@@ -7,6 +7,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { AuthenticationBasicService } from '../login-basic/authentication-basic.service';
 import { environment } from '../../environments/environment';
 import { Player } from './player';
+import {User} from "../login-basic/user";
 @Injectable()
 export class PlayerService {
 
@@ -70,4 +71,9 @@ export class PlayerService {
     return this.authentication.isAdmin();
   }
 
+  isMatchCreator(matchCreator: Player):boolean {
+    const user: User = this.authentication.getCurrentUser();
+    return user.username==matchCreator.username;
+
+  }
 }

@@ -6,6 +6,7 @@ import {Player} from '../../player/player';
 import {MatchJoinRequest} from "../../match-join-request/MatchJoinRequest";
 import {MatchJoinRequestService} from "../../match-join-request/match-join-request.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {PlayerService} from '../../player/player.service';
 
 @Component({
   selector: 'app-custom-match-detail',
@@ -23,6 +24,7 @@ export class CustomMatchDetailComponent implements OnInit {
               private customMatchService: CustomMatchService,
               private matchJoinRequestService: MatchJoinRequestService,
               private router: Router,
+              private userService: PlayerService,
   ) {this.matchJoinRequestForm = fb.group({
     'message': ['MatchJoinRequest message', Validators.maxLength(255)],
   }); }
@@ -63,6 +65,12 @@ export class CustomMatchDetailComponent implements OnInit {
 
 
 
+  }
+  isLoggedIn(): boolean {
+    return this.userService.isLoggedIn();
+  }
+  isMatchCreator(): boolean {
+    return this.userService.isMatchCreator(this.matchCreator);
   }
 
 }
