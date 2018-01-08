@@ -1,0 +1,96 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div>Match nº {{match?.id}}</div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-4">
+      <h4>Match status: </h4>
+      <span *ngIf="match?.cancelled == false">
+        Ongoing
+      </span>
+      <span *ngIf="match?.cancelled == true">
+        Closed
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h4>Court type: </h4>
+      <span *ngIf="match?.courtType == 'INDOOR'">
+        Indoor
+      </span>
+      <span *ngIf="match?.courtType == 'OUTDOOR'">
+        Outdoor
+      </span>
+      <span *ngIf="match?.courtType == 'UNDEFINED'">
+        Undefined
+      </span>
+    </div>
+    <div class="col-md-4" *ngIf="match != null && match['level'] != null">
+      <h4>Match Level: </h4>
+      {{match['level']}}
+    </div>
+    <div class="col-md-4">
+      <h4>Start date: </h4>
+      {{match?.startDateString}}
+    </div>
+    <div class="col-md-4">
+      <h4>Duration of the match: </h4>
+      <span *ngIf="match?.duration == 'PT30M'">
+        30 minutes
+      </span>
+      <span *ngIf="match?.duration == 'PT1H'">
+        1 hour
+      </span>
+      <span *ngIf="match?.duration == 'PT1H30M'">
+        1 hour and 30 minutes
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h4>Match deadline: </h4>
+      {{match?.cancelationDeadline}}
+    </div>
+    <div class="col-md-4">
+      <h4>Players invited: </h4>
+      <span *ngIf="match?.invitations.length == 0">
+        No players invited yet.
+      </span>
+      <span *ngIf="match?.invitations.length != 0">
+        {{match?.invitations}}
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h4>Match result: </h4>
+      <span *ngIf="match != null && match['matchResult'] == null">
+        The match has not ended.
+      </span>
+      <span *ngIf="match != null && match['matchResult'] != null">
+        {{match['matchResult']}}
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h4>Match creator: </h4>
+      <a routerLink="{{match?.matchCreator?.uri}}">
+        {{match?.matchCreator?.username}}
+      </a>
+    </div>
+  </div>
+  <div class="panel-footer text-center">
+    <span *ngIf="match != null && match['level'] != null">
+      <button id="listMatchesPublic" type="button" [routerLink]="['/publicMatches']"
+              class="btn btn-primary">Go back to list
+      </button>
+    </span>
+    <span *ngIf="match != null && match['isPrivate']">
+      <button id="listMatchesPrivate" type="button" [routerLink]="['/privateMatches']"
+              class="btn btn-primary">Go back to list
+      </button>
+    </span>
+    <span *ngIf="match != null && match['isCustom']">
+      <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
+              class="btn btn-primary">Go back to list
+      </button>
+    </span>
+    <button id="editMatch" type="button" [routerLink]="['']"
+            class="btn btn-success">Edit match (Not implemented until manel and roger do it)
+    </button>
+  </div>
+</div>
