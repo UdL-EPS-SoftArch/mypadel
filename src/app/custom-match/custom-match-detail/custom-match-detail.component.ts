@@ -7,6 +7,7 @@ import {MatchJoinRequest} from "../../match-join-request/MatchJoinRequest";
 import {MatchJoinRequestService} from "../../match-join-request/match-join-request.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PlayerService} from '../../player/player.service';
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-custom-match-detail',
@@ -69,8 +70,8 @@ export class CustomMatchDetailComponent implements OnInit {
   isLoggedIn(): boolean {
     return this.userService.isLoggedIn();
   }
-  isMatchCreator(): boolean {
-    return this.userService.isMatchCreator(this.matchCreator);
+  getCurrentUser(): User {
+    return this.userService.getCurrentUser();
   }
 
 }

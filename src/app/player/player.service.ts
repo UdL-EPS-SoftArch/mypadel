@@ -67,13 +67,8 @@ export class PlayerService {
   isLoggedIn(): boolean {
     return this.authentication.isLoggedIn();
   }
-  isAdmin(): boolean {
-    return this.authentication.isAdmin();
-  }
 
-  isMatchCreator(matchCreator: Player):boolean {
-    const user: User = this.authentication.getCurrentUser();
-    return user.username==matchCreator.username;
-
+  getCurrentUser(): User {
+    return new User(JSON.parse(localStorage.getItem('currentUser')));
   }
 }

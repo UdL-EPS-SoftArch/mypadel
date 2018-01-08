@@ -38,16 +38,25 @@
     <div class="form-group row">
       <div class="col-md-3"></div>
       <div class="col-md-9">
-        <span *ngIf="isLoggedIn()&& !isMatchCreator()">
+        <span *ngIf="isLoggedIn()&&!(getCurrentUser().username==matchCreator?.username)">
         <button id="createMatchJoinRequest" type="submit"
                 class="btn btn-success pull-right">Create MatchJoinRequest
         </button>
           </span>
+
       </div>
     </div>
     </fieldset>
 
   </form>
+  <div class="col-md-9">
+        <span *ngIf="isLoggedIn()&&getCurrentUser().username==matchCreator?.username">
+        <button id="listMatchJoinRequest" type="submit"
+                class="btn btn-success pull-right">List MatchJoinRequests
+        </button>
+          </span>
+
+  </div>
 </div>
 
 
