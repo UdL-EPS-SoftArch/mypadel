@@ -26,6 +26,15 @@ import { PrivateMatchDetailComponent} from './private-match/private-match-detail
 import { PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import {MatchFormComponent} from './match/match-form/match-form.component';
+import { PublicMatchDetailComponent  } from './public-match/public-match-detail/public-match-detail-component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import { JoinMatchDetailComponent} from './join-match/joinmatch-detail/JoinMatch-detail.component';
+import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -57,5 +66,14 @@ export const routes: Routes = [
   { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
-  { path: 'match/new', component: MatchFormComponent}
+  { path: 'match/new', component: MatchFormComponent},
+  { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
+  { path: 'joinMatches', component: JoinMatchListComponent},
+  { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
+  { path: 'joinMatches/:id/delete', component: JoinMatchDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reservations/new', component: ReservationFormComponent },
+  { path: 'reservations', component: ReservationListComponent },
+  { path: 'reservations/:id/edit', component: ReservationEditComponent, canActivate: [LoggedInGuard] },
+  { path: 'reservations/:id/delete', component: ReservationDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'reservations/:id', component: ReservationDetailComponent },
 ];

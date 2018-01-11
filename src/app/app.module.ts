@@ -27,6 +27,7 @@ import { PublicMatchService } from './public-match/PublicMatch.service';
 import { PublicMatchSearchComponent } from './public-match/public-match-search/public-match-search.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
+import { PublicMatchDetailComponent } from './public-match/public-match-detail/public-match-detail-component';
 import { CourtListComponent } from './court/court-list/court-list.component';
 import { CourtFormComponent } from './court/court-form/court-form.component';
 import { CourtService } from './court/court.service';
@@ -51,6 +52,18 @@ import { InviteCreateComponent } from './invite/invite-create/invite-create.comp
 import { MatchService} from './match/Match.service';
 import { MatchFormComponent } from './match/match-form/match-form.component';
 import { MatchEditComponent } from './match/match-edit/match-edit.component';
+import { JoinMatchService } from './join-match/JoinMatch.service';
+import { JoinMatchSearchComponent } from './join-match/joinmatch-search/JoinMatch-search.component';
+import { JoinMatchListComponent } from './join-match/joinmatch-list/JoinMatch-list.component';
+import { JoinMatchDeleteComponent } from './join-match/joinmatch-delete/JoinMatch-delete.component';
+import { JoinMatchDetailComponent } from './join-match/joinmatch-detail/JoinMatch-detail.component';
+import { ReservationFormComponent } from './reservation/reservation-form/reservation-form.component';
+import { ReservationService } from './reservation/reservation.service';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationSearchComponent } from './reservation/reservation-search/reservation-search.component';
+import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +92,9 @@ import { MatchEditComponent } from './match/match-edit/match-edit.component';
     PlayerDeleteComponent,
     CustomMatchListComponent,
     CustomMatchFormComponent,
+    PublicMatchListComponent,
+    PublicMatchEditComponent,
+    PublicMatchDetailComponent,
     MatchResultListComponent,
     PrivateMatchEditComponent,
     PrivateMatchListComponent,
@@ -87,6 +103,16 @@ import { MatchEditComponent } from './match/match-edit/match-edit.component';
     InviteCreateComponent,
     MatchFormComponent,
     MatchEditComponent,
+    JoinMatchListComponent,
+    JoinMatchSearchComponent,
+    JoinMatchDeleteComponent,
+    JoinMatchDetailComponent,
+    ReservationFormComponent,
+    ReservationListComponent,
+    ReservationSearchComponent,
+    ReservationEditComponent,
+    ReservationDeleteComponent,
+    ReservationDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +124,8 @@ import { MatchEditComponent } from './match/match-edit/match-edit.component';
     DateTimePickerModule,
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
-              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService],
+              PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService,
+              JoinMatchService, ReservationService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
