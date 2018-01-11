@@ -1,0 +1,6 @@
+<h4>Filter match results by identificator</h4>
+<input name="title" #searchTerm (keyup)="performSearch(searchTerm.value)">
+<p i18n>{ matchResults.length, plural,
+  =0 {No match results found}
+  =1 {1 match result found}
+  other { {{matchResults.length}} match results found} }</p>

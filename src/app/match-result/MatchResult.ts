@@ -2,6 +2,8 @@ import { Player } from '../player/player';
 import { Match } from '../match/Match';
 
 export class MatchResult {
+    uri: string;
+    _links: any = {};
     public id: number;
     public winningPair: Player[];
     public losingPair: Player[];
