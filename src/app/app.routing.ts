@@ -23,6 +23,7 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { MatchResultDetailComponent } from './match-result/matchResult-detail/matchResult-detail.component';
 import { MatchResultSearchComponent } from './match-result/matchResult-search/matchResult-search.component';
 import { MatchResultEditComponent } from './match-result/matchResult-edit/matchResult-edit.component';
 import { MatchResultFormComponent } from './match-result/matchResult-form/matchResult-form.component';
@@ -81,6 +82,7 @@ export const routes: Routes = [
   { path: 'matchInvitations', component: InviteCreateComponent},
   { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'matchResults/:id', component: MatchResultDetailComponent },
   { path: 'matchResults/new', component: MatchResultFormComponent },
   { path: 'matchResults/:id/edit', component: MatchResultEditComponent },
   { path: 'joinMatches', component: JoinMatchListComponent},

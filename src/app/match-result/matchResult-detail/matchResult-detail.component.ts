@@ -9,7 +9,7 @@ import { MatchResultService } from '../MatchResult.service';
   templateUrl: './matchResult-list.component.html'
 })
 
-export class MatchResultListComponent implements OnInit {
+export class MatchResultDetailComponent implements OnInit {
 
   public MatchResult: MatchResult;
   public errorMessage = '';
