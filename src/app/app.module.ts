@@ -22,7 +22,6 @@ import { AdminSearchComponent } from './admin/admin-search/admin-search.componen
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
 import { CustomMatchService } from './custom-match/custom-match.service';
-import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { CustomMatchSearchComponent } from './custom-match/custom-match-search/custom-match-search.component';
 import { CustomMatchEditComponent } from './custom-match/custom-match-edit/custom-match-edit.component';
 import { CustomMatchDetailComponent } from './custom-match/custom-match-detail/custom-match-detail.component';
@@ -100,7 +99,6 @@ import { MatchResultService } from './match-result/MatchResult.service';
     PlayerEditComponent,
     PlayerDeleteComponent,
     CustomMatchListComponent,
-    CustomMatchFormComponent,
     CustomMatchSearchComponent,
     CustomMatchEditComponent,
     CustomMatchDetailComponent,

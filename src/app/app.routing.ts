@@ -7,7 +7,6 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
-import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
 import { PublicMatchDetailComponent } from './public-match/public-match-detail/public-match-detail-component';
@@ -63,7 +62,6 @@ export const routes: Routes = [
   { path: 'publicMatches', component: PublicMatchListComponent },
   { path: 'customMatches', component: CustomMatchListComponent },
   { path: 'customMatches/new/:type', component: MatchFormComponent },
-  { path: 'customMatches/new', component: CustomMatchFormComponent }, //TODO: Should be deleted when generalization of matches is finished
   { path: 'customMatches/:id/edit', component: CustomMatchEditComponent },
   { path: 'customMatches/:id', component: CustomMatchDetailComponent },
   { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
