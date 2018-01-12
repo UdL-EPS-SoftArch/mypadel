@@ -23,6 +23,9 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { MatchResultSearchComponent } from './match-result/matchResult-search/matchResult-search.component';
+import { MatchResultEditComponent } from './match-result/matchResult-edit/matchResult-edit.component';
+import { MatchResultFormComponent } from './match-result/matchResult-form/matchResult-form.component';
 import { CustomMatchEditComponent } from './custom-match/custom-match-edit/custom-match-edit.component';
 import { CustomMatchDetailComponent } from './custom-match/custom-match-detail/custom-match-detail.component';
 import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
@@ -39,6 +42,7 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -77,6 +81,8 @@ export const routes: Routes = [
   { path: 'matchInvitations', component: InviteCreateComponent},
   { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'matchResults/new', component: MatchResultFormComponent },
+  { path: 'matchResults/:id/edit', component: MatchResultEditComponent },
   { path: 'joinMatches', component: JoinMatchListComponent},
   { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
   { path: 'joinMatches/:id/delete', component: JoinMatchDeleteComponent, canActivate: [LoggedInGuard] },
