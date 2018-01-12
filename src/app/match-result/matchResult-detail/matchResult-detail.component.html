@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div>Match Result nº {{MatchResult?.id}}</div>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-6">
+            <h4>E-Mail:</h4>
+            <p>{{MatchResult.admin.email}}</p>
+        </div>
+        <div class="col-md-6">
+            <h4>Winning pair:</h4>
+            <div *ngFor="let player of MatchResult.winningPair">
+                <p>{{MatchResult.player.username}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Loosing pair:</h4>
+            <div *ngFor="let player of MatchResult.losingPair">
+                <p>{{MatchResult.player.username}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div ng-if="MatchResult.isDraw == true">
+                <p i18n>The match result ended with draw</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>MatchID:</h4>
+            <p>{{MatchResult.match.id}}</p>
+        </div>
+    </div>
+</div>
+
+
