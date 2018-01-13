@@ -82,5 +82,9 @@ export class MatchDetailComponent implements OnInit {
   getCurrentUser(): User {
     return this.userService.getCurrentUser();
   }
+  matchJoinRequestURI():string{
+    return `/customMatches/${this.match.id}/matchJoinRequests`
+
+  }
 
 }

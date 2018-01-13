@@ -105,6 +105,14 @@
     </fieldset>
 
   </form>
+      <div class="col-md-9">
+        <span *ngIf="isLoggedIn()&&getCurrentUser().username==match?.matchCreator?.username">
+        <button id="listMatchJoinRequest" type="submit" [routerLink]="[matchJoinRequestURI()]"
+                class="btn btn-success pull-right">List MatchJoinRequests
+        </button>
+          </span>
+
+  </div>
 
     </span>
     <button id="editMatch" type="button" [routerLink]="['']"
