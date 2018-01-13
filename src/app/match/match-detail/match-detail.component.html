@@ -89,9 +89,23 @@
       <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
               class="btn btn-primary">Go back to list
       </button>
-      <button id="createMatchJoinRequest" type="button" (onclick)="createMatchJoinRequest()"
-              class="btn btn-primary">Create Match Join Request
-      </button>
+<form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
+    <fieldset>
+
+
+        <span *ngIf="isLoggedIn()&&!(getCurrentUser().username==match?.matchCreator?.username)">
+
+        <button id="createMatchJoinRequest" type="submit"
+                class="btn btn-success pull-right">Create MatchJoinRequest
+        </button>
+          </span>
+
+
+
+    </fieldset>
+
+  </form>
+
     </span>
     <button id="editMatch" type="button" [routerLink]="['']"
             class="btn btn-success">Edit match (Not implemented until manel and roger do it)

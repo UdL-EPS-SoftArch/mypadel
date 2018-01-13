@@ -4,7 +4,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MatchService} from '../Match.service';
 import {MatchJoinRequestService} from '../../match-join-request/match-join-request.service';
 import {MatchJoinRequest} from "../../match-join-request/MatchJoinRequest";
-import {environment} from "../../../environments/environment";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {User} from "../../login-basic/user";
+import {PlayerService} from "../../player/player.service";
+
 
 @Component({
   selector: 'app-match-detail',
@@ -14,12 +17,18 @@ export class MatchDetailComponent implements OnInit {
   public match: Match;
   public matchJoinRequest:MatchJoinRequest;
   public errorMessage: string;
+  public matchJoinRequestForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
               private matchService: MatchService,
               private matchJoinRequestService:MatchJoinRequestService,
               private router: Router,
+              private fb: FormBuilder,
+              private userService: PlayerService,
   ) {
+    this.matchJoinRequestForm = fb.group({
+      'message': ['MatchJoinRequest message', Validators.maxLength(255)],
+    });
   }
 
   ngOnInit() {
@@ -52,7 +61,7 @@ export class MatchDetailComponent implements OnInit {
   createMatchJoinRequest(): void {
     this.matchJoinRequest = new MatchJoinRequest();
     this.matchJoinRequest.message="Hi I want to join in your match !";
-    this.matchJoinRequest.customMatch=`${environment.API}/customMatches/${this.match.id}`
+    this.matchJoinRequest.customMatch=this.match.uri;
     this.matchJoinRequest.eventDate=this.match.startDate;
 
     this.matchJoinRequestService.addMatchJoinRequest(this.matchJoinRequest)
@@ -69,6 +78,9 @@ export class MatchDetailComponent implements OnInit {
   customMatchURI():string{
     return `/customMatches/${this.match.id}`
 
+  }
+  getCurrentUser(): User {
+    return this.userService.getCurrentUser();
   }
 
 }
