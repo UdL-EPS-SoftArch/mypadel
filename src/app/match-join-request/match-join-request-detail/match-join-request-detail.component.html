@@ -12,6 +12,7 @@
         <p><a routerLink="{{player?.uri}}" >{{player?.username}}</a></p>
       </div>
 
+
       <div class="col-md-6">
         <h5><b>Match:</b></h5>
         <p><a routerLink="{{customMatch?.uri}}" >{{customMatch?.id}}</a></p>
@@ -25,12 +26,30 @@
         <h5><b>Event Date:</b></h5>
         <p>{{matchJoinRequest?.eventDate}}</p>
       </div>
+      <div class="col-md-6">
+        <h5><b>Match Join Request Status:</b></h5>
+        <p>{{matchJoinRequest?.status}}</p>
+      </div>
 
     </div>
   </div>
   <div class="panel-footer text-center">
+    <button id="rejectMatchJoinRequest" type="button" [routerLink]="['customMatch']"
+            class="btn btn-danger">Reject</button>
     <button id="customMatchList" type="button" [routerLink]="['/customMatches']"
             class="btn btn-primary">Back to List</button>
+
+
+    <form id="player-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="accept()">
+      <fieldset>
+        <button id="acceptMatchJoinRequest" type="submit"
+                class="btn btn-success " >Accept
+        </button>
+      </fieldset>
+    </form>
+
+
+
 
   </div>
 </div>

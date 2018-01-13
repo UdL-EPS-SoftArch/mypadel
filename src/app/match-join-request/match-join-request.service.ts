@@ -40,4 +40,15 @@ export class MatchJoinRequestService {
       .map((res: Response) => new CustomMatch(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
+
+  updateMatchJoinRequest(matchJoinRequest: MatchJoinRequest) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.put(`${environment.API}${matchJoinRequest.uri}`,matchJoinRequest,options)
+      .map((res: Response) => new MatchJoinRequest(res.json()))
+      .catch((error: any) => Observable.throw(error.json()));
+
+  }
 }

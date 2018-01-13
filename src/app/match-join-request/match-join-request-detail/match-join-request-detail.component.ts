@@ -5,6 +5,7 @@ import {MatchJoinRequest} from '../../match-join-request/MatchJoinRequest';
 import {MatchJoinRequestService} from '../../match-join-request/match-join-request.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomMatch} from '../../custom-match/custom-match';
+import {Status} from "../Status";
 
 @Component({
   selector: 'app-match-join-request-detail',
@@ -15,12 +16,17 @@ export class MatchJoinRequestDetailComponent implements OnInit {
   public matchJoinRequest : MatchJoinRequest;
   public player: Player;
   public customMatch: CustomMatch;
+  public matchJoinRequestForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
               private fb: FormBuilder,
               private matchJoinRequestService: MatchJoinRequestService,
               private router: Router,
-  ) { }
+  ) {
+    this.matchJoinRequestForm = fb.group({
+      'status': [{value: '' }],
+    });
+  }
 
   ngOnInit() {
     this.route.params
@@ -48,6 +54,15 @@ export class MatchJoinRequestDetailComponent implements OnInit {
             error => this.errorMessage = <any>error.message);
         }
       );
+
+  }
+  accept(){
+    this.matchJoinRequest.status=Status.ACCEPTED;
+    this.matchJoinRequestService.updateMatchJoinRequest(this.matchJoinRequest)
+      .subscribe(
+        player => this.router.navigate([player.uri]),
+        error => this.errorMessage =
+          error.errors ? <any>error.errors[0].message : <any>error.message);
 
   }
 
