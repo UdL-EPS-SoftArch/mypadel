@@ -72,6 +72,7 @@
         {{match?.matchCreator?.username}}
       </a>
     </div>
+
   </div>
   <div class="panel-footer text-center">
     <span *ngIf="match != null && match['level'] != null">
@@ -84,9 +85,12 @@
               class="btn btn-primary">Go back to list
       </button>
     </span>
-    <span *ngIf="match != null && match['isCustom']">
+    <span *ngIf="match != null && match?.uri==customMatchURI()">
       <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
               class="btn btn-primary">Go back to list
+      </button>
+      <button id="createMatchJoinRequest" type="button" (onclick)="createMatchJoinRequest()"
+              class="btn btn-primary">Create Match Join Request
       </button>
     </span>
     <button id="editMatch" type="button" [routerLink]="['']"
