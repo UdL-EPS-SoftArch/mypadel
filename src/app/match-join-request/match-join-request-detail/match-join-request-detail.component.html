@@ -34,8 +34,15 @@
     </div>
   </div>
   <div class="panel-footer text-center">
-    <button id="rejectMatchJoinRequest" type="button" [routerLink]="['customMatch']"
-            class="btn btn-danger">Reject</button>
+    <form id="reject-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="reject()">
+      <fieldset>
+        <button id="rejcetMatchJoinRequest" type="submit"
+                class="btn btn-danger " [disabled]='!(matchJoinRequest?.status=="PENDING")'>Reject
+        </button>
+      </fieldset>
+    </form>
+
+
     <button id="customMatchList" type="button" [routerLink]="['/customMatches']"
             class="btn btn-primary">Back to List</button>
 
@@ -43,7 +50,7 @@
     <form id="player-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="accept()">
       <fieldset>
         <button id="acceptMatchJoinRequest" type="submit"
-                class="btn btn-success " >Accept
+                class="btn btn-success " [disabled]='!(matchJoinRequest?.status=="PENDING")' >Accept
         </button>
       </fieldset>
     </form>

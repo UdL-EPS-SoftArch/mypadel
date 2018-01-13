@@ -65,6 +65,19 @@ export class MatchJoinRequestDetailComponent implements OnInit {
           error.errors ? <any>error.errors[0].message : <any>error.message);
 
   }
+  reject(){
+    this.matchJoinRequest.status=Status.REJECTED;
+    this.matchJoinRequestService.updateMatchJoinRequest(this.matchJoinRequest)
+      .subscribe(
+        player => this.router.navigate([player.uri]),
+        error => this.errorMessage =
+          error.errors ? <any>error.errors[0].message : <any>error.message);
+
+  }
+  isPENDING():boolean{
+    return this.matchJoinRequest.status==Status.PENDING;
+
+  }
 
 
 
