@@ -5,7 +5,9 @@ import {MatchJoinRequest} from '../../match-join-request/MatchJoinRequest';
 import {MatchJoinRequestService} from '../../match-join-request/match-join-request.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomMatch} from '../../custom-match/custom-match';
-import {Status} from "../Status";
+import {Status} from '../Status';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+import {User} from '../../login-basic/user';
 
 @Component({
   selector: 'app-match-join-request-detail',
@@ -13,7 +15,7 @@ import {Status} from "../Status";
 })
 export class MatchJoinRequestDetailComponent implements OnInit {
   public errorMessage: string;
-  public matchJoinRequest : MatchJoinRequest;
+  public matchJoinRequest: MatchJoinRequest;
   public player: Player;
   public customMatch: CustomMatch;
   public matchJoinRequestForm: FormGroup;
@@ -22,6 +24,7 @@ export class MatchJoinRequestDetailComponent implements OnInit {
               private fb: FormBuilder,
               private matchJoinRequestService: MatchJoinRequestService,
               private router: Router,
+  private authentication: AuthenticationBasicService
   ) {
     this.matchJoinRequestForm = fb.group({
       'status': [{value: '' }],
@@ -56,8 +59,8 @@ export class MatchJoinRequestDetailComponent implements OnInit {
       );
 
   }
-  accept(){
-    this.matchJoinRequest.status=Status.ACCEPTED;
+  accept() {
+    this.matchJoinRequest.status = Status.ACCEPTED;
     this.matchJoinRequestService.updateMatchJoinRequest(this.matchJoinRequest)
       .subscribe(
         player => this.router.navigate([player.uri]),
@@ -65,8 +68,8 @@ export class MatchJoinRequestDetailComponent implements OnInit {
           error.errors ? <any>error.errors[0].message : <any>error.message);
 
   }
-  reject(){
-    this.matchJoinRequest.status=Status.REJECTED;
+  reject() {
+    this.matchJoinRequest.status = Status.REJECTED;
     this.matchJoinRequestService.updateMatchJoinRequest(this.matchJoinRequest)
       .subscribe(
         player => this.router.navigate([player.uri]),
@@ -74,10 +77,14 @@ export class MatchJoinRequestDetailComponent implements OnInit {
           error.errors ? <any>error.errors[0].message : <any>error.message);
 
   }
-  isPENDING():boolean{
-    return this.matchJoinRequest.status==Status.PENDING;
-
+  isLoggedIn(): boolean {
+    return this.authentication.isLoggedIn();
   }
+  getCurrentUser(): User {
+    return this.authentication.getCurrentUser();
+  }
+
+
 
 
 

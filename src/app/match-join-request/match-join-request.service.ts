@@ -4,7 +4,7 @@ import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs/Observable';
 import {MatchJoinRequest} from './MatchJoinRequest';
 import {Injectable} from '@angular/core';
-import {Player} from "../player/player";
+import {Player} from '../player/player';
 import {CustomMatch} from '../custom-match/custom-match';
 
 @Injectable()
@@ -46,7 +46,7 @@ export class MatchJoinRequestService {
     headers.append('Authorization', this.authentication.getCurrentUser().authorization);
     const options = new RequestOptions({headers: headers});
 
-    return this.http.put(`${environment.API}${matchJoinRequest.uri}`,matchJoinRequest,options)
+    return this.http.put(`${environment.API}${matchJoinRequest.uri}`, matchJoinRequest, options)
       .map((res: Response) => new MatchJoinRequest(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
 

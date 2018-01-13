@@ -3,11 +3,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CustomMatchService} from '../custom-match.service';
 import {CustomMatch} from '../custom-match';
 import {Player} from '../../player/player';
-import {MatchJoinRequest} from "../../match-join-request/MatchJoinRequest";
-import {MatchJoinRequestService} from "../../match-join-request/match-join-request.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {MatchJoinRequest} from '../../match-join-request/MatchJoinRequest';
+import {MatchJoinRequestService} from '../../match-join-request/match-join-request.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PlayerService} from '../../player/player.service';
-import {User} from "../../login-basic/user";
+import {User} from '../../login-basic/user';
 
 @Component({
   selector: 'app-custom-match-detail',
@@ -17,7 +17,7 @@ export class CustomMatchDetailComponent implements OnInit {
   public customMatch: CustomMatch = new CustomMatch();
   public errorMessage: string;
   public matchCreator: Player;
-  public matchJoinRequest : MatchJoinRequest;
+  public matchJoinRequest: MatchJoinRequest;
   public matchJoinRequestForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
@@ -52,9 +52,9 @@ export class CustomMatchDetailComponent implements OnInit {
 
   createMatchJoinRequest(): void {
     this.matchJoinRequest = new MatchJoinRequest();
-    this.matchJoinRequest.message="Hi I want to join in your match !";
-    this.matchJoinRequest.customMatch=this.customMatch.uri;
-    this.matchJoinRequest.eventDate=this.customMatch.startDate;
+    this.matchJoinRequest.message = 'Hi I want to join in your match !';
+    this.matchJoinRequest.customMatch = this.customMatch.uri;
+    this.matchJoinRequest.eventDate = this.customMatch.startDate;
 
     this.matchJoinRequestService.addMatchJoinRequest(this.matchJoinRequest)
       .subscribe(

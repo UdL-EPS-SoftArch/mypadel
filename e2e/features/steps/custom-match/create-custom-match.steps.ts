@@ -1,6 +1,6 @@
 import { binding, given } from 'cucumber-tsflow';
 import { browser, element, by } from 'protractor';
-import {CustomMatchFormPage} from "../../../pages/custom-match/custom-match-form.page";
+import {CustomMatchFormPage} from '../../../pages/custom-match/custom-match-form.page';
 
 
 

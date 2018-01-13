@@ -47,7 +47,7 @@
             class="btn btn-primary">Back to List</button>
 
 
-    <form id="player-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="accept()">
+    <form id="accept-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="accept()">
       <fieldset>
         <button id="acceptMatchJoinRequest" type="submit"
                 class="btn btn-success " [disabled]='!(matchJoinRequest?.status=="PENDING")' >Accept

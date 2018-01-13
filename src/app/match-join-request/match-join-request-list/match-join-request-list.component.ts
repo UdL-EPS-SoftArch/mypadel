@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomMatchService} from "../../custom-match/custom-match.service";
-import {MatchJoinRequest} from "../MatchJoinRequest";
-import {ActivatedRoute} from "@angular/router";
+import {CustomMatchService} from '../../custom-match/custom-match.service';
+import {MatchJoinRequest} from '../MatchJoinRequest';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class MatchJoinRequestListComponent implements OnInit {
   public totalMatchJoinRequests = 0;
   public errorMessage = '';
 
-  constructor(private customMatchService: CustomMatchService,private route: ActivatedRoute) {}
+  constructor(private customMatchService: CustomMatchService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.params

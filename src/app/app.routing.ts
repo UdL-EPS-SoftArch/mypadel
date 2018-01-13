@@ -26,7 +26,7 @@ import { MatchResultListComponent } from './match-result/matchResult-list/matchR
 import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
 import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
 import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-request-detail/match-join-request-detail.component';
-import {MatchJoinRequestListComponent} from "./match-join-request/match-join-request-list/match-join-request-list.component";
+import {MatchJoinRequestListComponent} from './match-join-request/match-join-request-list/match-join-request-list.component';
 import { PrivateMatchListComponent } from './private-match/private-match-list/private-match-list.component';
 import { PrivateMatchFormComponent } from './private-match/private-match-form/private-match-form.component';
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';

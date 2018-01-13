@@ -7,7 +7,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { AuthenticationBasicService } from '../login-basic/authentication-basic.service';
 import { environment } from '../../environments/environment';
 import { Player } from './player';
-import {User} from "../login-basic/user";
+import {User} from '../login-basic/user';
 @Injectable()
 export class PlayerService {
 
