@@ -1,12 +1,11 @@
-import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 import { MatchResult } from '../MatchResult';
 import { MatchResultService } from '../MatchResult.service';
 
 @Component({
-  selector: 'app-matchresult-list',
-  templateUrl: './matchResult-list.component.html'
+  selector: 'app-matchresult-detail',
+  templateUrl: './matchResult-detail.component.html'
 })
 
 export class MatchResultDetailComponent implements OnInit {
@@ -14,19 +13,14 @@ export class MatchResultDetailComponent implements OnInit {
   public MatchResult: MatchResult;
   public errorMessage = '';
 
-  constructor(private matchResultService: MatchResultService,
-    private route: ActivatedRoute,
-    private router: Router) {
+  public constructor(private matchResultService: MatchResultService, private route: ActivatedRoute) {}
+
+  public ngOnInit() {
+    this.route.params.map(params => params['id']).subscribe((id) => {
+      this.matchResultService.getMatchResult(id).subscribe((matchResult: MatchResult) => {
+          this.MatchResult = matchResult;
+      });
+    });
   }
 
-  ngOnInit() { 
-    this.route.params
-      .map(params => params['id'])
-      .subscribe((id) => {
-      this.matchResultService.getMatchResult(id)
-        .subscribe((matchResult: MatchResult) => {
-          this.MatchResult = matchResult;
-        })
-      })
-    }
-  }
+}

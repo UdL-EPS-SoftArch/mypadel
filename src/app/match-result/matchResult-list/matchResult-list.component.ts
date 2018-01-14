@@ -1,5 +1,4 @@
-import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { MatchResult } from '../MatchResult';
 import { MatchResultService } from '../MatchResult.service';
 
@@ -7,27 +6,23 @@ import { MatchResultService } from '../MatchResult.service';
   selector: 'app-matchresult-list',
   templateUrl: './matchResult-list.component.html'
 })
-
 export class MatchResultListComponent implements OnInit {
 
   public MatchResults: MatchResult[];
   public totalMatchResults = 0;
   public errorMessage = '';
 
-  constructor(private matchResultService: MatchResultService) {
-  }
+  public constructor(private matchResultService: MatchResultService) {}
 
-  ngOnInit() {
-    this.matchResultService.getAllMatchReults()
-    .subscribe(
-      (matchResults: MatchResult[]) => {
+  public ngOnInit() {
+    this.matchResultService.getAllMatchReults().subscribe((matchResults: MatchResult[]) => {
         this.MatchResults = matchResults;
         this.totalMatchResults = matchResults.length;
       },
-      error => this.errorMessage = <any>error.message);
+      (error: Error) => this.errorMessage = error.message);
   }
 
-  public onSearch(MatchResults) {
-    this.MatchResults = MatchResults;
+  public onSearch(matchResults: MatchResult[]) {
+    this.MatchResults = matchResults;
   }
 }
