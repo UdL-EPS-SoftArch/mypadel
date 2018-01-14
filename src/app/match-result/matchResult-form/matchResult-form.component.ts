@@ -29,7 +29,7 @@ export class MatchResultFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.matchResultService.addMatchResult(this.matchResult)
+    this.matchResultService.create(this.matchResult)
       .subscribe(
         matchResult => this.router.navigate([matchResult.uri]),
         error => {

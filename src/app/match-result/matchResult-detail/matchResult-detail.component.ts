@@ -17,7 +17,7 @@ export class MatchResultDetailComponent implements OnInit {
 
   public ngOnInit() {
     this.route.params.map(params => params['id']).subscribe((id) => {
-      this.matchResultService.getMatchResult(id).subscribe((matchResult: MatchResult) => {
+      this.matchResultService.getById(id).subscribe((matchResult: MatchResult) => {
           this.MatchResult = matchResult;
       });
     });

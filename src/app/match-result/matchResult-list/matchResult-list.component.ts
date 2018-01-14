@@ -15,7 +15,7 @@ export class MatchResultListComponent implements OnInit {
   public constructor(private matchResultService: MatchResultService) {}
 
   public ngOnInit() {
-    this.matchResultService.getAllMatchReults().subscribe((matchResults: MatchResult[]) => {
+    this.matchResultService.getAll().subscribe((matchResults: MatchResult[]) => {
         this.MatchResults = matchResults;
         this.totalMatchResults = matchResults.length;
       },
