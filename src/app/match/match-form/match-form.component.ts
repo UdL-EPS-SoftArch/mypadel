@@ -29,7 +29,7 @@ export class MatchFormComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private publicMatchService: PublicMatchService,
               private customMatchService: CustomMatchService,
-              private privateMatchService: PrivateMatchService,) {
+              private privateMatchService: PrivateMatchService) {
     this.matchBuilder = MatchBuilder.match();
     this.matchForm = fb.group({
       'startDate': ['Match start hour', Validators.required],
