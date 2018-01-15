@@ -79,12 +79,12 @@
               class="btn btn-primary">Go back to list
       </button>
     </span>
-    <span *ngIf="match != null && match['isPrivate']">
+    <span *ngIf="match != null && match?._links.privateMatch != null">
       <button id="listMatchesPrivate" type="button" [routerLink]="['/privateMatches']"
               class="btn btn-primary">Go back to list
       </button>
     </span>
-    <span *ngIf="match != null && match['isCustom']">
+    <span *ngIf="match != null && match?._links.customMatch != null">
       <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
               class="btn btn-primary">Go back to list
       </button>
