@@ -16,6 +16,13 @@ export class MatchService {
               private authentication: AuthenticationBasicService) {
   }
 
+  // GET /matches
+  getAllMatches(): Observable<Match[]> {
+    return this.http.get(`${environment.API}/matches`)
+      .map((res: Response) => res.json()._embedded.publicMatches.map(json => new Match(json)))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
   // GET /matches /id
   getMatch(id: string): Observable<Match> {
     return this.http.get(`${environment.API}/matches/${id}`)
