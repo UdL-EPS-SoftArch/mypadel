@@ -15,7 +15,7 @@ export class ReservationFormPage {
     this.duration = this.form.element(by.css('option[value="PT60M"]')).click();
     this.courtType = this.form.element(by.css('option[value="INDOOR"]')).click();
     this.form.element(by.id('startdate')).click();
-    this.startDate = this.form.element(by.tagName('owl-date-time')).click();
+    this.startDate = this.form.element(by.className('owl-calendar-outFocus')).click();
     this.registerButton = this.form.element(by.tagName('button'));
   }
 
