@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http, RequestOptions, Response} from '@angular/http';
 import {AuthenticationBasicService} from '../login-basic/authentication-basic.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -38,6 +38,17 @@ export class MatchService {
   getMatchInvitations(link: string): Observable<MatchInvitation[]> {
     return this.http.get(`${link}`)
       .map((res: Response) => res.json()._embedded.matchInvitations.map(json => new MatchInvitation(json)))
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  updateMatch(match: Match): Observable<Match> {
+    const body = JSON.stringify(match);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', this.authentication.getCurrentUser().authorization);
+    const options = new RequestOptions({headers: headers});
+
+    return this.http.put(`${environment.API}${match.uri}`, body, options)
+      .map((res: Response) => new Match(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
 }
