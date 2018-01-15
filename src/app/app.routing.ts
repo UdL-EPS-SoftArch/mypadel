@@ -37,6 +37,7 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+import {MatchEditComponent} from './match/match-edit/match-edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -71,6 +72,7 @@ export const routes: Routes = [
   { path: 'matchInvitations', component: InviteCreateComponent},
   { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matches/new/:type', component: MatchFormComponent},
+  { path: 'matches/:id/edit', component: MatchEditComponent},
   { path: 'matchResults', component: MatchResultListComponent },
   { path: 'privateMatches', component: PrivateMatchListComponent},
   { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
