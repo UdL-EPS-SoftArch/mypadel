@@ -7,7 +7,6 @@ import {AdminFormComponent} from './admin/admin-form/admin-form.component';
 import {AdminEditComponent} from './admin/admin-edit/admin-edit.component';
 import {AdminDeleteComponent} from './admin/admin-delete/admin-delete.component';
 import {CustomMatchListComponent} from './custom-match/custom-match-list/custom-match-list.component';
-import {CustomMatchFormComponent} from './custom-match/custom-match-form/custom-match-form.component';
 import {PublicMatchListComponent} from './public-match/public-match-list/public-match-list.component';
 import {PublicMatchFormComponent} from './public-match/public-match-form/public-match-form.component';
 import {PublicMatchEditComponent} from './public-match/public-match-edit/public-match-edit.component';
@@ -36,6 +35,8 @@ import {ReservationListComponent} from './reservation/reservation-list/reservati
 import {ReservationEditComponent} from './reservation/reservation-edit/reservation-edit.component';
 import {ReservationDeleteComponent} from './reservation/reservation-delete/reservation-delete.component';
 import {ReservationDetailComponent} from './reservation/reservation-detail/reservation-detail.component';
+import {MatchFormComponent} from './match/match-form/match-form.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -45,8 +46,7 @@ export const routes: Routes = [
   { path: 'admins', component: AdminListComponent },
   { path: 'admins/:id', component: AdminDetailComponent },
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
-  { path: 'publicMatches', component: PublicMatchListComponent },
-  { path: 'publicMatches/new', component: PublicMatchFormComponent },
+  { path: 'publicMatches', component: PublicMatchListComponent},
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'courts', component: CourtListComponent },
   { path: 'courts/new', component: CourtFormComponent },
@@ -60,7 +60,6 @@ export const routes: Routes = [
   { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'publicMatches', component: PublicMatchListComponent },
   { path: 'customMatches', component: CustomMatchListComponent },
-  { path: 'customMatches/new', component: CustomMatchFormComponent },
   { path: 'customMatches/:id/edit', component: CustomMatchEditComponent },
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
@@ -70,11 +69,15 @@ export const routes: Routes = [
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
   { path: 'matches/:id', component: MatchDetailComponent},
+  { path: 'matches/new/:type', component: MatchFormComponent},
   { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'privateMatches', component: PrivateMatchListComponent},
+  { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
+  { path: 'matchInvitations', component: InviteCreateComponent},
+  { path: 'match/new', component: MatchFormComponent},
   { path: 'joinMatches', component: JoinMatchListComponent},
   { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
   { path: 'joinMatches/:id/delete', component: JoinMatchDeleteComponent, canActivate: [LoggedInGuard] },
-  { path: 'matchResults', component: MatchResultListComponent },
   { path: 'reservations/new', component: ReservationFormComponent },
   { path: 'reservations', component: ReservationListComponent },
   { path: 'reservations/:id/edit', component: ReservationEditComponent, canActivate: [LoggedInGuard] },
