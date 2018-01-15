@@ -14,14 +14,14 @@ export class PublicMatchDetailsPage {
   }
 
   getDuration(): promise.Promise<string> {
-    return this.duration.getText().then(text => text.split("\n")[1]);
+    return this.duration.getText().then(text => text.split('\n')[1]);
   }
 
   getCourtType(): promise.Promise<string> {
-    return this.courtType.getText().then(text => text.split("\n")[1]);
+    return this.courtType.getText().then(text => text.split('\n')[1]);
   }
 
   getLevel(): promise.Promise<string> {
-    return this.level.getText().then(text => text.split("\n")[1]);
+    return this.level.getText().then(text => text.split('\n')[1]);
   }
 }
