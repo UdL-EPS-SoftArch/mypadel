@@ -8,7 +8,7 @@ import {MatchService} from '../Match.service';
 })
 export class MatchListComponent implements OnInit {
   public matches: Match[] = [];
-  public totalmatches = 0;
+  public totalMatches = 0;
   public errorMessage = '';
 
   constructor(private matchService: MatchService) {}
@@ -18,7 +18,7 @@ export class MatchListComponent implements OnInit {
       .subscribe(
         (matches: Match[]) => {
           this.matches = matches;
-          this.totalmatches = matches.length; },
+          this.totalMatches = matches.length; },
         error => this.errorMessage = <any>error.message);
   }
 
