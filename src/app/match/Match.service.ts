@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, RequestOptions, Response} from '@angular/http';
+import {Http, RequestOptions, Response, Headers} from '@angular/http';
 import {AuthenticationBasicService} from '../login-basic/authentication-basic.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
