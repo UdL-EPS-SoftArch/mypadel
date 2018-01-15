@@ -10,13 +10,12 @@ export class ReservationFormPage {
   private courtType;
   private registerButton;
 
-
   constructor() {
     this.form = element(by.id('reservation-form'));
-    this.duration = this.form.element(by.css('option[value="PT1H"]')).click();
+    this.duration = this.form.element(by.css('option[value="PT60M"]')).click();
     this.courtType = this.form.element(by.css('option[value="INDOOR"]')).click();
-    this.form.element(by.id('startDate')).click();
-    this.startDate = this.form.element(by.className('owl-calendar-outFocus')).click();
+    this.form.element(by.id('startdate')).click();
+    this.startDate = this.form.element(by.tagName('owl-date-time')).click();
     this.registerButton = this.form.element(by.tagName('button'));
   }
 

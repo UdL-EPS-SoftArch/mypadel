@@ -13,7 +13,7 @@ class CreateReservationSteps {
 
   @when(/^I create a reservation with duration "([^"]*)", courtType "([^"]*)" and startDate "([^"]*)"$/)
   public iCreateAReservation (duration: string, courtType: string, startDate: string, callback): void {
-    new MainContentPage().clickLinkWithText('Create New Reservation');
+    new MainContentPage().clickLinkWithText('Make a new Reservation');
     this.datasetForm = new ReservationFormPage();
     this.datasetForm.setDuration(duration);
     this.datasetForm.setCourtType(courtType);
