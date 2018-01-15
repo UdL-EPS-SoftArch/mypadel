@@ -20,8 +20,9 @@ export class DetailsPublicMatchSteps {
 
   @then(/^I see a public match with duration "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
   public iSeePubMaDet(duration: string, courtType: string, level: string, callback): void {
-    expect(this.publicMatchDetails.getDuration()).to.eventually.equal(duration).and.notify(callback);
-    expect(this.publicMatchDetails.getCourtType()).to.eventually.equal(courtType).and.notify(callback);
-    expect(this.publicMatchDetails.getLevel()).to.eventually.equal(level).and.notify(callback);
+    expect(this.publicMatchDetails.getDuration()).to.eventually.equal(duration);
+    expect(this.publicMatchDetails.getCourtType()).to.eventually.equal(courtType);
+    expect(this.publicMatchDetails.getLevel()).to.eventually.equal(level);
+    callback();
   }
 }
