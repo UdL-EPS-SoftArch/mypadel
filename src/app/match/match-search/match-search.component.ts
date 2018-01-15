@@ -4,8 +4,8 @@ import {MatchService} from '../Match.service';
 import {Match} from "../Match";
 
 @Component({
-  selector: 'app-public-match-search',
-  templateUrl: './public-match-search.component.html'
+  selector: 'app-match-search',
+  templateUrl: './match-search.component.html'
 })
 
 export class MatchSearchComponent {
