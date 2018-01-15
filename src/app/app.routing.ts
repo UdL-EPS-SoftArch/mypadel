@@ -39,6 +39,7 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+import {MatchListComponent} from './match/match-list/match-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -48,7 +49,6 @@ export const routes: Routes = [
   { path: 'admins', component: AdminListComponent },
   { path: 'admins/:id', component: AdminDetailComponent },
   { path: 'admins/:id/delete', component: AdminDeleteComponent, canActivate: [LoggedInGuard] },
-  { path: 'publicMatches', component: PublicMatchListComponent },
   { path: 'publicMatches/new', component: PublicMatchFormComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'courts', component: CourtListComponent },
@@ -61,8 +61,6 @@ export const routes: Routes = [
   { path: 'players/:id', component: PlayerDetailComponent },
   { path: 'players/:id/edit', component: PlayerEditComponent, canActivate: [LoggedInGuard] },
   { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
-  { path: 'publicMatches', component: PublicMatchListComponent },
-  { path: 'customMatches', component: CustomMatchListComponent },
   { path: 'customMatches/new', component: CustomMatchFormComponent },
   { path: 'customMatches/:id/edit', component: CustomMatchEditComponent },
   { path: 'customMatches/:id', component: CustomMatchDetailComponent },
@@ -70,11 +68,11 @@ export const routes: Routes = [
   { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
-  { path: 'privateMatches', component: PrivateMatchListComponent},
   { path: 'privateMatches/new', component: PrivateMatchFormComponent},
   { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
+  { path: 'matches', component: MatchListComponent},
   { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matchResults', component: MatchResultListComponent },
   { path: 'joinMatches', component: JoinMatchListComponent},

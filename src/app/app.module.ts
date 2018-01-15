@@ -72,6 +72,7 @@ import { MatchResultEditComponent } from './match-result/matchResult-edit/matchR
 import { MatchResultFormComponent } from './match-result/matchResult-form/matchResult-form.component';
 import { MatchResultSearchComponent } from './match-result/matchResult-search/matchResult-search.component';
 import { MatchResultService } from './match-result/MatchResult.service';
+import {MatchListComponent} from './match/match-list/match-list.component';
 
 
 @NgModule({
@@ -120,6 +121,7 @@ import { MatchResultService } from './match-result/MatchResult.service';
     PrivateMatchDetailComponent,
     InviteCreateComponent,
     MatchDetailComponent,
+    MatchListComponent,
     JoinMatchListComponent,
     JoinMatchSearchComponent,
     JoinMatchDeleteComponent,
