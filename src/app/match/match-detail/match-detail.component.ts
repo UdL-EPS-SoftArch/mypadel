@@ -75,10 +75,7 @@ export class MatchDetailComponent implements OnInit {
 
 
   }
-  customMatchURI(): string {
-    return `/customMatches/${this.match.id}`;
-
-  }
+  
   getCurrentUser(): User {
     return this.userService.getCurrentUser();
   }
