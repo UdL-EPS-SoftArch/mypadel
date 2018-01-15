@@ -1,3 +1,87 @@
-<p>
-  match-edit works!
-</p>
+<h2>Edit match</h2>
+<form id="match-form" [formGroup]="matchForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+
+    <!-- Duration input-->
+    <div class="form-group row" [class.has-error]="matchForm.controls['duration'].touched &&
+                  matchForm.controls['duration'].hasError('required')">
+      <label class="col-md-3 control-label" for="duration">Match duration*</label>
+      <select name="duration" [(ngModel)]="match?.duration" [formControl]="matchForm.controls['duration']" id="duration" class="form-control input-md">
+        <option value="PT30M">30 minutes</option>
+        <option value="PT60M">1 hour</option>
+        <option value="PT90M">1 hour and 30 minutes</option>
+      </select>
+      <div class="col-md-9">
+        <div *ngIf="matchForm.controls['duration'].touched &&
+                    matchForm.controls['duration'].hasError('required')" class="label-warning">
+          A duration between 30 and 120 minutes is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- Court type input-->
+    <div class="form-group row" [class.has-error]="matchForm.controls['courtType'].touched &&
+                  matchForm.controls['courtType'].hasError('required')">
+      <label class="col-md-3 control-label" for="CourtType">Match CourtType*</label>
+      <select name="courtType" [(ngModel)]="match?.courtType" [formControl]="matchForm.controls['courtType']" id="courtType" class="form-control input-md">
+        <option value="INDOOR">Indoor</option>
+        <option value="OUTDOOR">Outdoor</option>
+        <option value="UNDEFINED">Do not care</option>
+      </select>
+      <div class="col-md-9">
+        <div *ngIf="matchForm.controls['courtType'].touched &&
+                    matchForm.controls['courtType'].hasError('required')" class="label-warning">
+          A court type selection is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- Match level input-->
+    <div class="form-group row" [class.has-error]="matchForm.controls['level'].touched &&
+                  matchForm.controls['level'].hasError('required')">
+      <label class="col-md-3 control-label" for="level">Match level*</label>
+      <select name="level" [(ngModel)]="match?.level" [formControl]="matchForm.controls['level']" id="level" class="form-control input-md">
+        <option value="NOVICE">Novice</option>
+        <option value="BEGINNER">Beginner</option>
+        <option value="INTERMEDIATE">Intermediate</option>
+        <option value="ADVANCED">Advanced</option>
+        <option value="BRUTAL">Expert</option>
+      </select>
+      <div class="col-md-9">
+        <div *ngIf="matchForm.controls['level'].touched &&
+                    matchForm.controls['level'].hasError('required')" class="label-warning">
+          A level selection is required!
+        </div>
+      </div>
+    </div>
+
+    <!-- Start date input-->
+    <div class="form-group row" [class.has-error]="matchForm.controls['startDate'].touched &&
+                  matchForm.controls['startDate'].hasError('required')">
+      <label class="col-md-3 control-label" for="StartDate">Match StartDate*</label>
+      <owl-date-time id="startDate" [(ngModel)]="match?.startDate" [formControl]="matchForm.controls['startDate']"></owl-date-time>
+      <div class="col-md-9">
+        <div *ngIf="matchForm.controls['startDate'].touched &&
+                    matchForm.controls['startDate'].hasError('required')" class="label-warning">
+          A starting date is required!
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="label-danger col-md-9">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button id="createMatch" type="submit"
+                class="btn btn-success pull-right" [disabled]="!matchForm.valid">Edit
+        </button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
