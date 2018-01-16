@@ -24,8 +24,7 @@ export class MatchService {
         const publicMatches = res.json()._embedded.publicMatches;
         const privateMatches = res.json()._embedded.privateMatches;
         const customMatches = res.json()._embedded.customMatches;
-        matches.concat(publicMatches, privateMatches, customMatches);
-        return matches.filter(match => new Match(match));
+        return matches.concat(publicMatches, privateMatches, customMatches);
       })
       .catch((error: any) => Observable.throw(error.json()));
   }
