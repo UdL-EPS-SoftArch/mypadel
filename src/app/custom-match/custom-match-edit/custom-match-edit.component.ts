@@ -40,7 +40,7 @@ export class CustomMatchEditComponent implements OnInit {
   onSubmit(): void {
     this.customMatchService.updateCustomMatch(this.customMatch)
       .subscribe(
-        customMatch => this.router.navigate([customMatch.uri]),
+        customMatch => this.router.navigate(['/matches/' + customMatch.id]),
         error => this.errorMessage =
           error.errors ? <any>error.errors[0].message : <any>error.message);
   }
