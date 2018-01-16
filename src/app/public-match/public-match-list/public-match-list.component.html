@@ -8,7 +8,7 @@
   <div class="col-md-8">
     <h4>
       <a class="btn btn-primary" role="button"
-         [routerLink]="['/publicMatches/new']">Create New Public Match</a>
+         [routerLink]="['/matches/new/public']">Create New Public Match</a>
     </h4>
   </div>
 </div>
@@ -24,7 +24,7 @@
   <div class="panel-group col-md-12">
     <div class="panel panel-default" *ngFor="let publicMatch of publicMatches">
       <div class="panel-heading">
-        <h5>Public Match: <a routerLink="{{publicMatch.uri}}">{{publicMatch.id}}</a></h5>
+        <h5>Public Match: <a routerLink="/matches/{{publicMatch?.id}}">{{publicMatch.id}}</a></h5>
       </div>
       <div class="panel-body">
         <div class="col-md-4">

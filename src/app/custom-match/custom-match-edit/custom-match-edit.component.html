@@ -1,6 +1,7 @@
-<h2>Create Custom Match</h2>
+<h2>Edit customMatch</h2>
 <form id="custom-match-form" [formGroup]="customMatchForm" (ngSubmit)="onSubmit()">
   <fieldset>
+
     <!-- Duration input-->
     <div class="form-group row" [class.has-error]="customMatchForm.controls['duration'].touched &&
                   customMatchForm.controls['duration'].hasError('required')">
@@ -21,7 +22,7 @@
     <!-- Court type input-->
     <div class="form-group row" [class.has-error]="customMatchForm.controls['courtType'].touched &&
                   customMatchForm.controls['courtType'].hasError('required')">
-      <label class="col-md-3 control-label" for="courtType">Match CourtType*</label>
+      <label class="col-md-3 control-label" for="CourtType">Match CourtType*</label>
       <select name="courtType" [(ngModel)]="customMatch.courtType" [formControl]="customMatchForm.controls['courtType']" id="courtType" class="form-control input-md">
         <option value="INDOOR">Indoor</option>
         <option value="OUTDOOR">Outdoor</option>
@@ -59,7 +60,7 @@
       <div class="col-md-3"></div>
       <div class="col-md-9">
         <button id="createCustomMatch" type="submit"
-                class="btn btn-success pull-right" [disabled]="!customMatchForm.valid">Create
+                class="btn btn-success pull-right" [disabled]="!customMatchForm.valid">Edit
         </button>
       </div>
     </div>

@@ -14,6 +14,7 @@ class AuthenticationSteps {
   @given(/^I sign in as "([^"]*)" with password "([^"]*)"$/)
   public iSignInAsWithPassword (username: string, password: string, callback): void {
     this.navBar.clickSignin();
+    browser.waitForAngular();
     this.loginForm.typeUsername(username);
     this.loginForm.typePassword(password);
     this.loginForm.submitForm();

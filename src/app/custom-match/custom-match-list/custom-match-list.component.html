@@ -3,19 +3,19 @@
     <h4 i18n>{ totalCustomMatches, plural,
       =0 {There are no pending custom matches}
       =1 {There is 1 pending custom match}
-      other { There are {{totalCustomMatches}} pending public matches} }</h4>
+      other { There are {{totalCustomMatches}} pending custom matches} }</h4>
   </div>
   <div class="col-md-8">
     <h4>
       <a class="btn btn-primary" role="button"
-         [routerLink]="['/customMatches/new']">Create New Custom Match</a>
+         [routerLink]="['/matches/new/custom']">Create New Custom Match</a>
     </h4>
   </div>
 </div>
 <div class="row">
   <h3 class="col-md-12">Custom Matches</h3>
   <div class="col-md-12">
-    Custom Match Search
+    <app-custom-match-search (onSearchited)="onSearch($event)" [customMatches]="customMatches"></app-custom-match-search>
   </div>
 </div>
 
@@ -23,16 +23,16 @@
   <div class="panel-group col-md-12">
     <div class="panel panel-default" *ngFor="let customMatch of customMatches">
       <div class="panel-heading">
-        <h4>CustomMatch: <a routerLink="{{customMatch.uri}}">{{customMatch.id}}</a></h4>
+        <h4>CustomMatch: <a routerLink="/matches/{{customMatch?.id}}">{{customMatch.id}}</a></h4>
       </div>
       <div class="panel-body">
-        <div class="col-md-6">
-          <h4>Start Date:</h4>
+        <div class="col-md-4">
+          <h5>Start Date:</h5>
           <p>{{customMatch.startDate}}</p>
         </div>
+
       </div>
     </div>
   </div>
 </div>
-
 
