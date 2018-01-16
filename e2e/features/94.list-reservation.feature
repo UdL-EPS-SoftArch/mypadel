@@ -3,7 +3,6 @@ Feature: List Reservations
   As a user
   I want to list them
 
-
   Scenario: List all reservations when just default one
     Given I'm in the home page
     When I click menu option "Reservations"
