@@ -72,6 +72,7 @@
         {{match?.matchCreator?.username}}
       </a>
     </div>
+
   </div>
   <div class="panel-footer text-center">
     <span *ngIf="match != null && match['level'] != null">
@@ -84,10 +85,35 @@
               class="btn btn-primary">Go back to list
       </button>
     </span>
-    <span *ngIf="match != null && match['isCustom']">
+    <span *ngIf="match != null && match?._links.customMatch != null">
       <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
               class="btn btn-primary">Go back to list
       </button>
+<form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
+    <fieldset>
+
+
+        <span *ngIf="isLoggedIn()&&!(getCurrentUser().username==match?.matchCreator?.username)">
+
+        <button id="createMatchJoinRequest" type="submit"
+                class="btn btn-success pull-right">Create MatchJoinRequest
+        </button>
+          </span>
+
+
+
+    </fieldset>
+
+  </form>
+      <div class="col-md-9">
+        <span *ngIf="isLoggedIn()&&getCurrentUser().username==match?.matchCreator?.username">
+        <button id="listMatchJoinRequest" type="submit" [routerLink]="[matchJoinRequestURI()]"
+                class="btn btn-success pull-right">List MatchJoinRequests
+        </button>
+          </span>
+
+  </div>
+
     </span>
     <button id="editMatch" type="button" [routerLink]="['edit']"
             class="btn btn-success">Edit match

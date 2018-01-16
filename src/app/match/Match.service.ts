@@ -51,4 +51,8 @@ export class MatchService {
       .map((res: Response) => new Match(res.json()))
       .catch((error: any) => Observable.throw(error.json()));
   }
+
+  isLoggedIn(): boolean {
+    return this.authentication.isLoggedIn();
+  }
 }
