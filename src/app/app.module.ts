@@ -41,6 +41,9 @@ import { PlayerDetailComponent } from './player/player-detail/player-detail.comp
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
+import { MatchJoinRequestService } from './match-join-request/match-join-request.service';
+import { MatchJoinRequestDetailComponent } from './match-join-request/match-join-request-detail/match-join-request-detail.component';
+import { MatchJoinRequestListComponent } from './match-join-request/match-join-request-list/match-join-request-list.component';
 import { PrivateMatchService } from './private-match/private-match.service';
 import { PrivateMatchEditComponent } from './private-match/private-match-edit/private-match-edit.component';
 import { PrivateMatchDetailComponent } from './private-match/private-match-detail/private-match-detail.component';
@@ -97,6 +100,8 @@ import {MatchSearchComponent} from './match/match-search/match-search.component'
     PublicMatchEditComponent,
     PublicMatchDetailComponent,
     MatchResultListComponent,
+    MatchJoinRequestDetailComponent,
+    MatchJoinRequestListComponent,
     PrivateMatchEditComponent,
     PrivateMatchDetailComponent,
     InviteCreateComponent,
@@ -131,7 +136,7 @@ import {MatchSearchComponent} from './match/match-search/match-search.component'
   ],
   providers: [AuthenticationBasicService, LoggedInGuard, AdminService, PublicMatchService,
               PlayerService, CustomMatchService, CourtService, MatchService, PrivateMatchService,
-              JoinMatchService, ReservationService, MatchResultService],
+              JoinMatchService, ReservationService, MatchResultService, MatchJoinRequestService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

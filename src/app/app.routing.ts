@@ -35,6 +35,8 @@ import {ReservationEditComponent} from './reservation/reservation-edit/reservati
 import {ReservationDeleteComponent} from './reservation/reservation-delete/reservation-delete.component';
 import {ReservationDetailComponent} from './reservation/reservation-detail/reservation-detail.component';
 import {MatchListComponent} from './match/match-list/match-list.component';
+import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-request-detail/match-join-request-detail.component';
+import {MatchJoinRequestListComponent} from './match-join-request/match-join-request-list/match-join-request-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -60,6 +62,8 @@ export const routes: Routes = [
   { path: 'publicMatches/:id', component: PublicMatchDetailComponent },
   { path: 'publicMatches/:id/edit', component: PublicMatchEditComponent },
   { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'matchJoinRequests/:id', component: MatchJoinRequestDetailComponent },
+  { path: 'customMatches/:id/matchJoinRequests', component: MatchJoinRequestListComponent },
   { path: 'privateMatches/:id', component: PrivateMatchDetailComponent},
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
