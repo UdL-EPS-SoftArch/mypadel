@@ -31,10 +31,6 @@ export class PrivateMatchFormPage {
     return this.courtType.getText();
   }
 
-  getLevel(): promise.Promise<string> {
-    return this.duration.getText();
-  }
-
   setStartDate(value: string): promise.Promise<void> {
     this.startDate.sendKeys(protractor.Key.DELETE);
     return this.startDate.clear().sendKeys(value);
@@ -45,10 +41,6 @@ export class PrivateMatchFormPage {
   }
 
   setCourtType(value: string): promise.Promise<void> {
-    return this.duration = this.form.element(by.css('option[value="' + value + '"]')).click();
-  }
-
-  setLevel(value: string): promise.Promise<void> {
     return this.duration = this.form.element(by.css('option[value="' + value + '"]')).click();
   }
 
