@@ -11,7 +11,7 @@ class CreatePrivateMatchSteps {
   private datasetForm;
 
   @when(/^I create a private match with duration "([^"]*)", court type "([^"]*)"$/)
-  public iCreateAPublicMatch (duration: string, courtType: string, callback): void {
+  public iCreateAPrivateMatch (duration: string, courtType: string, callback): void {
     new MainContentPage().clickLinkWithText('Create New Private Match');
     this.datasetForm = new PrivateMatchFormPage();
     this.datasetForm.setDuration(duration);
