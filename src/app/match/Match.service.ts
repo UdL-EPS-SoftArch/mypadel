@@ -16,6 +16,20 @@ export class MatchService {
               private authentication: AuthenticationBasicService) {
   }
 
+  // GET /matches
+  getAllMatches(): Observable<Match[]> {
+    return this.http.get(`${environment.API}/matches`)
+      .map((res: Response) => {
+        const matches = [];
+        const publicMatches = res.json()._embedded.publicMatches;
+        const privateMatches = res.json()._embedded.privateMatches;
+        const customMatches = res.json()._embedded.customMatches;
+        return matches.concat(publicMatches, privateMatches, customMatches);
+      })
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+
   // GET /matches /id
   getMatch(id: string): Observable<Match> {
     return this.http.get(`${environment.API}/matches/${id}`)
@@ -24,7 +38,7 @@ export class MatchService {
   }
 
   getMatchByStartDate(from: string, to: string): Observable<Response> {
-    return this.http.get(`${environment.API}/matches/search/findByStartDateBetween?from=${from}&to=${to}`)
+    return this.http.get(`${environment.API}/matches/search/findByStartDateStringBetween?from=${from}&to=${to}`)
       .map((res: Response) => res.json()._embedded.matches.map(json => new Match(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }

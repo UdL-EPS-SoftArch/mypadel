@@ -11,7 +11,7 @@ export class ListPublicMatchesSteps {
 
   @then(/^I see (\d+) public matches$/)
   public iSeePubMa(count: string, callback): void {
-    element(by.linkText('Public Matches')).click();
+    element(by.linkText('Matches')).click();
     expect(this.publicMatchesList.getPublicMatchesCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
   }

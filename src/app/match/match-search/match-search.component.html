@@ -1,0 +1,26 @@
+<h4>Filter matches by Start Dates</h4>
+<h5>Since start date:</h5>
+<owl-date-time #startDateFrom></owl-date-time>
+<h5>Until start date:</h5>
+<owl-date-time #startDateTo></owl-date-time>
+<!-- Button -->
+<div class="form-group row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9">
+    <button id="searchByDate" type="submit"
+            class="btn btn-success pull-right" (click)="performSearch(startDateFrom.value, startDateTo.value)">Filter
+    </button>
+  </div>
+</div>
+
+<h4>Filter matches by Type</h4>
+<div class="btn-group" role="group" aria-label="Select a type of match to filter">
+  <button type="button" class="btn btn-default" (click)="searchPublic()">Public Match</button>
+  <button type="button" class="btn btn-default" (click)="searchPrivate()">Private Match</button>
+  <button type="button" class="btn btn-default" (click)="searchCustom()">Custom Match</button>
+</div>
+
+<p i18n>{ matches.length, plural,
+  =0 {No matches found}
+  =1 {1 match found}
+  other { {{matches.length}} matches found} }</p>
