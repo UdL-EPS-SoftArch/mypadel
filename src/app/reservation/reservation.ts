@@ -1,4 +1,4 @@
-import {CourtType} from "./court-type";
+import {CourtType} from './court-type';
 
 export class Reservation {
   uri: string;

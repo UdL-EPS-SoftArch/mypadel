@@ -31,7 +31,7 @@ import { ReservationFormComponent } from './reservation/reservation-form/reserva
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { ReservationEditComponent } from './reservation/reservation-edit/reservation-edit.component';
 import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
-import {ReservationDetailComponent} from "./reservation/reservation-detail/reservation-detail.component";
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
