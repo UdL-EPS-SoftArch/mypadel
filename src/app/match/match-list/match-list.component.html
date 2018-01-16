@@ -41,7 +41,15 @@
         </div>
         <div class="col-md-3">
           <h5>Match type:</h5>
-
+          <span *ngIf="match != null && match?._links.publicMatch != null">
+            Public Match
+          </span>
+          <span *ngIf="match != null && match?._links.privateMatch != null">
+            Private Match
+          </span>
+          <span *ngIf="match != null && match?._links.customMatch != null">
+            Custom Match
+          </span>
         </div>
       </div>
     </div>
