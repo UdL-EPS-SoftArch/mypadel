@@ -10,6 +10,8 @@ class CreateCourtSteps {
   @given(/^I create a court$/)
   public createCourt (callback): void {
     element(by.linkText('Create a new Court')).click();
+    element(by.id('available')).click();//we need to add this lines of codes to create a reservation
+    element(by.id('isIndoor')).click();//we need to add this lines of codes to create a reservation
     this.datasetForm.submitForm();
     browser.waitForAngular();
     callback();
