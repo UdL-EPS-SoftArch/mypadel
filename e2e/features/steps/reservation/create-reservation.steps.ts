@@ -17,7 +17,6 @@ class CreateReservationSteps {
     this.datasetForm = new ReservationFormPage();
     this.datasetForm.setDuration(duration);
     this.datasetForm.setCourtType(courtType);
-    this.datasetForm.setStartDate(startDate);
     this.datasetForm.submitForm();
     browser.waitForAngular();
     callback();
