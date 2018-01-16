@@ -5,12 +5,11 @@
       =1 {There is 1 pending match}
       other { There are {{matches?.length}} pending matches} }</h4>
   </div>
-  <div class="dropdown col-md-8">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Create new match
-      <span class="caret"></span>
+  <div class="btn-group">
+    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Create new match <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <ul class="dropdown-menu">
       <li><a [routerLink]="['/matches/new/public']">Public Match</a></li>
       <li><a [routerLink]="['/matches/new/private']">Private Match</a></li>
       <li><a [routerLink]="['/matches/new/custom']">Custom Match</a></li>
