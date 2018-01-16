@@ -3,13 +3,18 @@
     <h4 i18n>{ totalMatches, plural,
       =0 {There are no pending matches}
       =1 {There is 1 pending match}
-      other { There are {{matches}} pending matches} }</h4>
+      other { There are {{matches?.length}} pending matches} }</h4>
   </div>
-  <div class="col-md-8">
-    <h4>
-      <a class="btn btn-primary" role="button"
-         [routerLink]="['/publicMatches/new']">Create New Match</a>
-    </h4>
+  <div class="dropdown col-md-8">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Create new match
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a [routerLink]="['/matches/new/public']">Public Match</a></li>
+      <li><a [routerLink]="['/matches/new/private']">Private Match</a></li>
+      <li><a [routerLink]="['/matches/new/custom']">Custom Match</a></li>
+    </ul>
   </div>
 </div>
 
