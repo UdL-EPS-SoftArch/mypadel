@@ -17,8 +17,8 @@ export class MatchListComponent implements OnInit {
     this.matchService.getAllMatches()
       .subscribe(
         (matches: Match[]) => {
-          this.matches = matches;
-          this.totalMatches = matches.length; },
+          this.matches = matches.filter(match => match != null);
+          this.totalMatches = this.matches.length; },
         error => this.errorMessage = <any>error.message);
   }
 
