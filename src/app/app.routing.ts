@@ -7,7 +7,6 @@ import { AdminFormComponent } from './admin/admin-form/admin-form.component';
 import { AdminEditComponent } from './admin/admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin/admin-delete/admin-delete.component';
 import { CustomMatchListComponent } from './custom-match/custom-match-list/custom-match-list.component';
-import { CustomMatchFormComponent } from './custom-match/custom-match-form/custom-match-form.component';
 import { PublicMatchListComponent } from './public-match/public-match-list/public-match-list.component';
 import { PublicMatchEditComponent } from './public-match/public-match-edit/public-match-edit.component';
 import { PublicMatchDetailComponent } from './public-match/public-match-detail/public-match-detail-component';
