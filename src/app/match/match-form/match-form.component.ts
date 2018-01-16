@@ -35,7 +35,7 @@ export class MatchFormComponent implements OnInit {
       'startDate': ['Match start hour', Validators.required],
       'duration': ['Duration of the match', Validators.required],
       'courtType': ['Type of court', Validators.required],
-      'level': ['Difficulty', Validators.required],
+      'level': ['Difficulty'],
     });
   }
 
