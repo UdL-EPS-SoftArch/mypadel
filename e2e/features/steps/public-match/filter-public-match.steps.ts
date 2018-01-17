@@ -9,7 +9,7 @@ const expect = chai.expect;
 export class FilterPublicMatchSteps {
   private mainContent = new MainContentPage();
 
-  @when(/^I click filter button "([^"]*)"$/)
+  @when(/^I click button "([^"]*)"$/)
   public iClickFilterButton(filterButton: string, callback): void {
     this.mainContent.clickButtonWithText(filterButton);
     browser.waitForAngular();
