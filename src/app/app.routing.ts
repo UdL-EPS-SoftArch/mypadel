@@ -1,3 +1,4 @@
+
 import {Routes} from '@angular/router';
 import {AboutComponent} from './about/about.component';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
@@ -34,6 +35,7 @@ import {ReservationDetailComponent} from './reservation/reservation-detail/reser
 import {MatchListComponent} from './match/match-list/match-list.component';
 import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-request-detail/match-join-request-detail.component';
 import {MatchJoinRequestListComponent} from './match-join-request/match-join-request-list/match-join-request-list.component';
+import {MatchEditComponent} from './match/match-edit/match-edit.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -64,6 +66,7 @@ export const routes: Routes = [
   { path: 'matches', component: MatchListComponent},
   { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matches/new/:type', component: MatchFormComponent},
+  { path: 'matches/:id/edit', component: MatchEditComponent},
   { path: 'matchResults', component: MatchResultListComponent },
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
