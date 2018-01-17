@@ -5,15 +5,16 @@ Feature: Public Match filter
 
   Scenario: Filter public matches, getting only public matches
     Given I see 1 public matches
-    When I click filter button "Private Match"
+    When I click filter button "Public Match Only"
     Then I see 1 public matches
 
   Scenario: Filter public matches, getting only private matches
     Given I see 1 public matches
-    When I click filter button "Private Match"
+    When I click filter button "Private Match Only"
     Then I see 0 public matches
+    And I click filter button "Public Match Only"
 
   Scenario: Filter public matches, getting only custom matches
     Given I see 1 public matches
-    When I click filter button "Custom Match"
+    When I click filter button "Custom Match Only"
     Then I see 0 public matches
