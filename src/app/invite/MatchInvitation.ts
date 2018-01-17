@@ -7,11 +7,15 @@ export class MatchInvitation {
   eventDate: Date;
   message: string;
   invitedPlayer: string;
-  /*createdBy: User;
+
+  /*
   invitedPlayer: string;
   invitesToMatch: string;
 */
   constructor(values: Object = {}) {
     Object.assign(this, values);
+  }
+  setInvitedPlayer(username): void {
+    this.invitedPlayer = username;
   }
 }

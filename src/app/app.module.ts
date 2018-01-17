@@ -45,6 +45,8 @@ import { PlayerDeleteComponent } from './player/player-delete/player-delete.comp
 import { MatchResultListComponent } from './match-result/matchResult-list/matchResult-list.component';
 import { InviteCreateComponent } from './invite/invite-create/invite-create.component';
 import {MatchService} from './match/Match.service';
+import {SearchPlayerComponent} from './invite/search-player/search-player.component';
+
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import {MatchService} from './match/Match.service';
     PublicMatchEditComponent,
     MatchResultListComponent,
     InviteCreateComponent,
+    SearchPlayerComponent,
   ],
   imports: [
     BrowserModule,
