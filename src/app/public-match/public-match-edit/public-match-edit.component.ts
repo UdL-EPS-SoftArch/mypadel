@@ -39,7 +39,7 @@ export class PublicMatchEditComponent implements OnInit {
   onSubmit(): void {
     this.publicMatchService.updatePublicMatch(this.publicMatch)
       .subscribe(
-        publicMatch => this.router.navigate([publicMatch.uri]),
+        publicMatch => this.router.navigate(['/matches/' + publicMatch.id]),
         error => this.errorMessage =
           error.errors ? <any>error.errors[0].message : <any>error.message);
   }

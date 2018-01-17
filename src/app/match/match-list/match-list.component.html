@@ -5,12 +5,13 @@
       =1 {There is 1 pending match}
       other { There are {{matches?.length}} pending matches} }</h4>
   </div>
-  <div class="col-md-8">
-    <h4>
-      <a class="btn btn-primary" role="button"
-         [routerLink]="['/matches/new/public']">Create New Match</a>
-    </h4>
-  </div>
+
+    <div class="col-md-8">
+      Create new:
+      <button routerLink="/matches/new/public">Public Match</button>
+      <button routerLink="/matches/new/private">Private Match</button>
+      <button routerLink="/matches/new/custom">Custom Match</button>
+    </div>
 </div>
 
 <div class="row">
