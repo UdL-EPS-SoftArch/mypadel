@@ -24,6 +24,7 @@ export class MatchDetailComponent implements OnInit {
   public joinMatch: JoinMatch;
   public showJoin: boolean;
   public auxJoin: JoinMatch;
+  public auxMatch: Match;
 
   constructor(private route: ActivatedRoute,
               private matchService: MatchService,
@@ -66,9 +67,9 @@ export class MatchDetailComponent implements OnInit {
               this.joinMatchService.getMatchFromJoinMatch(t.id.toString())
                 .subscribe(
                   (match: Match) => {
-                    this.match = match;
+                    this.auxMatch = match;
 
-                    if (this.match.id !== this.match.id) {
+                    if (this.match.id !== this.auxMatch.id) {
                       this.showJoin = true;
                     } else {
                       this.showJoin = false;

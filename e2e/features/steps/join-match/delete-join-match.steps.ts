@@ -7,9 +7,16 @@ import {MainContentPage} from '../../../pages/main-content.page';
 export class DeleteJoinMatchSteps {
   private mainContent = new MainContentPage();
 
+  @when(/^I leave the match$/)
+  public iDeleteCurrentPlayer(callback): void {
+    this.mainContent.clickButtonWithText('Leave the match');
+    browser.waitForAngular();
+    callback();
+  }
+
   @when(/^I confirm leaving the game$/)
   public iConfirmDeletion(callback): void {
-    this.mainContent.clickButtonWithText('Leave the game');
+    this.mainContent.clickButtonWithText('Leave the match');
     browser.waitForAngular();
     callback();
   }
