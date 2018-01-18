@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {PrivateMatch} from '../../private-match/PrivateMatch';
 import {CustomMatchService} from '../../custom-match/custom-match.service';
 import {CustomMatch} from '../../custom-match/custom-match';
+import {Match} from '../Match';
 
 export class FilterCustomMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
@@ -23,7 +24,7 @@ export class FilterCustomMatchStrategy extends FilterMatchStrategy {
     return this.filtered;
   }
 
-  getMatchType(){
-    return CustomMatch;
+  isSameType(match: Match): boolean {
+    return match instanceof CustomMatch;
   }
 }

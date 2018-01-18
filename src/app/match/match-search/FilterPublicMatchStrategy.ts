@@ -2,6 +2,7 @@ import {FilterMatchStrategy} from './FilterMatchStrategy';
 import {PublicMatchService} from '../../public-match/PublicMatch.service';
 import {PublicMatch} from '../../public-match/PublicMatch';
 import {Observable} from 'rxjs/Observable';
+import {Match} from '../Match';
 
 export class FilterPublicMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
@@ -22,7 +23,7 @@ export class FilterPublicMatchStrategy extends FilterMatchStrategy {
     return this.filtered;
   }
 
-  getMatchType(){
-    return PublicMatch;
+  isSameType(match: Match): boolean {
+    return match instanceof PublicMatch;
   }
 }

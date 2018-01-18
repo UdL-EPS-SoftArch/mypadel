@@ -2,6 +2,7 @@ import {FilterMatchStrategy} from './FilterMatchStrategy';
 import {Observable} from 'rxjs/Observable';
 import {PrivateMatchService} from '../../private-match/private-match.service';
 import {PrivateMatch} from '../../private-match/PrivateMatch';
+import {Match} from '../Match';
 
 export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
@@ -20,8 +21,8 @@ export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
     return this.filtered;
   }
 
-  getMatchType(){
-    return PrivateMatch;
+  isSameType(match: Match): boolean {
+    return match instanceof PrivateMatch;
   }
 
 }
