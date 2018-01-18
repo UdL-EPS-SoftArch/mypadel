@@ -13,6 +13,7 @@ class CreatePublicMatchSteps {
   @when(/^I create a public match with duration "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
   public iCreateAPublicMatch (duration: string, courtType: string, level: string, callback): void {
     new MainContentPage().clickLinkWithText('Create New Public Match');
+    browser.waitForAngular();
     this.datasetForm = new PublicMatchFormPage();
     this.datasetForm.setDuration(duration);
     this.datasetForm.setCourtType(courtType);

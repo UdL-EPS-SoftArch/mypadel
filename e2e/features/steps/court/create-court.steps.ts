@@ -9,6 +9,7 @@ class CreateCourtSteps {
   @given(/^I create an unavailable outdoor court$/)
   public createCourt (callback): void {
     element(by.linkText('Create a new Court')).click();
+    browser.waitForAngular();
     this.datasetForm.submitForm();
     browser.waitForAngular();
     callback();
@@ -17,6 +18,7 @@ class CreateCourtSteps {
   @given(/^I create an available indoor court$/)
   public createAvailableIndoorCourt (callback): void {
     element(by.linkText('Create a new Court')).click();
+    browser.waitForAngular();
     element(by.id('available')).click();
     element(by.id('isIndoor')).click();
     this.datasetForm.submitForm();
