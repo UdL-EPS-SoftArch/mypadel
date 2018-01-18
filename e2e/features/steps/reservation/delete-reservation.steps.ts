@@ -11,9 +11,9 @@ class DeleteReservationSteps {
   private mainContent = new MainContentPage();
 
   @when(/^I click delete the current reservation$/)
-  public iClickDeleteTheCurrentReservation(callback):void{
+  public iClickDeleteTheCurrentReservation(callback): void {
     this.mainContent.clickButtonWithText('Delete');
     browser.waitForAngular();
-    callback()
+    callback();
   }
 }

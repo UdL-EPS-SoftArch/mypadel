@@ -1,7 +1,7 @@
-import {binding, when ,then} from 'cucumber-tsflow';
-import {browser, by, element} from 'protractor';
+import { binding, when , then } from 'cucumber-tsflow';
+import { browser } from 'protractor';
 import { ReservationDetailPage } from '../../../pages/reservation/reservation-detail.page';
-import {MainContentPage} from '../../../pages/main-content.page';
+import { MainContentPage } from '../../../pages/main-content.page';
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;
