@@ -53,6 +53,11 @@
             <span class="fa fa-reservation"></span> Reservations
           </a>
         </li>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a [routerLink]="['/matchResults']">
+            <span class="fa fa-sitemap"></span> Match Results
+          </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" app-login-basic>
       </ul>
