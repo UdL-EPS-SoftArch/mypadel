@@ -12,7 +12,7 @@ Feature: Public Match filter
     Given I see 1 public matches
     When I click button "Private Match Only"
     Then I see 0 public matches
-    And I click filter button "Public Match Only"
+    And I click button "Public Match Only"
 
   Scenario: Filter public matches, getting only custom matches
     Given I see 1 public matches
