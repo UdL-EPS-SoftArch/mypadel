@@ -28,6 +28,7 @@ export class ListPublicMatchesSteps {
   @then(/^I see (\d+) games$/)
   public iSeeGames(count: string, callback): void {
     element(by.linkText('My Games')).click();
+    browser.waitForAngular();
     expect(this.joinMatchesList.getJoinedMatchesCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
   }
