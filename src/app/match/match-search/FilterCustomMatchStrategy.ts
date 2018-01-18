@@ -16,7 +16,9 @@ export class FilterCustomMatchStrategy extends FilterMatchStrategy {
   filterMatch(): Observable<PrivateMatch[]> {
     this.filtered = !this.filtered;
     return this.customMatchService.getAllCustomMatches().map(
-      matches => {return matches;},
+      matches => {
+        return matches;
+      },
       error => this.errorMessage = <any>error.message);
   }
 

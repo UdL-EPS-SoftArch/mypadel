@@ -54,9 +54,9 @@ export class MatchSearchComponent {
   }
 
   private showMatches(matches: Match[], filterMatch: FilterMatchStrategy) {
-    if(filterMatch.isFiltered()){
+    if (filterMatch.isFiltered()) {
       this.filteredMatches = this.filteredMatches.concat(matches);
-    }else{
+    } else {
       this.filteredMatches = this.filteredMatches.filter((match) => !filterMatch.isSameType(match));
     }
     this.onSearchited.emit(this.filteredMatches);

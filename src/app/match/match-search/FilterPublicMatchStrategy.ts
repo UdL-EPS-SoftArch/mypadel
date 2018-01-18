@@ -15,7 +15,9 @@ export class FilterPublicMatchStrategy extends FilterMatchStrategy {
   filterMatch(): Observable<PublicMatch[]> {
     this.filtered = !this.filtered;
     return this.publicMatchService.getAllPublicMatches().map(
-      matches => {return matches;},
+      matches => {
+        return matches;
+      },
       error => this.errorMessage = <any>error.message);
   }
 
