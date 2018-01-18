@@ -1,32 +1,28 @@
-import {binding, when} from 'cucumber-tsflow';
-import {MainContentPage} from '../../../pages/main-content.page';
+import { binding, when, then } from 'cucumber-tsflow';
 import {browser} from 'protractor';
+import {PublicMatchDetailsPage} from '../../../pages/public-match/public-match-details.page';
+import {MainContentPage} from '../../../pages/main-content.page';
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;
 
 @binding()
-export class DetailPublicMatches {
+export class DetailsPublicMatchSteps {
+  private publicMatchDetails = new PublicMatchDetailsPage();
   private mainContent = new MainContentPage();
 
-  @when(/^I click to the match "([^"]*)"$/)
-  public WhenIClickMatchWithId (name: string, callback): void {
-    this.mainContent.clickLinkWithText(name);
+  @when(/^I click public match number "([^"]*)"$/)
+  public iClickPublicMatch(id: string, callback): void {
+    this.mainContent.clickLinkWithText(id);
     browser.waitForAngular();
     callback();
   }
 
-  @when(/^I join to the match$/)
-  public WhenIClickJoin (callback): void {
-    this.mainContent.clickButtonWithText('Join');
-    browser.waitForAngular();
-    callback();
-  }
-
-  @when(/^I leave the match$/)
-  public iLeaveTheMatch(callback): void {
-    this.mainContent.clickButtonWithText('Leave the match');
-    browser.waitForAngular();
+  @then(/^I see a public match with duration "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
+  public iSeePubMaDet(duration: string, courtType: string, level: string, callback): void {
+    expect(this.publicMatchDetails.getDuration()).to.eventually.equal(duration);
+    expect(this.publicMatchDetails.getCourtType()).to.eventually.equal(courtType);
+    expect(this.publicMatchDetails.getLevel()).to.eventually.equal(level);
     callback();
   }
 }

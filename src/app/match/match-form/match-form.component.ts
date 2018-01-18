@@ -35,7 +35,7 @@ export class MatchFormComponent implements OnInit {
       'startDate': ['Match start hour', Validators.required],
       'duration': ['Duration of the match', Validators.required],
       'courtType': ['Type of court', Validators.required],
-      'level': ['Difficulty', Validators.required],
+      'level': ['Difficulty'],
     });
   }
 
@@ -77,7 +77,7 @@ export class MatchFormComponent implements OnInit {
     this.publicMatchService
       .addPublicMatch(this.matchBuilder.withLevel(this.level).asPublicMatch())
       .subscribe(
-        publicMatch => this.router.navigate(['/publicMatches']),
+        publicMatch => this.router.navigate(['/matches']),
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });
@@ -91,7 +91,7 @@ export class MatchFormComponent implements OnInit {
     this.customMatchService
       .addCustomMatch(this.matchBuilder.asCustomMatch())
       .subscribe(
-        customMatch => this.router.navigate(['/customMatches']),
+        customMatch => this.router.navigate(['/matches']),
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         })
@@ -106,7 +106,7 @@ export class MatchFormComponent implements OnInit {
     this.privateMatchService
       .addPrivateMatch(this.matchBuilder.asPrivateMatch())
       .subscribe(
-        privateMatch => this.router.navigate(['/privateMatches']),
+        privateMatch => this.router.navigate(['/matches']),
         error => {
           this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
         });

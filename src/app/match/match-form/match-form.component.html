@@ -1,20 +1,20 @@
-<div class="row jumbotron">
-  <div class="col-md-2">
-    <label for="public-match">public match</label>
-    <input type="radio" id="public-match" name="match-group" [checked]="type === 'public'"
-           (click)="onSelect('public')"/>
-  </div>
-  <div class="col-md-2">
-    <label for="custom-match">custom match</label>
-    <input type="radio" id="custom-match" name="match-group" [checked]="type === 'custom'"
-           (click)="onSelect('custom')"/>
-  </div>
-  <div class="col-md-2">
-    <label for="private-match">private match</label>
-    <input type="radio" id="private-match" name="match-group" [checked]="type === 'private'"
-           (click)="onSelect('private')"/>
-  </div>
-</div>
+<!--<div class="row jumbotron">-->
+  <!--<div class="col-md-2">-->
+    <!--<label for="public-match">public match</label>-->
+    <!--<input type="radio" id="public-match" name="match-group" [checked]="type === 'public'"-->
+           <!--(click)="onSelect('public')"/>-->
+  <!--</div>-->
+  <!--<div class="col-md-2">-->
+    <!--<label for="custom-match">custom match</label>-->
+    <!--<input type="radio" id="custom-match" name="match-group" [checked]="type === 'custom'"-->
+           <!--(click)="onSelect('custom')"/>-->
+  <!--</div>-->
+  <!--<div class="col-md-2">-->
+    <!--<label for="private-match">private match</label>-->
+    <!--<input type="radio" id="private-match" name="match-group" [checked]="type === 'private'"-->
+           <!--(click)="onSelect('private')"/>-->
+  <!--</div>-->
+<!--</div>-->
 <h2>Create {{type}} match</h2>
 <form id="match-form" [formGroup]="matchForm" (ngSubmit)="onSubmit()">
   <fieldset>
