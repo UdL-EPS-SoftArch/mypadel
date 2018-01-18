@@ -7,10 +7,8 @@ import {MatchJoinRequest} from '../../match-join-request/MatchJoinRequest';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../login-basic/user';
 import {PlayerService} from '../../player/player.service';
-
 import {JoinMatch} from '../../join-match/JoinMatch';
 import {JoinMatchService} from '../../join-match/JoinMatch.service';
-import {PlayerService} from '../../player/player.service';
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 
 @Component({
@@ -33,15 +31,13 @@ export class MatchDetailComponent implements OnInit {
               private router: Router,
               private fb: FormBuilder,
               private userService: PlayerService,
+              private joinMatchService: JoinMatchService,
+              private authentication: AuthenticationBasicService
   ) {
     this.matchJoinRequestForm = fb.group({
       'message': ['MatchJoinRequest message', Validators.maxLength(255)],
     });
-              private router: Router,
-              private matchService: MatchService,
-              private joinMatchService: JoinMatchService,
-              private playerService: PlayerService,
-              private authentication: AuthenticationBasicService) {
+
   }
 
   ngOnInit() {
