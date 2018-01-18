@@ -31,6 +31,7 @@ import {CourtDeleteComponent} from './court/court-delete/court-delete.component'
 import {CourtDetailComponent} from './court/court-detail/court-detail.component';
 import {CourtEditComponent} from './court/court-edit/court-edit.component';
 import {CourtSearchComponent} from './court/court-search/court-search.component';
+import {CustomMatchDetailComponent} from './custom-match/custom-match-detail/custom-match-detail.component';
 import {PlayerListComponent} from './player/player-list/player-list.component';
 import {PlayerFormComponent} from './player/player-form/player-form.component';
 import {PlayerService} from './player/player.service';
@@ -86,6 +87,7 @@ import {MatchListComponent} from './match/match-list/match-list.component';
     CourtDetailComponent,
     CourtEditComponent,
     CourtSearchComponent,
+    CustomMatchDetailComponent,
     PlayerListComponent,
     PlayerFormComponent,
     PlayerSearchComponent,

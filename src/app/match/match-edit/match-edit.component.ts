@@ -17,10 +17,10 @@ export class MatchEditComponent implements OnInit {
   // public duration: string;
   // public courtType: CourtType;
   // public level: Level;
-  public matchForm: FormGroup;
-  public matchBuilder: MatchBuilder;
-  private errorMessage: string;
-  private match: Match;
+  matchForm: FormGroup;
+  matchBuilder: MatchBuilder;
+  errorMessage: string;
+  match: Match;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
