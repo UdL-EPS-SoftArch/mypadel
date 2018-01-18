@@ -5,7 +5,7 @@ import {PrivateMatch} from '../../private-match/PrivateMatch';
 
 export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
-
+  filtered = false;
   constructor(private privateMatchService: PrivateMatchService) {
     super();
   }
@@ -14,6 +14,10 @@ export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
     return this.privateMatchService.getAllPrivateMatches().map(
       matches => {return matches;},
       error => this.errorMessage = <any>error.message);
+  }
+
+  isFiltered(): boolean {
+    return this.filtered;
   }
 
 }

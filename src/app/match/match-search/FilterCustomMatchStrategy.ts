@@ -5,6 +5,7 @@ import {CustomMatchService} from '../../custom-match/custom-match.service';
 
 export class FilterCustomMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
+  filtered = false;
 
   constructor(private customMatchService: CustomMatchService) {
     super();
@@ -14,6 +15,10 @@ export class FilterCustomMatchStrategy extends FilterMatchStrategy {
     return this.customMatchService.getAllCustomMatches().map(
       matches => {return matches;},
       error => this.errorMessage = <any>error.message);
+  }
+
+  isFiltered(): boolean {
+    return this.filtered;
   }
 
 }

@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 
 export class FilterPublicMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
+  filtered = false;
 
   constructor(private publicMatchService: PublicMatchService) {
     super();
@@ -14,6 +15,10 @@ export class FilterPublicMatchStrategy extends FilterMatchStrategy {
     return this.publicMatchService.getAllPublicMatches().map(
       matches => {return matches;},
       error => this.errorMessage = <any>error.message);
+  }
+
+  isFiltered(): boolean {
+    return this.filtered;
   }
 
 }
