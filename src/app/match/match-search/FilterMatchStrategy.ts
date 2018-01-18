@@ -1,6 +1,6 @@
 import {Match} from '../Match';
 import {Observable} from 'rxjs/Observable';
 
-export abstract class FilterMatchVisitor {
+export abstract class FilterMatchStrategy {
   abstract filterMatch(): Observable<Match[]>;
 }

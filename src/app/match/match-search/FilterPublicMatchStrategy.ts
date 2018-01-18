@@ -1,9 +1,9 @@
-import {FilterMatchVisitor} from './FilterMatchVisitor';
+import {FilterMatchStrategy} from './FilterMatchStrategy';
 import {PublicMatchService} from '../../public-match/PublicMatch.service';
 import {PublicMatch} from '../../public-match/PublicMatch';
 import {Observable} from 'rxjs/Observable';
 
-export class FilterPublicMatchVisitor extends FilterMatchVisitor {
+export class FilterPublicMatchStrategy extends FilterMatchStrategy {
   public errorMessage: string;
 
   constructor(private publicMatchService: PublicMatchService) {
