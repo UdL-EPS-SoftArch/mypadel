@@ -22,7 +22,7 @@ export class FilterPublicMatchStrategy extends FilterMatchStrategy {
     return this.filtered;
   }
 
-  getMatchType(): string {
-    return "PublicMatch";
+  getMatchType(){
+    return PublicMatch;
   }
 }

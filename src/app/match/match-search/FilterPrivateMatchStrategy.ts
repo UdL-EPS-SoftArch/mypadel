@@ -20,8 +20,8 @@ export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
     return this.filtered;
   }
 
-  getMatchType(): string {
-    return "PrivateMatch";
+  getMatchType(){
+    return PrivateMatch;
   }
 
 }
