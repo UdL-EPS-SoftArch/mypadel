@@ -48,7 +48,7 @@ export class MatchEditComponent implements OnInit {
   onSubmit(): void {
     this.matchService.updateMatch(this.match)
       .subscribe(
-        match => this.router.navigate([match.uri]),
+        match => this.router.navigate(['/matches/'+match.id]),
         error => this.errorMessage =
           error.errors ? <any>error.errors[0].message : <any>error.message);
   }
