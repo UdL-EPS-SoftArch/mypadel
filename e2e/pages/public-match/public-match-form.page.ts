@@ -11,7 +11,7 @@ export class PublicMatchFormPage {
   private registerButton;
 
   constructor() {
-    this.form = element(by.id('public-match-form'));
+    this.form = element(by.id('match-form'));
     this.duration = this.form.element(by.css('option[value="PT60M"]')).click();
     this.courtType = this.form.element(by.css('option[value="INDOOR"]')).click();
     this.level = this.form.element(by.css('option[value="NOVICE"]')).click();

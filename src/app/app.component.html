@@ -29,13 +29,8 @@
           </a>
         </li>
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-          <a [routerLink]="['/publicMatches']">
-            <span class="fa fa-search"></span> Public Matches
-          </a>
-        </li>
-        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-          <a [routerLink]="['/customMatches']">
-            <span class="fa fa-play" aria-hidden="true"></span> Custom Matches
+          <a [routerLink]="['/matches']">
+            <span class="fa fa-search"></span> Matches
           </a>
         </li>
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
@@ -44,9 +39,6 @@
           </a>
         </li>
         <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-          <a [routerLink]="['/privateMatches']">
-            <span class="fa fa-search"></span> Private Matches
-          </a>
           <a [routerLink]="['/matchInvitations']">
             <span class="fa fa-user"></span> Match invitations
           </a>

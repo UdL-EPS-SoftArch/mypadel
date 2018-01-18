@@ -12,7 +12,7 @@
         Closed
       </span>
     </div>
-    <div class="col-md-4">
+    <div id="courtType" class="col-md-4">
       <h4>Court type: </h4>
       <span *ngIf="match?.courtType == 'INDOOR'">
         Indoor
@@ -24,7 +24,7 @@
         Undefined
       </span>
     </div>
-    <div class="col-md-4" *ngIf="match != null && match['level'] != null">
+    <div id="level" class="col-md-4" *ngIf="match != null && match['level'] != null">
       <h4>Match Level: </h4>
       {{match['level']}}
     </div>
@@ -32,7 +32,7 @@
       <h4>Start date: </h4>
       {{match?.startDateString}}
     </div>
-    <div class="col-md-4">
+    <div id="duration" class="col-md-4">
       <h4>Duration of the match: </h4>
       <span *ngIf="match?.duration == 'PT30M'">
         30 minutes
@@ -72,6 +72,7 @@
         {{match?.matchCreator?.username}}
       </a>
     </div>
+
   </div>
   <div class="panel-footer text-center">
     <span *ngIf="match != null && match['level'] != null">
@@ -79,18 +80,43 @@
               class="btn btn-primary">Go back to list
       </button>
     </span>
-    <span *ngIf="match != null && match['isPrivate']">
+    <span *ngIf="match != null && match?._links.privateMatch != null">
       <button id="listMatchesPrivate" type="button" [routerLink]="['/privateMatches']"
               class="btn btn-primary">Go back to list
       </button>
     </span>
-    <span *ngIf="match != null && match['isCustom']">
+    <span *ngIf="match != null && match?._links.customMatch != null">
       <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
               class="btn btn-primary">Go back to list
       </button>
+<form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
+    <fieldset>
+
+
+        <span *ngIf="isLoggedIn()&&!(getCurrentUser().username==match?.matchCreator?.username)">
+
+        <button id="createMatchJoinRequest" type="submit"
+                class="btn btn-success pull-right">Create MatchJoinRequest
+        </button>
+          </span>
+
+
+
+    </fieldset>
+
+  </form>
+      <div class="col-md-9">
+        <span *ngIf="isLoggedIn()&&getCurrentUser().username==match?.matchCreator?.username">
+        <button id="listMatchJoinRequest" type="submit" [routerLink]="[matchJoinRequestURI()]"
+                class="btn btn-success pull-right">List MatchJoinRequests
+        </button>
+          </span>
+
+  </div>
+
     </span>
-    <button id="editMatch" type="button" [routerLink]="['']"
-            class="btn btn-success">Edit match (Not implemented until manel and roger do it)
+    <button id="editMatch" type="button" routerLink="/matches/{{match?.id}}/edit/"
+            class="btn btn-success">Edit match
     </button>
   </div>
 </div>

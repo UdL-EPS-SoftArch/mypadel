@@ -1,0 +1,65 @@
+<div class="panel-group col-md-12 text-center">
+
+  <div class="panel panel-default" >
+    <div class="panel-heading">
+
+      <h1>Match Join Request Detail: {{matchJoinRequest?.id}}</h1>
+    </div>
+    <div class="panel-body">
+
+      <div class="col-md-6">
+        <h5><b>Match Join Request Creator:</b></h5>
+        <p><a routerLink="{{player?.uri}}" >{{player?.username}}</a></p>
+      </div>
+
+
+      <div class="col-md-6">
+        <h5><b>Match:</b></h5>
+        <p><a routerLink="{{customMatch?.uri}}" >{{customMatch?.id}}</a></p>
+      </div>
+
+      <div class="col-md-6">
+        <h5><b>Message:</b></h5>
+        <p>{{matchJoinRequest?.message}}</p>
+      </div>
+      <div class="col-md-6">
+        <h5><b>Event Date:</b></h5>
+        <p>{{matchJoinRequest?.eventDate}}</p>
+      </div>
+      <div class="col-md-6">
+        <h5><b>Match Join Request Status:</b></h5>
+        <p>{{matchJoinRequest?.status}}</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="panel-footer text-center">
+    <form id="reject-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="reject()">
+      <fieldset>
+        <button id="rejcetMatchJoinRequest" type="submit"
+                class="btn btn-danger " [disabled]='!(matchJoinRequest?.status=="PENDING")'>Reject
+        </button>
+      </fieldset>
+    </form>
+
+
+    <button id="customMatchList" type="button" [routerLink]="['/customMatches']"
+            class="btn btn-primary">Back to List</button>
+
+
+    <form id="accept-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="accept()">
+      <fieldset>
+        <button id="acceptMatchJoinRequest" type="submit"
+                class="btn btn-success " [disabled]='!(matchJoinRequest?.status=="PENDING")' >Accept
+        </button>
+      </fieldset>
+    </form>
+
+
+
+
+  </div>
+</div>
+
+
+
