@@ -9,7 +9,7 @@ const expect = chai.expect;
 class EditPublicMatchSteps {
   private datasetForm;
 
-  @when(/^I change the duration to '([^']*)', court type to '([^']*)' and level to '([^']*)'$/)
+  @when(/^I change the duration to "([^"]*)", court type to "([^"]*)" and level to "([^"]*)"$/)
   public iCreateAPublicMatch (duration: string, courtType: string, level: string, callback): void {
     this.datasetForm = new PublicMatchEditPage();
     this.datasetForm.setDuration(duration);
