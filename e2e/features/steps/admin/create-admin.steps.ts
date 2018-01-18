@@ -9,6 +9,7 @@ class CreateAdminSteps {
   @given(/^I create an administrator with username "([^"]*)", e-mail "([^"]*)" and password "([^"]*)"$/)
   public createAdminWithUsernameEmailPassword (username: string, email: string, password: string, callback): void {
     element(by.linkText('Register New Administrator')).click();
+    browser.waitForAngular();
     this.datasetForm.setUsername(username);
     this.datasetForm.setEMail(email);
     this.datasetForm.setPassword(password);
