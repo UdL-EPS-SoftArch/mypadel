@@ -11,7 +11,7 @@ export class ListPrivateMatchesSteps {
 
   @then(/^I see (\d+) private matches$/)
   public iSeePrivMa(count: string, callback): void {
-    element(by.linkText('Private Matches')).click();
+    element(by.linkText('Matches')).click();
     expect(this.privateMatchesList.getPrivateMatchesCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
   }
