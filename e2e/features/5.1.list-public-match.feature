@@ -5,5 +5,5 @@ Feature: List Public Matches
 
   Scenario: List all public matches when just default one
     Given I'm on the home page and logged out
-    When I click menu option "Public Matches"
+    When I click menu option "Matches"
     Then I see 0 public matches
