@@ -4,10 +4,10 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { MatchResult } from './MatchResult';
-import {ICRUDService} from './ICRUDService';
+import { ICRUDService } from './ICRUDService';
 
 @Injectable()
-export class MatchResultService implements ICRUDService<MatchResult>{
+export class MatchResultService implements ICRUDService<MatchResult> {
 
   private readonly http: Http;
   private readonly authenticationBasicService: AuthenticationBasicService;
