@@ -1,4 +1,4 @@
-import { binding, then } from 'cucumber-tsflow';
+import {binding, then} from 'cucumber-tsflow';
 import {PublicMatchListPage} from '../../../pages/public-match/public-match-list.page';
 import {by, element} from 'protractor';
 
