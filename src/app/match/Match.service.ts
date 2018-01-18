@@ -40,4 +40,7 @@ export class MatchService {
       .map((res: Response) => res.json()._embedded.matchInvitations.map(json => new MatchInvitation(json)))
       .catch((error: any) => Observable.throw(error.json()));
   }
+  isLoggedIn(): boolean {
+    return this.authentication.isLoggedIn();
+  }
 }

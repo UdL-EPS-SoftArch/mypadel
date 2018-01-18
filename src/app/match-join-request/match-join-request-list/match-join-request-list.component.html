@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4 i18n>{ totalMatchJoinRequests, plural,
+      =0 {There are no pending match join requests}
+      =1 {There is 1 pending match join requests}
+      other { There are {{totalMatchJoinRequests}} pending match join requests} }</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="panel-group col-md-12">
+    <div class="panel panel-default" *ngFor="let matchJoinRequest of matchJoinRequests">
+      <div class="panel-heading">
+        <h4>MatchJoinRequest: <a routerLink="{{matchJoinRequest.uri}}">{{matchJoinRequest.id}}</a></h4>
+      </div>
+
+    </div>
+  </div>
+</div>

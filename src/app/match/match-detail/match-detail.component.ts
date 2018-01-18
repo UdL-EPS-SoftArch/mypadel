@@ -2,6 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {Match} from '../Match';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatchService} from '../Match.service';
+import {MatchJoinRequestService} from '../../match-join-request/match-join-request.service';
+import {MatchJoinRequest} from '../../match-join-request/MatchJoinRequest';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {User} from '../../login-basic/user';
+import {PlayerService} from '../../player/player.service';
+
 import {JoinMatch} from '../../join-match/JoinMatch';
 import {JoinMatchService} from '../../join-match/JoinMatch.service';
 import {PlayerService} from '../../player/player.service';
@@ -13,13 +19,24 @@ import {AuthenticationBasicService} from '../../login-basic/authentication-basic
 })
 export class MatchDetailComponent implements OnInit {
   public match: Match;
+  public matchJoinRequest: MatchJoinRequest;
   public errorMessage: string;
+  public matchJoinRequestForm: FormGroup;
   public joinMatches: JoinMatch[] = [];
   public joinMatch: JoinMatch;
   public showJoin: boolean;
   public auxJoin: JoinMatch;
 
   constructor(private route: ActivatedRoute,
+              private matchService: MatchService,
+              private matchJoinRequestService: MatchJoinRequestService,
+              private router: Router,
+              private fb: FormBuilder,
+              private userService: PlayerService,
+  ) {
+    this.matchJoinRequestForm = fb.group({
+      'message': ['MatchJoinRequest message', Validators.maxLength(255)],
+    });
               private router: Router,
               private matchService: MatchService,
               private joinMatchService: JoinMatchService,
@@ -93,4 +110,28 @@ export class MatchDetailComponent implements OnInit {
     );
   }
 
+  isLoggedIn(): boolean {
+    return this.matchService.isLoggedIn();
+  }
+
+  createMatchJoinRequest(): void {
+    this.matchJoinRequest = new MatchJoinRequest();
+    this.matchJoinRequest.message = 'Hi I want to join in your match !';
+    this.matchJoinRequest.customMatch = this.match.uri;
+    this.matchJoinRequest.eventDate = this.match.startDate;
+    this.matchJoinRequestService.addMatchJoinRequest(this.matchJoinRequest)
+      .subscribe(
+        matchJoinRequest => this.router.navigate([matchJoinRequest.uri]),
+        error => {
+          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
+        });
+  }
+
+  getCurrentUser(): User {
+    return this.userService.getCurrentUser();
+  }
+
+  matchJoinRequestURI(): string {
+    return `/customMatches/${this.match.id}/matchJoinRequests`;
+  }
 }
