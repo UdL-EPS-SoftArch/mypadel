@@ -9,7 +9,6 @@ export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
   constructor(private privateMatchService: PrivateMatchService) {
     super();
   }
-
   filterMatch(): Observable<PrivateMatch[]> {
     this.filtered = !this.filtered;
     return this.privateMatchService.getAllPrivateMatches().map(
@@ -19,6 +18,10 @@ export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
 
   isFiltered(): boolean {
     return this.filtered;
+  }
+
+  getMatchType(): string {
+    return "PrivateMatch";
   }
 
 }

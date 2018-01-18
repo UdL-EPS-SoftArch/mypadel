@@ -22,4 +22,7 @@ export class FilterCustomMatchStrategy extends FilterMatchStrategy {
     return this.filtered;
   }
 
+  getMatchType(): string {
+    return "CustomMatch";
+  }
 }
