@@ -10,6 +10,7 @@ class CreatePlayerSteps {
   @given(/^I create a player with username "([^"]*)", e-mail "([^"]*)" and password "([^"]*)"$/)
   public createDatasetWithTitleAndDescription (username: string, email: string, password: string, callback): void {
     element(by.linkText('Register New Player')).click();
+    browser.waitForAngular();
     this.datasetForm.setUsername(username);
     this.datasetForm.setEMail(email);
     this.datasetForm.setPassword(password);
