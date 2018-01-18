@@ -82,17 +82,17 @@
       <button id="publicMatchesDelete" type="button" *ngIf="showJoin === false" (click)="deleteJoin()"
               class="btn btn-danger">Leave the match
       </button>
-      <button id="listMatchesPublic" type="button" [routerLink]="['/publicMatches']"
+      <button id="listMatchesPublic" type="button" [routerLink]="['/matches']"
               class="btn btn-primary">Go back to list
       </button>
     </span>
     <span *ngIf="match != null && match?._links.privateMatch != null">
-      <button id="listMatchesPrivate" type="button" [routerLink]="['/privateMatches']"
+      <button id="listMatchesPrivate" type="button" [routerLink]="['/matches']"
               class="btn btn-primary">Go back to list
       </button>
     </span>
     <span *ngIf="match != null && match?._links.customMatch != null">
-      <button id="listMatchesCustom" type="button" [routerLink]="['/customMatches']"
+      <button id="listMatchesCustom" type="button" [routerLink]="['/matches']"
               class="btn btn-primary">Go back to list
       </button>
 <form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
