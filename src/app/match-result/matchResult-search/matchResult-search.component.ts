@@ -21,7 +21,7 @@ export class MatchResultSearchComponent {
   }
 
   performSearch(searchTerm: number): void {
-    this.matchResultService.getMatchResult(searchTerm).subscribe(
+    this.matchResultService.getById(searchTerm).subscribe(
         matchResults => { this.onSearchited.emit(matchResults); },
       error => this.errorMessage = <any>error.message);
   }

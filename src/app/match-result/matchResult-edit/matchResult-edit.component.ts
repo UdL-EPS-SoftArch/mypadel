@@ -30,13 +30,13 @@ export class MatchResultEditComponent implements OnInit {
         this.route.params
             .map(params => params['id'])
             .subscribe((id) =>
-                this.matchResultService.getMatchResult(id).subscribe(
+                this.matchResultService.getById(id).subscribe(
                     matchResult => this.matchResult = matchResult,
                     error => this.errorMessage = <any>error.message));
     }
 
     onSubmit(): void {
-        this.matchResultService.addMatchResult(this.matchResult)
+        this.matchResultService.create(this.matchResult)
             .subscribe(
             matchResult => this.router.navigate([matchResult.uri]),
             error => {
