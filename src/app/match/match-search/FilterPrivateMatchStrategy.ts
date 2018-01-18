@@ -12,7 +12,7 @@ export class FilterPrivateMatchStrategy extends FilterMatchStrategy {
 
   filterMatch(): Observable<PrivateMatch[]> {
     return this.privateMatchService.getAllPrivateMatches().map(
-      matches => matches,
+      matches => {return matches;},
       error => this.errorMessage = <any>error.message);
   }
 

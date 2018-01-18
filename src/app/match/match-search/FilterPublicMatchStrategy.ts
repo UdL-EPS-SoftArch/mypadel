@@ -12,7 +12,7 @@ export class FilterPublicMatchStrategy extends FilterMatchStrategy {
 
   filterMatch(): Observable<PublicMatch[]> {
     return this.publicMatchService.getAllPublicMatches().map(
-      matches => matches,
+      matches => {return matches;},
       error => this.errorMessage = <any>error.message);
   }
 
