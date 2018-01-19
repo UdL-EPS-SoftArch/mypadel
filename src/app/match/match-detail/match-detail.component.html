@@ -82,43 +82,33 @@
       <button id="MatchesDelete" type="button" *ngIf="showJoin === false" (click)="deleteJoin()"
               class="btn btn-danger">Leave the match
       </button>
-      <button id="listMatchesPublic" type="button" [routerLink]="['/matches']"
-              class="btn btn-primary">Go back to list
-      </button>
     </span>
-    <span *ngIf="match != null && match?._links.privateMatch != null">
-      <button id="listMatchesPrivate" type="button" [routerLink]="['/matches']"
+    <span>
+      <button id="listMatches" type="button" [routerLink]="['/matches']"
               class="btn btn-primary">Go back to list
       </button>
     </span>
     <span *ngIf="match != null && match?._links.customMatch != null">
-      <button id="listMatchesCustom" type="button" [routerLink]="['/matches']"
-              class="btn btn-primary">Go back to list
-      </button>
-<form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
-    <fieldset>
 
+    <form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
+      <fieldset>
 
         <span *ngIf="isLoggedIn()&&!(getCurrentUser().username==match?.matchCreator?.username)">
+          <button id="createMatchJoinRequest" type="submit"
+                  class="btn btn-success pull-right">Create MatchJoinRequest
+          </button>
+        </span>
 
-        <button id="createMatchJoinRequest" type="submit"
-                class="btn btn-success pull-right">Create MatchJoinRequest
-        </button>
-          </span>
+      </fieldset>
 
-
-
-    </fieldset>
-
-  </form>
+    </form>
       <div class="col-md-9">
         <span *ngIf="isLoggedIn()&&getCurrentUser().username==match?.matchCreator?.username">
         <button id="listMatchJoinRequest" type="submit" [routerLink]="[matchJoinRequestURI()]"
                 class="btn btn-success pull-right">List MatchJoinRequests
         </button>
           </span>
-
-  </div>
+      </div>
 
     </span>
     <button id="editMatch" type="button" routerLink="/matches/{{match?.id}}/edit/"
