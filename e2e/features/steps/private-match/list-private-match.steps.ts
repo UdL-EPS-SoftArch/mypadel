@@ -1,5 +1,5 @@
 import {binding, then} from 'cucumber-tsflow';
-import {by, element} from 'protractor';
+import {browser, by, element} from 'protractor';
 import {PrivateMatchListPage} from '../../../pages/private-match/private-match-list.page';
 
 const chai = require('chai').use(require('chai-as-promised'));
@@ -12,6 +12,7 @@ export class ListPrivateMatchesSteps {
   @then(/^I see (\d+) private matches$/)
   public iSeePrivMa(count: string, callback): void {
     element(by.linkText('Matches')).click();
+    browser.waitForAngular();
     expect(this.privateMatchesList.getPrivateMatchesCount())
       .to.eventually.equal(parseInt(count, 10)).and.notify(callback);
   }

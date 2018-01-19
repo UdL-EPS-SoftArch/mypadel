@@ -57,6 +57,7 @@ import {ReservationSearchComponent} from './reservation/reservation-search/reser
 import {ReservationEditComponent} from './reservation/reservation-edit/reservation-edit.component';
 import {ReservationDeleteComponent} from './reservation/reservation-delete/reservation-delete.component';
 import {ReservationDetailComponent} from './reservation/reservation-detail/reservation-detail.component';
+import {MatchResultDetailComponent} from './match-result/matchResult-detail/matchResult-detail.component';
 import {MatchResultEditComponent} from './match-result/matchResult-edit/matchResult-edit.component';
 import {MatchResultFormComponent} from './match-result/matchResult-form/matchResult-form.component';
 import {MatchResultSearchComponent} from './match-result/matchResult-search/matchResult-search.component';
@@ -120,6 +121,7 @@ import {MatchListComponent} from './match/match-list/match-list.component';
     MatchResultFormComponent,
     MatchResultListComponent,
     MatchResultSearchComponent,
+    MatchResultDetailComponent,
   ],
   imports: [
     BrowserModule,

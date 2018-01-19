@@ -19,6 +19,9 @@ import {PlayerDetailComponent} from './player/player-detail/player-detail.compon
 import {PlayerEditComponent} from './player/player-edit/player-edit.component';
 import {PlayerDeleteComponent} from './player/player-delete/player-delete.component';
 import {MatchResultListComponent} from './match-result/matchResult-list/matchResult-list.component';
+import {MatchResultDetailComponent} from './match-result/matchResult-detail/matchResult-detail.component';
+import {MatchResultEditComponent} from './match-result/matchResult-edit/matchResult-edit.component';
+import {MatchResultFormComponent} from './match-result/matchResult-form/matchResult-form.component';
 import {MatchFormComponent} from './match/match-form/match-form.component';
 import {CustomMatchEditComponent} from './custom-match/custom-match-edit/custom-match-edit.component';
 import {PrivateMatchEditComponent} from './private-match/private-match-edit/private-match-edit.component';
@@ -67,10 +70,13 @@ export const routes: Routes = [
   { path: 'matches/:id', component: MatchDetailComponent},
   { path: 'matches/new/:type', component: MatchFormComponent},
   { path: 'matches/:id/edit', component: MatchEditComponent},
-  { path: 'matchResults', component: MatchResultListComponent },
   { path: 'privateMatches/:id/edit', component: PrivateMatchEditComponent},
   { path: 'matchInvitations', component: InviteCreateComponent},
   { path: 'match/new', component: MatchFormComponent},
+  { path: 'matchResults', component: MatchResultListComponent },
+  { path: 'matchResults/:id', component: MatchResultDetailComponent },
+  { path: 'matchResults/new', component: MatchResultFormComponent },
+  { path: 'matchResults/:id/edit', component: MatchResultEditComponent },
   { path: 'joinMatches', component: JoinMatchListComponent},
   { path: 'joinMatches/:id', component: JoinMatchDetailComponent },
   { path: 'joinMatches/:id/delete', component: JoinMatchDeleteComponent, canActivate: [LoggedInGuard] },
