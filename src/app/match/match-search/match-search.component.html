@@ -14,11 +14,14 @@
 </div>
 
 <h4>Filter matches by: </h4>
-<div class="btn-group" role="group" aria-label="Select a type of match to filter">
-  <button type="button" class="btn btn-default" (click)="filter(filterPublicMatch)">Public Match Only</button>
-  <button type="button" class="btn btn-default" (click)="filter(filterPrivateMatch)">Private Match Only</button>
-  <button type="button" class="btn btn-default" (click)="filter(filterCustomMatch)">Custom Match Only</button>
-</div>
+
+  <button type="button" class="btn btn-default" (click)="filter(filterPublicMatch)"
+          [ngStyle]="{'background-color':filterPublicMatch.isFiltered() === true ? '#a6e681' : '#e6e6e6' }">Public Match Only</button>
+  <button type="button" class="btn btn-default" (click)="filter(filterPrivateMatch)"
+          [ngStyle]="{'background-color':filterPrivateMatch.isFiltered() === true ? '#a6e681' : '#e6e6e6' }">Private Match Only</button>
+  <button type="button" class="btn btn-default" (click)="filter(filterCustomMatch)"
+          [ngStyle]="{'background-color':filterCustomMatch.isFiltered() === true ? '#a6e681' : '#e6e6e6' }">Custom Match Only</button>
+
 
 <p i18n>{ matches.length, plural,
   =0 {No matches found}
