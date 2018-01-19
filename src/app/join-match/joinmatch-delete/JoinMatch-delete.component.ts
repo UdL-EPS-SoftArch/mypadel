@@ -7,6 +7,7 @@ import {JoinMatchService} from '../JoinMatch.service';
   selector: 'app-joinmatch-delete',
   templateUrl: './JoinMatch-delete.component.html',
 })
+
 export class JoinMatchDeleteComponent implements OnInit {
   public joinMatch: JoinMatch;
   public errorMessage: string;

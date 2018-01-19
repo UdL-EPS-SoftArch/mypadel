@@ -75,6 +75,14 @@
 
   </div>
   <div class="panel-footer text-center">
+    <span *ngIf="match != null && match['level'] != null">
+      <button id="MatchesJoin" type="button" *ngIf="showJoin === true" (click)="submitJoin()"
+              class="btn btn-primary">Join
+      </button>
+      <button id="MatchesDelete" type="button" *ngIf="showJoin === false" (click)="deleteJoin()"
+              class="btn btn-danger">Leave the match
+      </button>
+    </span>
     <span>
       <button id="listMatches" type="button" [routerLink]="['/matches']"
               class="btn btn-primary">Go back to list
