@@ -7,7 +7,9 @@ import {MatchJoinRequest} from '../../match-join-request/MatchJoinRequest';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../login-basic/user';
 import {PlayerService} from '../../player/player.service';
-
+import {JoinMatch} from '../../join-match/JoinMatch';
+import {JoinMatchService} from '../../join-match/JoinMatch.service';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 
 @Component({
   selector: 'app-match-detail',
@@ -18,6 +20,11 @@ export class MatchDetailComponent implements OnInit {
   public matchJoinRequest: MatchJoinRequest;
   public errorMessage: string;
   public matchJoinRequestForm: FormGroup;
+  public joinMatches: JoinMatch[] = [];
+  public joinMatch: JoinMatch;
+  public showJoin: boolean;
+  public auxJoin: JoinMatch;
+  public auxMatch: Match;
 
   constructor(private route: ActivatedRoute,
               private matchService: MatchService,
@@ -25,13 +32,17 @@ export class MatchDetailComponent implements OnInit {
               private router: Router,
               private fb: FormBuilder,
               private userService: PlayerService,
+              private joinMatchService: JoinMatchService,
+              private authentication: AuthenticationBasicService
   ) {
     this.matchJoinRequestForm = fb.group({
       'message': ['MatchJoinRequest message', Validators.maxLength(255)],
     });
+
   }
 
   ngOnInit() {
+    this.joinMatch = new JoinMatch();
     this.route.params
       .map(params => params['id'])
       .subscribe((id) => {
@@ -43,6 +54,46 @@ export class MatchDetailComponent implements OnInit {
             error => this.errorMessage = <any>error.message);
         }
       );
+
+    this.joinMatchService.getJoinMatchByPlayer(this.authentication.getCurrentUser().username)
+      .subscribe(
+        (joinMatch: JoinMatch[]) => {
+          this.joinMatches = joinMatch;
+
+          if (this.joinMatches.length === 0) {
+            this.showJoin = true;
+          }else {
+            this.joinMatches.forEach(t => {
+              this.joinMatchService.getMatchFromJoinMatch(t.id.toString())
+                .subscribe(
+                  (match: Match) => {
+                    this.auxMatch = match;
+
+                    if (this.match.id !== this.auxMatch.id) {
+                      this.showJoin = true;
+                    } else {
+                      this.showJoin = false;
+                      this.auxJoin = t;
+                    }
+                  },
+                  error => this.errorMessage = <any>error.message);
+            });
+          }},
+        error => this.errorMessage = <any>error.message);
+  }
+  public submitJoin() {
+    this.joinMatch.match = this.match.uri;
+    this.joinMatch.player = this.authentication.getCurrentUser().uri;
+    this.joinMatchService.addJoinMatch(this.joinMatch)
+      .subscribe(
+        joinMatch => this.router.navigate(['/joinMatches']),
+        error => {
+          this.errorMessage = error.errors ? <any>error.errors[0].message : <any>error.message;
+        });
+  }
+
+  public deleteJoin() {
+    this.router.navigate([`/joinMatches/${this.auxJoin.id}/delete`]);
   }
 
   setLinkedAttributes(match: Match) {
