@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {PublicMatch} from '../PublicMatch';
-import {PublicMatchService} from '../PublicMatch.service';
+import { PublicMatch } from '../PublicMatch';
+import { PublicMatchService } from '../PublicMatch.service';
 
 @Component({
   selector: 'app-public-match-edit',
@@ -15,9 +15,9 @@ export class PublicMatchEditComponent implements OnInit {
   public errorMessage: string;
 
   constructor(private fb: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router,
-              private publicMatchService: PublicMatchService) {
+    private route: ActivatedRoute,
+    private router: Router,
+    private publicMatchService: PublicMatchService) {
     this.publicMatchForm = fb.group({
       'startDate': ['Match start hour', Validators.required],
       'duration': ['Duration of the match', Validators.required],
@@ -39,8 +39,8 @@ export class PublicMatchEditComponent implements OnInit {
   onSubmit(): void {
     this.publicMatchService.updatePublicMatch(this.publicMatch)
       .subscribe(
-        publicMatch => this.router.navigate(['/matches/' + publicMatch.id]),
-        error => this.errorMessage =
-          error.errors ? <any>error.errors[0].message : <any>error.message);
+      publicMatch => this.router.navigate([publicMatch.uri]),
+      error => this.errorMessage =
+        error.errors ? <any>error.errors[0].message : <any>error.message);
   }
 }
