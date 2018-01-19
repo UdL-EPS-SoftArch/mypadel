@@ -10,7 +10,7 @@ export class PrivateMatchListPage {
   }
 
   getPrivateMatches(): ElementArrayFinder {
-    return element.all(by.css('div.panel'));
+    return element.all(by.css('span.private-match'));
   }
 
   getPrivateMatchInPosition(position: number): ElementFinder {

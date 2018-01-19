@@ -98,27 +98,22 @@
 <form id="match-join-request-form" [formGroup]="matchJoinRequestForm" (ngSubmit)="createMatchJoinRequest()">
     <fieldset>
 
-
         <span *ngIf="isLoggedIn()&&!(getCurrentUser().username==match?.matchCreator?.username)">
+          <button id="createMatchJoinRequest" type="submit"
+                  class="btn btn-success pull-right">Create MatchJoinRequest
+          </button>
+        </span>
 
-        <button id="createMatchJoinRequest" type="submit"
-                class="btn btn-success pull-right">Create MatchJoinRequest
-        </button>
-          </span>
+      </fieldset>
 
-
-
-    </fieldset>
-
-  </form>
+    </form>
       <div class="col-md-9">
         <span *ngIf="isLoggedIn()&&getCurrentUser().username==match?.matchCreator?.username">
         <button id="listMatchJoinRequest" type="submit" [routerLink]="[matchJoinRequestURI()]"
                 class="btn btn-success pull-right">List MatchJoinRequests
         </button>
           </span>
-
-  </div>
+      </div>
 
     </span>
     <button id="editMatch" type="button" routerLink="/matches/{{match?.id}}/edit/"
