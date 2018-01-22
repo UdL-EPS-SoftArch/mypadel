@@ -68,7 +68,7 @@ import {MatchJoinRequestListComponent} from './match-join-request/match-join-req
 import {MatchJoinRequestDetailComponent} from './match-join-request/match-join-request-detail/match-join-request-detail.component';
 import {MatchSearchComponent} from './match/match-search/match-search.component';
 import {MatchListComponent} from './match/match-list/match-list.component';
-
+import {SearchPlayerComponent} from './invite/search-player/search-player.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +120,7 @@ import {MatchListComponent} from './match/match-list/match-list.component';
     MatchResultListComponent,
     MatchResultSearchComponent,
     MatchResultDetailComponent,
+    SearchPlayerComponent,
   ],
   imports: [
     BrowserModule,

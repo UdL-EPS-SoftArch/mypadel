@@ -14,6 +14,7 @@ export class MatchInvitationService {
               private authentication: AuthenticationBasicService) {}
   // GET /matchInvitations
   // GET /matchInvitations /id
+
   // POST /matchInvitations
   addMatchInvitation(matchInvitation: MatchInvitation): Observable<MatchInvitation> {
     const body = JSON.stringify(matchInvitation);

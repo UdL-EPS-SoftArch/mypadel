@@ -3,13 +3,50 @@
 <form id="match-invitation-form" [formGroup]="matchInvitationForm" (ngSubmit)="onSubmit()">
   <fieldset>
 
-    <!-- Text input-->
-    <div class="form-group row" [class.has-error]="matchInvitationForm.controls['message'].touched &&
-                  matchInvitationForm.controls['message'].hasError('required')">
+
+    <div class="row">
+      <h3 class="col-md-12">Players</h3>
+      <div class="col-md-12">
+        <app-search-player (onSearchited)="onSearch($event)" [players]="players"></app-search-player>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="panel-group col-md-12">
+        <div class="panel panel-default" *ngFor="let player of players">
+          <div class="panel-heading">
+
+
+            <h4>Player:
+              <a routerLink="{{player.uri}}" id="user">{{player.username}}</a>
+              <p style="display: inline; margin-left: 30px;"> E-mail: {{player.email}}</p>
+              <div class="pull-right" style="display: inline">
+                <div class="btn btn-success form-control " (click)="storeInvitedPlayer(player.uri)">
+                  +
+                </div>
+              </div>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="form-group row"
+         [class.has-error]="matchInvitationForm.controls['message'].touched
+         &&
+          matchInvitationForm.controls['message'].hasError('required')">
+
       <label class="col-md-6 control-label" for="message">Send a message to player you are inviting</label>
-      <textarea id="message" type="text" placeholder="Write your message here" class="form-control input-md"
-             [formControl]="matchInvitationForm.controls['message']"
-             [(ngModel)]="matchInvitation.message"></textarea>
+
+      <textarea id="message" type="text" placeholder="Write your message here"
+                class="form-control input-md"
+                [formControl]="matchInvitationForm.controls['message']"
+                [(ngModel)]="matchInvitation.message">
+
+      </textarea>
+
+
       <div class="col-md-12">
         <div *ngIf="matchInvitationForm.controls['message'].touched &&
                     matchInvitationForm.controls['message'].hasError('required')" class="alert alert-danger">
