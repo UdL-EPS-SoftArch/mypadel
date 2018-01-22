@@ -4,8 +4,9 @@ Feature: Create Administrator
   I want to register them
 
   Scenario: Create additional administrator
-    Given I sign in as "admin@mypadel.cat" with password "password"
+    Given I'm logged out
+    And I sign in as "admin@mypadel.cat" with password "password"
     And I see 1 administrators
-    When I create an administrator with username "admin2" and e-mail "admin2@mypadel.cat"
+    When I create an administrator with username "admin2", e-mail "admin2@mypadel.cat" and password "password"
     Then I click menu option "Admins"
     And I see 2 administrators

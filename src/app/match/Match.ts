@@ -6,15 +6,14 @@ export class Match {
   _links: any = {};
   id: number;
   startDate: Date;
-  duration: String;
+  startDateString: string;
+  duration: string;
   courtType: CourtType;
   cancelationDeadline: Date;
-  isCancelled: boolean;
+  cancelled: boolean;
   matchCreator: Player;
-  /*Waiting for other components being implemented
-  invitations: any = [];//invitation[] = []
-  reservation: Reservation;
-  */
+  invitations: any = [];
+  // reservation: Reservation;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

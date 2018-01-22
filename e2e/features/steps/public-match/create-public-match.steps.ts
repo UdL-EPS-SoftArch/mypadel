@@ -1,20 +1,21 @@
 import {binding, when} from 'cucumber-tsflow';
 import {browser, by, element} from 'protractor';
 import {PublicMatchFormPage} from '../../../pages/public-match/public-match-form.page';
+import {MainContentPage} from '../../../pages/main-content.page';
 
 const chai = require('chai').use(require('chai-as-promised'));
 const expect = chai.expect;
 
 @binding()
 class CreatePublicMatchSteps {
-  private datasetForm = new PublicMatchFormPage();
+  private datasetForm;
 
-  @when(/^I create a public match with date "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
-  public iCreateAPublicMatch (date: string, courtType: string, level: string, callback): void {
-    element(by.linkText('Public Matches')).click();
-    element(by.linkText('Create New Public Match')).click();
-    this.datasetForm.setStartDate(date);
-    this.datasetForm.setDuration('PT60M');
+  @when(/^I create a public match with duration "([^"]*)", court type "([^"]*)" and level "([^"]*)"$/)
+  public iCreateAPublicMatch (duration: string, courtType: string, level: string, callback): void {
+    new MainContentPage().clickButtonWithText('Create Public Match');
+    browser.waitForAngular();
+    this.datasetForm = new PublicMatchFormPage();
+    this.datasetForm.setDuration(duration);
     this.datasetForm.setCourtType(courtType);
     this.datasetForm.setLevel(level);
     this.datasetForm.submitForm();

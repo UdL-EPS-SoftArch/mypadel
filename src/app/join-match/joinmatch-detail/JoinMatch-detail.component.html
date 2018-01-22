@@ -1,0 +1,17 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <div><h4>Joined to the Match nº{{match?.id}}</h4></div>
+  </div>
+  <div class="panel-body">
+    <h4>Joined on: {{joinMatch?.date}}</h4>
+    <h4>Joined Match: <a routerLink="{{'/matches/match?.id'}}">{{match?.id}}</a></h4>
+  </div>
+  <div class="panel-footer text-center">
+    <button id="publicMatchesList" type="button" [routerLink]="['/joinMatches']"
+            class="btn btn-primary">Back to List
+    </button>
+    <button id="publicMatches" type="button" [routerLink]="['delete']"
+            class="btn btn-danger">Leave the match
+    </button>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { AuthenticationBasicService } from '../login-basic/authentication-basic.service';
 import { environment } from '../../environments/environment';
 import { Player } from './player';
+import {User} from '../login-basic/user';
 @Injectable()
 export class PlayerService {
 
@@ -70,4 +71,7 @@ export class PlayerService {
     return this.authentication.isAdmin();
   }
 
+  getCurrentUser(): User {
+    return new User(JSON.parse(localStorage.getItem('currentUser')));
+  }
 }

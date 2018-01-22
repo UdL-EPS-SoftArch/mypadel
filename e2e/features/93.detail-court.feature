@@ -4,10 +4,9 @@ Feature: Detail court
   I want to view the detail
 
   Scenario: Detail court
-    Given I'm in the home page
+    Given I'm on the home page and logged out
     And I sign in as "player@mypadel.cat" with password "password"
     And I click menu option "Courts"
     When I click on a court with ID "1"
-    Then I see a court with availability "Unavailable"
-    And I see a court "Outdoor"
-    And I logout
+    Then I see a court with availability "Available"
+    And I see a court "Indoor"
